@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default class PublicRoute extends React.Component{
+export default class SignUpPage extends React.Component{
 
   render(){
     return(
