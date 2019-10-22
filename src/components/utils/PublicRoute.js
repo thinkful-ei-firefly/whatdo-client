@@ -1,12 +1,18 @@
 import React from 'react'
 
-export default class PublicRoute extends React.Component{
+export default function PublicRoute({component, ...props}){
+  const Component = component
 
   render(){
     return(
-      <div>
-        
-      </div>
+      <Route 
+        {...props}
+        render={componentsProps => 
+          TokenService.hasAuthToken()
+          ? <Redirect to={'/'} />
+          : <Component {...componentsProps} />
+        }
+      />
     )
   }
 }
