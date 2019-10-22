@@ -18,7 +18,7 @@ function App() {
         {/* PublicOnlyRoute
             PrivateOnlyRoute */}
         <Route path={'/eventPage'} component={EventPage} />
-        
+
         <Route component={'NotFound'}/>
       </Switch>
       <Footer />
