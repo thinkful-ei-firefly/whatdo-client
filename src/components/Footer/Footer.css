@@ -1,4 +1,6 @@
 .Footer{
-  height: 30px;
-  background-color: grey;
+  /* height: 30px; */
+  /* background-color: grey; */
+  background: linear-gradient(to bottom,white,grey);
+  height: 100px;
 }
