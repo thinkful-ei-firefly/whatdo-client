@@ -7,6 +7,7 @@ import Footer from '../../components/Footer/Footer'
 
 import './App.css';
 import LandingPage from '../../routes/LandingPage/LandingPage';
+import EventPage from '../../routes/EventPage/EventPage';
 
 function App() {
   return (
@@ -16,6 +17,8 @@ function App() {
         <Route exact path={'/'} component={LandingPage}/>
         {/* PublicOnlyRoute
             PrivateOnlyRoute */}
+        <Route path={'/eventPage'} component={EventPage} />
+        
         <Route component={'NotFound'}/>
       </Switch>
       <Footer />
