@@ -1,5 +1,6 @@
 import React from 'react'
 import Search from '../../components/Search/Search'
+import SearchResults from '../../components/SearchResults/SearchResults'
 
 export default class LandingPage extends React.Component{
 
@@ -7,6 +8,7 @@ export default class LandingPage extends React.Component{
     return(
       <div>
         <Search />
+        <SearchResults />
       </div>
     )
   }
