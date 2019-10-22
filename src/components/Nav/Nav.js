@@ -27,8 +27,8 @@ export default class Nav extends React.Component {
           : this.renderLoginLink()
         */}
         {/**demo  login & register*/}
-        <Link to='/login' className="btn btn4">Login</Link>
-        <Link to='/register' className="btn btn4">Sign up</Link>
+        <Link to='/signIn' className="btn btn4">Login</Link>
+        <Link to='/signUp' className="btn btn4">Sign up</Link>
 
 
         <label htmlFor="chk" className="hide-menu-btn">
