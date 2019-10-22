@@ -4,7 +4,7 @@ export default class Search extends React.Component {
   render() {
     return (
       <div className="Search">
-        <form class="search-form">
+        <form className="search-form">
           <div>
             <input
               placeholder="zipcode"
@@ -24,7 +24,7 @@ export default class Search extends React.Component {
             type="date"
             id="date"
             name="date"
-            value="2019-10-21"
+            defaultValue="2019-10-21"
             min="2019-01-01"
             max="2019-12-31"
           />
@@ -35,7 +35,7 @@ export default class Search extends React.Component {
             type="radio"
             name="event-type"
             value="1"
-            class="event-type-radio"
+            className="event-type-radio"
           />
           <label htmlFor="event-type">
             <span>Concert</span>
@@ -45,7 +45,7 @@ export default class Search extends React.Component {
             type="radio"
             name="event-type"
             value="2"
-            class="event-type-radio"
+            className="event-type-radio"
           />
           <label htmlFor="event-type" />
           <span>Outdoor Activities</span>
@@ -54,7 +54,7 @@ export default class Search extends React.Component {
             type="radio"
             name="event-type"
             value="1"
-            class="event-type-radio"
+            className="event-type-radio"
           />
           <label htmlFor="event-type">
             <span>Museums</span>
@@ -64,7 +64,7 @@ export default class Search extends React.Component {
             type="radio"
             name="event-type"
             value="2"
-            class="event-type-radio"
+            className="event-type-radio"
           />
           <label htmlFor="event-type">
             <span>Festivals</span>
@@ -74,7 +74,7 @@ export default class Search extends React.Component {
             type="radio"
             name="event-type"
             value="2"
-            class="event-type-radio"
+            className="event-type-radio"
           />
           <label htmlFor="event-type">
             <span>Bars</span>
@@ -84,7 +84,7 @@ export default class Search extends React.Component {
             type="radio"
             name="event-type"
             value="2"
-            class="event-type-radio"
+            className="event-type-radio"
           />
           <label htmlFor="event-type">
             <span>Movies</span>
@@ -94,7 +94,7 @@ export default class Search extends React.Component {
             type="radio"
             name="event-type"
             value="2"
-            class="event-type-radio"
+            className="event-type-radio"
           />
           <label htmlFor="event-type">
             <span>Others</span>
