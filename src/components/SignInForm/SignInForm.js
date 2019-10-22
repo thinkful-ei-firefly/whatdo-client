@@ -3,6 +3,7 @@ import React from 'react'
 export default class SignInForm extends React.Component{
 
   handleSubmit = async e => {
+    e.preventDefault()
     console.log('Clicked LogIn')
   }
 

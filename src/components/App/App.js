@@ -10,6 +10,7 @@ import LandingPage from '../../routes/LandingPage/LandingPage'
 import EventPage from '../../routes/EventPage/EventPage'
 import EventsPage from '../../routes/EventsPage/EventsPage'
 import SignInPage from '../../routes/SignInPage/SignInPage'
+import SignUpPage from '../../routes/SignUpPage/SignUpPage'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Header />
       <Switch>
         <Route exact path={'/'} component={LandingPage} />
+        <Route path={'/signUp'} component={SignUpPage} />
         <Route path={'/signIn'} component={SignInPage} />
         {/* PublicOnlyRoute
             PrivateOnlyRoute */}
