@@ -16,7 +16,7 @@ const AuthApiService = {
   },
 
   async createAccount(newUser){
-    const res = await fetch(`${config.API_ENDPOINT}/users`,{
+    const res = await fetch(`${config.API_ENDPOINT}/user`,{
       method: 'POST',
       headers: {
         'Content-Type' : 'application/json'  

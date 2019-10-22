@@ -11,12 +11,12 @@ export default class SignUpForm extends React.Component{
     return(
       <form className="SignUpForm" onSubmit={this.handleSubmit}>
         <div>
-          <label htmlFor="firstName">First Name</label>
-          <input type="text" id="firstName" name="firstName" required />
+          <label htmlFor="username">Username</label>
+          <input type="text" id="username" name="username" required />
         </div>
         <div>
-          <label htmlFor="lastName">Last Name</label>
-          <input type="text" id="lastName" name="lastName" required />
+          <label htmlFor="nickName">Nick Name</label>
+          <input type="text" id="nickName" name="nickName" required />
         </div>
         <div>
           <label htmlFor="email">Email</label>
