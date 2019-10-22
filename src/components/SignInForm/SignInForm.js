@@ -19,7 +19,8 @@ export default class SignInForm extends React.Component{
       const user = await AuthApiService.login(loginCredentials)
       TokenService.saveAuthToken(user.authToken)
       // set context
-      console.log('log in success!')
+      // console.log('log in success!')
+      this.props.onSuccessfulSignIn()
     } catch(err){
       this.setState({error: err.error})
     }
