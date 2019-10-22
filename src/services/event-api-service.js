@@ -3,7 +3,7 @@ import config from '../config'
 const EventApiService = {
 
   async eventSearch (zipCode, distance, date, categories) {
-    //must format incoming date to YYYYMMDD00 format for search to work properly
+    //must format incoming date to YYYYMMDD00-YYYYMMDD00 format for search to work properly
     const datestring = '2019103100-2019103100'
     //All acceptable categories listed here. Multiple categories should be separated by commas
     const categorystring = 'music,conference,comedy,learning_education,family_fun_kids,festivals_parades,movies_film,food,fundraisers,art,support,holiday,books,attractions,community,business,singles_social,schools_alumni,clubs_association,outdoors_recreation,performing_arts,animals,politics_activism,sales,science,religion_spirituality,sports,technology,other'
