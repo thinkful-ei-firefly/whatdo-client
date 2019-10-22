@@ -18,16 +18,19 @@ export default class SignInForm extends React.Component{
     try{
       const user = await AuthApiService.login(loginCredentials)
       TokenService.saveAuthToken(user.authToken)
-
+      // set context
+      console.log('log in success!')
     } catch(err){
-
+      this.setState({error: err.error})
     }
   
   }
 
   render(){
+    const { error } = this.state 
     return(
       <form className='SignInForm' onSubmit={this.handleSubmit}>
+        <div className="alert">{error && <p>{error}</p>}</div>
         <div>
           <label htmlFor="username">Username</label>
           <input type="text" id="username" name="username" required/>
