@@ -1,22 +1,44 @@
 import React from 'react'
+import AuthApiService from '../../services/auth-api-service'
 
 export default class SignUpForm extends React.Component{
 
-  handleSubmit = e => {
+  state = {error: null}
+
+  handleSubmit = async e => {
     e.preventDefault()
-    console.log('Submit SignUp')
+    const {username, password, nickname, email} = e.target
+    const newUser = {
+      username: username.value,
+      password: password.value,
+      nickname: nickname.value,
+      email: email.value
+    }
+
+    try{
+      const createdUser = await AuthApiService.createAccount(newUser)
+      username.value = ''
+      password.value = ''
+      nickname.value = ''
+      console.log('Account Created!')
+      console.log(createdUser)
+    } catch(err){
+      this.setState({error: err.error})
+    }
   }
 
   render(){
+    const {error} = this.state
     return(
       <form className="SignUpForm" onSubmit={this.handleSubmit}>
+        <div className="alert">{error && <p>{error}</p>}</div>
         <div>
           <label htmlFor="username">Username</label>
           <input type="text" id="username" name="username" required />
         </div>
         <div>
-          <label htmlFor="nickName">Nick Name</label>
-          <input type="text" id="nickName" name="nickName" required />
+          <label htmlFor="nickname">Nickname</label>
+          <input type="text" id="nickname" name="nickname" required />
         </div>
         <div>
           <label htmlFor="email">Email</label>
