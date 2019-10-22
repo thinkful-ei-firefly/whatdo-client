@@ -7,7 +7,7 @@ export default function Logo(props) {
   
   return (
  
-    <svg id="logo" className='header-logo' width="200" height="110" viewBox="0 0 654 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg id="logo" className='header-logo' width="20vh" height="auto" viewBox="0 0 654 110" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M138.232 5.6319L123.688 55.8159L109.144 106H94.456L71.128 25.216L46.936 106L32.392 106.144L18.352 55.888L4.312 5.6319H18.28L40.168 90.736L64.36 5.6319H79.048L102.088 90.448L124.12 5.6319H138.232Z" stroke="black" strokeWidth="6"/>
     <path d="M229.9 5.6319V106H216.796V60.496H165.676V106H152.572V5.6319H165.676V49.696H216.796V5.6319H229.9Z" stroke="black" strokeWidth="6"/>
     <path d="M311.604 83.68H267.827L259.763 106H245.939L282.227 6.20789H297.347L333.492 106H319.667L311.604 83.68ZM307.859 73.024L289.715 22.336L271.571 73.024H307.859Z" stroke="black" strokeWidth="6"/>

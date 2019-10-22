@@ -11,7 +11,7 @@
   position: -ms-sticky;
   position: -o-sticky;
   top: 0;
-  height: 100px;
+  height: 10vh;
   justify-content: space-between;
   padding: 10px 15px;
   /* border-bottom: 1px solid; */
@@ -19,7 +19,7 @@
   letter-spacing: -.025em;
   align-items: center;
   background: linear-gradient(to bottom,grey,white);
-  margin-bottom: 15px;
+  /* margin-bottom: 15px; */
 /* color:white; */
 /* color:purple,blue,skyblue,green,yellow,orange,red; */
 /* background: linear-gradient(to right,purple,blue,skyblue,green,yellow,orange,red); */
@@ -221,7 +221,7 @@
     padding: 80px 0;
     line-height: normal;
     transition: 0.7s;
-    z-index: 5;
+    z-index: 1111;
     /* display: none; */
     /* line-height: 100px; */
     margin-block-start:0;

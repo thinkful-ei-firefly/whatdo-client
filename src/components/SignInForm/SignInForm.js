@@ -29,18 +29,21 @@ export default class SignInForm extends React.Component{
   render(){
     const { error } = this.state 
     return(
-      <form className='SignInForm' onSubmit={this.handleSubmit}>
-        <div className="alert">{error && <p>{error}</p>}</div>
-        <div>
-          <label htmlFor="username">Username</label>
-          <input type="text" id="username" name="username" required/>
+      <div className='SignInForm' >
+        <div className="alert ">{error && <p>{error}</p>}</div>
+        <form className='box' onSubmit={this.handleSubmit}>
 
-          <label htmlFor="pass">Password</label>
-          <input type="password" id="password" name="password" required />
+          <h1>Login</h1>
+          <input type="text"  autoComplete='off' id="username" name="username" required placeholder="Username" />
+      {/**
+      <label htmlFor="pass">Password</label>
+      */}
+          
+          <input type="password" id="password" name="password" placeholder="Password" required />
 
           <input type="submit" value="Sign In"/>
-        </div>
-      </form>
+        </form>
+      </div>
     )
   }
 }
