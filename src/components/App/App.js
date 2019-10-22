@@ -8,6 +8,7 @@ import Footer from '../../components/Footer/Footer'
 import './App.css';
 import LandingPage from '../../routes/LandingPage/LandingPage';
 import EventPage from '../../routes/EventPage/EventPage';
+import EventsPage from '../../routes/EventsPage/EventsPage';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route exact path={'/'} component={LandingPage}/>
         {/* PublicOnlyRoute
             PrivateOnlyRoute */}
+        <Route path={'/eventsPage'} component={EventsPage}/>
         <Route path={'/eventPage'} component={EventPage} />
 
         <Route component={'NotFound'}/>
