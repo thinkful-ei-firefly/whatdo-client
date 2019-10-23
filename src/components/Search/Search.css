@@ -6,9 +6,13 @@
     flex-direction: column;
     font-family: sans-serif;
     /* background: grey; */
-    background: rgb(196, 196, 196) url("Desktop-1.png") no-repeat fixed center;
+    /* background: rgb(196, 196, 196) url("Desktop-1.png") no-repeat fixed center; */
     background-repeat: no-repeat;
     background-size: 100% ;
+}
+
+.Search h1{
+    text-align: center;
 }
 
 .Search h3{
@@ -27,7 +31,8 @@ transition: all 0.4s ease 0s;
 
 .form {
     margin-bottom: 20px;
-    width: 100%;
+    width: 80%;
+    max-width: 600px;
     position: relative;
     /* height: 50px; */
     /* background: blue; */
@@ -36,15 +41,15 @@ transition: all 0.4s ease 0s;
     border-radius: 11px;
     /* height: 80vh; */
 }
-@media (min-width: 414px) {
+/* @media (min-width: 800px) {
     .form {
         width: 30%;
     }
 
-  }
+  } */
 
 .form-section {
-    margin: 20px;
+    margin: 20px  auto;
     width: 100%;
     position: relative;
     height: 50px;
@@ -56,10 +61,19 @@ transition: all 0.4s ease 0s;
 }
 
 .checkbox__section{
-    padding :20px;
+    padding :20px auto;
     height: 80px;
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
+    align-content: center;
+    height: 100%;
+    align-content: stretch;
+}
+
+.checkbox__section input +  label  {
+    width:100px;
+    flex-grow:1;
 
 }
 
@@ -69,10 +83,14 @@ transition: all 0.4s ease 0s;
     margin:0.2em;
     cursor: pointer;
     padding:  0.2em;
+    
 }
+
+
 
 .checkbox__section input {
     display: none;
+    
 }
 
 .checkbox__section input +label:before{
@@ -216,15 +234,3 @@ transition: all 0.4s ease 0s;
 
 
 
-
-.required {
-    color: white;
-}
-
-@media (min-width: 414px) {
-    .login, .register, .header-user-name, .logout{
-        display: inline;
-        padding-left: 5px;
-      }
-
-  }
