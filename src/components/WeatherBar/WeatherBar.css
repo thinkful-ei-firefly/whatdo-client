@@ -1,0 +1,35 @@
+.weatherbar {
+    text-align: center;
+}
+
+.weatherbar-header {
+    text-align: center;
+}
+
+.weathericon {
+    display: inline-block;
+    margin: 5px;
+}
+
+.weathericon-time {
+    text-align: center;
+    margin: 0;
+}
+
+.weathericon-icon {
+    margin-top: -20px;
+    margin-bottom: -20px;
+}
+
+.weathericon-temperature {
+    text-align: center;
+    margin: 0px;
+}
+
+.high {
+    color: darkred
+}
+
+.low {
+    color: darkblue;
+}
