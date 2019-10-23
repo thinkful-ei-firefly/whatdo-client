@@ -2,7 +2,7 @@ import config from '../config'
 
 const AuthApiService = {
   async login(credentials){
-    const res = await fetch(`${config.API_ENDPOINT}/auth/token`,{
+    const res = await fetch(`${config.REACT_APP_API_ENDPOINT}/auth/token`,{
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -16,7 +16,7 @@ const AuthApiService = {
   },
 
   async createAccount(newUser){
-    const res = await fetch(`${config.API_ENDPOINT}/user`,{
+    const res = await fetch(`${config.REACT_APP_API_ENDPOINT}/user`,{
       method: 'POST',
       headers: {
         'Content-Type' : 'application/json'  
