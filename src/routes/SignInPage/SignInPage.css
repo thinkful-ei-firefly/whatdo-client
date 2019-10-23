@@ -1,8 +1,10 @@
 
 .SignInForm {
+    width: 100%;
     margin: 0;
     padding: 0;
     font-family: sans-serif;
+    display: flex;
     /* background: #34495e; */
     /* background: linear-gradient(to bottom,white,rgb(72, 72, 72),white); */
     /* background: radial-gradient(to  right,black); */
@@ -14,11 +16,14 @@
 }
 .box{
     /* width:40%; */
-    padding:40px;
-    position: absolute;
+    width: 400px;
+    margin: auto;
+    
+    padding:20px;
+    /* position: absolute;
     top:50%;
     left:50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); */
     background: #191919;
    
     /* background: url(CBG.png); */
@@ -28,6 +33,7 @@
     text-align: center;
     border-radius: 7px;
     /* z-index: 0; */
+    overflow: hidden;
 }
 
 .box h1 {
@@ -73,7 +79,7 @@
     transition:  0.25s;
     cursor: pointer;
     font-size: large;
-    animation: anim 7s linear infinite;
+    /* animation: anim 7s linear infinite; */
 
 }
 @keyframes anim {
