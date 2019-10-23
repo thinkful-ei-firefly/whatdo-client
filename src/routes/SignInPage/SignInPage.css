@@ -1,0 +1,100 @@
+
+.SignInForm {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    display: flex;
+    /* background: #34495e; */
+    /* background: linear-gradient(to bottom,white,rgb(72, 72, 72),white); */
+    /* background: radial-gradient(to  right,black); */
+    height: 80vh;
+    /* background: url(Desktop-1.png);
+    background-repeat: no-repeat;
+    background-size: 100%; */
+    background: rgb(196, 196, 196) url("Desktop-1.png") no-repeat fixed center;
+}
+.box{
+    /* width:40%; */
+    width: 400px;
+    margin: auto;
+    
+    padding:20px;
+    /* position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%); */
+    background: #191919;
+   
+    /* background: url(CBG.png); */
+    /* background-image: url(https://rockymountevents.com/wp-content/uploads/2019/06/Concert-crowd-with-silhouettes-of-people-hold-their-hands-up.jpg); */
+    background-repeat: no-repeat;
+    background-size: 100%;
+    text-align: center;
+    border-radius: 7px;
+    /* z-index: 0; */
+    overflow: hidden;
+}
+
+.box h1 {
+    color: white;
+    text-transform: uppercase;
+    font-weight: 500;
+
+}
+
+.box input[type = "text"], .box input[type= "password"] {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #3498db;
+    padding: 14px 10px;
+    width: 200px;
+    outline: none;
+    color: white;
+    font-size: large;
+    border-radius: 24px;
+    transition:  0.25s;
+}
+
+.box input[type = "text"]:focus, .box input[type= "password"]:focus {
+    width:280px;
+    border-color: #2ecc71;
+
+}
+
+.box input[type='submit'] {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #2ecc71;
+    padding: 14px 40px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition:  0.25s;
+    cursor: pointer;
+    font-size: large;
+    /* animation: anim 7s linear infinite; */
+
+}
+@keyframes anim {
+    0% {
+      transform: scale(1);
+      background: rgb(22, 160, 27);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100%{
+      transform: scale(1);
+    }
+  }
+
+.box input[type='submit']:hover {
+    background: #2ecc71;
+}

@@ -1,5 +1,7 @@
 import React from 'react'
 import AuthApiService from '../../services/auth-api-service'
+import { Link } from 'react-router-dom'
+
 
 export default class SignUpForm extends React.Component{
 
@@ -30,29 +32,19 @@ export default class SignUpForm extends React.Component{
   render(){
     const {error} = this.state
     return(
+
+      <div className="signup-form">
       <form className="SignUpForm" onSubmit={this.handleSubmit}>
         <div className="alert">{error && <p>{error}</p>}</div>
-        <div>
-          <label htmlFor="username">Username</label>
-          <input type="text" id="username" name="username" required />
-        </div>
-        <div>
-          <label htmlFor="nickname">Nickname</label>
-          <input type="text" id="nickname" name="nickname" required />
-        </div>
-        <div>
-          <label htmlFor="email">Email</label>
-          <input type="email" id="email" name="email" required />
-        </div>
-        <div>
-          <label htmlFor="password">Password</label>
-          <input type="password" id="password" name="password" required />
-        </div>
-        <input type="checkbox" name="termsPolicy" id="termsPolicy" required/>
-        <label htmlFor="TermsPolicy">I accept Term of use & privacy policy</label>
-
-        <input type="submit" value="Sign Up!"/>
+      <h1>Sign Up</h1>
+      <input className="txtb" autoComplete='off' type="text" id="username" name="username" placeholder="Username" required />
+      <input className="txtb" autoComplete='off' type="text" id="nickname" name="nickname" placeholder="Nickname" required />
+      <input className="txtb" autoComplete='off' type="email" id="email" name="email" placeholder="Email" required />
+      <input className="txtb" type="password" id="password" name="password" placeholder="Password" required />
+      <input className="signup-btn" type="submit" value="Sign Up!"/>
+      <Link to='/' className="alreadyHaveAcc">Already Have one ?</Link>
       </form>
+      </div>
     )
   }
 }

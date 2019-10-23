@@ -17,9 +17,9 @@ export default class Nav extends React.Component {
     
         <ul className="menu">
 
-        <Link to='/' className="btn btn4">Home</Link>
+        <Link to='/' className="btn btn2">Home</Link>
 
-        <Link to='/myEventsPage' className="btn btn4">My Event</Link>
+        <Link to='/myEventsPage' className="btn btn2">My Event</Link>
 
         {/** 
         TokenService.hasAuthToken()
@@ -27,8 +27,8 @@ export default class Nav extends React.Component {
           : this.renderLoginLink()
         */}
         {/**demo  login & register*/}
-        <Link to='/signIn' className="btn btn4">Login</Link>
-        <Link to='/signUp' className="btn btn4">Sign up</Link>
+        <Link to='/signIn' className="btn btn2">Login</Link>
+        <Link to='/signUp' className="btn btn2">Sign up</Link>
 
 
         <label htmlFor="chk" className="hide-menu-btn">

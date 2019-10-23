@@ -1,13 +1,17 @@
 import React from 'react'
-
+import './SignInPage.css'
 import SignInForm from '../../components/SignInForm/SignInForm'
 
 export default class LoginPage extends React.Component{
 
+  onSuccessfulSignIn = () => {
+    return this.props.history.push('/eventsPage')
+  }
+
   render(){
     return(
       <div className='LoginPage'>
-        <SignInForm />
+        <SignInForm onSuccessfulSignIn={this.onSuccessfulSignIn}/>
       </div>
     )
   }
