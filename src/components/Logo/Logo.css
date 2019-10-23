@@ -3,7 +3,22 @@
     /* margin: 50%; */
     /* margin-top: 2%; */
     animation: fill 0.5s ease forwards  3s;
+       animation: anim 7s linear infinite;
+
 }
+@keyframes anim {
+    0% {
+      transform: scale(1);
+      
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100%{
+      transform: scale(1);
+    }
+  }
+
 
 #logo path:nth-child(1){
     stroke-dasharray: 801px;
@@ -57,27 +72,27 @@
 }
 
 #logo:hover path:nth-child(1){
-    fill:rgb(34, 34, 34);
+    fill:rgb(28, 33, 67);
     transition: 0.2s;
 }
 #logo:hover path:nth-child(2){
-    fill:rgb(85, 85, 85);
+    fill:rgb(48, 55, 105);
     transition: 0.4s;
 }
 #logo:hover path:nth-child(3){
-    fill:rgb(128, 126, 126);
+    fill:rgb(0, 26, 131);
     transition: 0.6s;
 }
 #logo:hover path:nth-child(4){
-    fill:rgb(167, 166, 166);
+    fill:rgb(69, 82, 155);
     transition: 0.8s;
 }
 #logo:hover path:nth-child(5){
-    fill:rgb(197, 197, 197);
+    fill:rgb(93, 106, 206);
     transition: 1s;
 }
 #logo:hover path:nth-child(6){
-    fill:whitesmoke;
+    fill:rgb(116, 131, 252);
     transition: 1.2s;
 }
 

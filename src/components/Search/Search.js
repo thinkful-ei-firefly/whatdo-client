@@ -4,9 +4,9 @@ export default class Search extends React.Component {
   render() {
     return (
       <div className="Search">
-      <h1>
+      <h2>
       Search event near you
-    </h1>
+    </h2>
     <h3>"Have fun, be yourself ,enjoy life and stay positive" - Tatiana Maslany</h3>
 
         <form className='form'  onSubmit={this.handleSubmit} >
@@ -63,9 +63,9 @@ export default class Search extends React.Component {
             max="2019-12-31"
           />
           </div>
+          <h4>Select event type</h4>
           
-
-          <h3>Select event type</h3>
+          
 
           <div className='form-section checkbox__section'>
 
@@ -75,7 +75,6 @@ export default class Search extends React.Component {
         <label htmlFor="box2" >Sports</label>
         <input type="checkbox" id='box3' name='box3' value='Museum'></input>
         <label htmlFor="box3" >Museum</label>
-        <br></br>
         <input type="checkbox" id='box4' name='box4' value='Arts'></input>
         <label htmlFor="box4" >Arts</label>
         <input type="checkbox" id='box5' name='box5' value='Bars'></input>
@@ -83,8 +82,8 @@ export default class Search extends React.Component {
         <input type="checkbox" id='box6' name='box6' value='Other'></input>
         <label htmlFor="box6" >Other</label>
 
-
-          </div>
+        </div>
+       
 
           <div className='form-btn' >
         <button className='searchForm__btn' type='submit'>
