@@ -1,13 +1,15 @@
 import React from 'react'
 import AuthApiService from '../../services/auth-api-service'
 import TokenService from '../../services/token-service'
+import {UserContext} from '../../contexts/UserContext'
 
 export default class SignInForm extends React.Component{
+  static contextType = UserContext
   state = {error: null, loading: false}
 
   handleSubmit = async e => {
     e.preventDefault()
-    // console.log('Clicked LogIn')
+    console.log('Clicked LogIn')
     const {username, password} = e.target
     // console.log(username.value, password.value)
     const loginCredentials = {
@@ -16,10 +18,11 @@ export default class SignInForm extends React.Component{
     }
 
     try{
-      const user = await AuthApiService.login(loginCredentials)
-      TokenService.saveAuthToken(user.authToken)
-      // set context
+      const token = await AuthApiService.login(loginCredentials)
+      TokenService.saveAuthToken(token.authToken)
       // console.log('log in success!')
+      // set context
+      this.context.setUser({username: username.value})
       this.props.onSuccessfulSignIn()
     } catch(err){
       this.setState({error: err.error})
