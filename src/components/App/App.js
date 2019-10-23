@@ -24,10 +24,11 @@ function App() {
         <PublicOnlyRoute path={'/signUp'} component={SignUpPage} />
         <PublicOnlyRoute path={'/signIn'} component={SignInPage} />
         <PrivateOnlyRoute path={'/eventsPage'} component={EventsPage} />
+        <PrivateOnlyRoute path={'/eventPage'} component={EventPage} />
         {/* <Route path={'/signUp'} component={SignUpPage} /> */}
         {/* <Route path={'/signIn'} component={SignInPage} /> */}
         {/* <Route path={'/eventsPage'} component={EventsPage} /> */}
-        <Route path={'/eventPage'} component={EventPage} />
+        {/* <Route path={'/eventPage'} component={EventPage} /> */}
         <Route component={NotFoundPage} />
       </Switch>
       <Footer />
