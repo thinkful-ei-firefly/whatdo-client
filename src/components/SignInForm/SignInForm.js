@@ -23,6 +23,7 @@ export default class SignInForm extends React.Component{
       // console.log('log in success!')
       // set context
       this.context.setUser({username: username.value})
+       // should update this to show a 'Success' message on next page
       this.props.onSuccessfulSignIn()
     } catch(err){
       this.setState({error: err.error})
