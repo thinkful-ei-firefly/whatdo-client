@@ -34,7 +34,7 @@ const EventApiService = {
     return res.json();
   },
 
-  async postEvent(event) {
+  async postEventToDB(event) {
     const res = await fetch(`${config.API_ENDPOINT}/event`, {
       method: 'POST',
       headers: {
@@ -42,6 +42,66 @@ const EventApiService = {
         authorization: `Bearer ${TokenService.getAuthToken()}`
       },
       body: JSON.stringify(event)
+    });
+
+    if (!res.ok) {
+      return res.json().then(e => Promise.reject(e));
+    }
+
+    return res.json();
+  },
+
+  async getEventsFromDB() {
+    const res = await fetch(`${config.API_ENDPOINT}/event`, {
+      headers: {
+        authorization: `Bearer ${TokenService.getAuthToken()}`
+      }
+    });
+
+    if (!res.ok) {
+      return res.json().then(e => Promise.reject(e));
+    }
+
+    return res.json();
+  },
+
+  async getEventFromDBById(event_id) {
+    const res = await fetch(`${config.API_ENDPOINT}/event/${event_id}`, {
+      headers: {
+        authorization: `Bearer ${TokenService.getAuthToken()}`
+      }
+    });
+
+    if (!res.ok) {
+      return res.json().then(e => Promise.reject(e));
+    }
+
+    return res.json();
+  },
+
+  async deleteEventFromDB(event_id) {
+    const res = await fetch(`${config.API_ENDPOINT}/event/${event_id}`, {
+      method: 'DELETE',
+      headers: {
+        authorization: `Bearer ${TokenService.getAuthToken()}`
+      }
+    });
+
+    if (!res.ok) {
+      return res.json().then(e => Promise.reject(e));
+    }
+
+    return res.json();
+  },
+
+  async patchEventInDB(event_id, patches) {
+    const res = await fetch(`${config.API_ENDPOINT}/event/${event_id}`, {
+      method: 'PATCH',
+      headers: {
+        'content-type': 'application/json',
+        authorization: `Bearer ${TokenService.getAuthToken()}`
+      },
+      body: JSON.stringify(patches)
     });
 
     if (!res.ok) {
