@@ -79,7 +79,7 @@
     transition:  0.25s;
     cursor: pointer;
     font-size: large;
-    /* animation: anim 7s linear infinite; */
+    animation: anim 7s linear infinite;
 
 }
 @keyframes anim {

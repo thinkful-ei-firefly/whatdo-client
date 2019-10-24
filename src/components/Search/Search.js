@@ -3,6 +3,8 @@ import './Search.css'
 export default class Search extends React.Component {
   render() {
     return (
+      <div className='SearchPage'>
+      
       <div className="Search">
       <h2>
       Search event near you
@@ -52,7 +54,7 @@ export default class Search extends React.Component {
           </label>
         </div>
 
-          <div className='form-section'>
+          <div className='form-section date'>
           <input
           className='input'
             type="date"
@@ -80,7 +82,7 @@ export default class Search extends React.Component {
         <input type="checkbox" id='box5' name='box5' value='Bars'></input>
         <label htmlFor="box5" >Bars</label>
         <input type="checkbox" id='box6' name='box6' value='Other'></input>
-        <label htmlFor="box6" >Other</label>
+        <label htmlFor="box6" >All</label>
 
         </div>
        
@@ -94,6 +96,9 @@ export default class Search extends React.Component {
         
         </form>
       </div>
+
+      </div>
+      
     )
   }
 }

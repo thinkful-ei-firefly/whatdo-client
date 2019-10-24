@@ -19,7 +19,7 @@
   text-transform: uppercase;
   letter-spacing: -.025em;
   align-items: center;
-  background: linear-gradient(to bottom,rgb(12, 19, 91),white,white,white);
+  background: linear-gradient(to bottom,#487eb0,white,white,white);
   /* margin-bottom: 15px; */
 /* color:white; */
 /* color:purple,blue,skyblue,green,yellow,orange,red; */
@@ -219,7 +219,7 @@ margin-right:auto;
     position: fixed;
     width: 100%;
     height: 100vh;
-    background: rgb(63, 63, 63);
+    background: #487eb0;
     right: -100%;
     top: 0;
     text-align: center;
