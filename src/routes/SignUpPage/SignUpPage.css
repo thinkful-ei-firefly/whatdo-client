@@ -46,6 +46,40 @@
     border: none;
     font-family: "montserrat",sans-serif;
   }
+
+  @keyframes changeInputColor {
+    0% {
+      /* background: rgb(255, 255, 255); */
+
+        
+    }
+
+    50% {
+        width: 100%;
+        background-color: #468ac9;
+        /* background-image: radial-gradient(rgb(255, 255, 255),blue); */
+
+    }
+   
+    100% {
+      background: rgba(255, 255, 255, 0.694);
+    }
+  }
+
+ .signup-form input[name='username'] {
+  animation: changeInputColor 2s linear ;
+ }
+ .signup-form input[name='nickname'] {
+  animation: changeInputColor 2s linear 1s ;
+}
+.signup-form input[name='email'] {
+  animation: changeInputColor 2s linear 2s ;
+}
+.signup-form input[name='password'] {
+  animation: changeInputColor 2s linear 3s ;
+}
+
+
   .txtb{
     margin: 20px 0;
     background: rgba(255, 255, 255, 0.694);

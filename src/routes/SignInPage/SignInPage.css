@@ -57,6 +57,46 @@
     font-size: large;
     border-radius: 24px;
     transition:  0.25s;
+    
+
+}
+
+.box input[type = "text"] {
+  animation: mymove1 5s ease ;
+}
+.box input[type= "password"] {
+  animation: mymove2 5s ease ;
+}
+
+
+@keyframes mymove1 {
+    0% {
+        width: 18ch;
+        
+    }
+
+    25% {
+        width: 100%;
+        background-color: darkblue;
+    }
+   
+    50% {
+        width: 18ch;
+    }
+}
+@keyframes mymove2 {
+  50% {
+      width: 18ch;;
+  }
+
+  75% {
+      width: 100%;
+      background-color: darkblue;
+  }
+ 
+  100% {
+      width: 18ch;
+  }
 }
 
 .box input[type = "text"]:focus, .box input[type= "password"]:focus {
