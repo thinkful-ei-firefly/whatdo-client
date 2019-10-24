@@ -1,6 +1,34 @@
 import React from 'react'
 import './Search.css'
+import SearchContext from '../../contexts/SearchContext'
+
 export default class Search extends React.Component {
+
+  static contextType = SearchContext
+  
+  handleSubmit (ev) {
+    ev.preventDefault()
+    console.log('form submitted!')
+    const zipCode = ev.target.zipCode.value
+    const distance = ev.target.distance.value
+    const date = new Date(ev.target.date.value)
+
+    let categories = []
+
+    for (let i=1; i<= 6; i++) {
+      if (ev.target[`box${i}`].checked) categories.push(`${ev.target[`box${i}`].value}`)
+    }
+
+    categories = categories.join()
+
+    if (!categories) categories = 'music,sports,outdoors_recreation,attractions,performing_arts,comedy,food,singles_social,festivals_parades,holiday'
+
+    this.context.apiSearch(zipCode, distance, date, categories)
+    //once SearchResults page is hooked up to context, modify apiSearch to return a promise
+    //then add a .then chain to history.push the user to the results page
+
+  }
+
   render() {
     return (
       <div className='SearchPage'>
@@ -11,7 +39,7 @@ export default class Search extends React.Component {
     </h2>
     <h3>"Have fun, be yourself ,enjoy life and stay positive" - Tatiana Maslany</h3>
 
-        <form className='form'  onSubmit={this.handleSubmit} >
+        <form className='form'  onSubmit={ev => this.handleSubmit(ev)} >
       {/**
       <div role='alert' className='alert' >
           {error && <p>{error}</p>}
@@ -24,14 +52,14 @@ export default class Search extends React.Component {
           <input type="text"
           className='input'
           
-            id='zipcode'
-            name='zipcode'
+            id='zipCode'
+            name='zipCode'
             autoComplete='off'
             required
           />
           <label 
           className='label-name'
-          htmlFor='zipcode'>
+          htmlFor='zipCode'>
           <span className='content-name' >Enter your zipcode</span>  
           </label>
         </div>
@@ -42,15 +70,15 @@ export default class Search extends React.Component {
           type="text"
           className='input'
           
-            id='mile'
-            name='mile'
+            id='distance'
+            name='distance'
             autoComplete='off'
             required
           />
           <label 
           className='label-name'
-          htmlFor='mile'>
-          <span className='content-name' >Mile around you</span>  
+          htmlFor='distance'>
+          <span className='content-name' >Miles around you</span>  
           </label>
         </div>
 
@@ -65,24 +93,24 @@ export default class Search extends React.Component {
             max="2019-12-31"
           />
           </div>
-          <h4>Select event type</h4>
+          <h4>Filter by event type</h4>
           
           
 
           <div className='form-section checkbox__section'>
 
-        <input type="checkbox" id='box1' name='box1' value='Concert'></input>
-        <label htmlFor="box1" >Concert</label>
-        <input type="checkbox" id='box2' name='box2' value='Sports'></input>
+        <input type="checkbox" id='box1' name='categories' value='music'></input>
+        <label htmlFor="box1" >Music</label>
+        <input type="checkbox" id='box2' name='categories' value='sports,outdoors_recreation'></input>
         <label htmlFor="box2" >Sports</label>
-        <input type="checkbox" id='box3' name='box3' value='Museum'></input>
-        <label htmlFor="box3" >Museum</label>
-        <input type="checkbox" id='box4' name='box4' value='Arts'></input>
-        <label htmlFor="box4" >Arts</label>
-        <input type="checkbox" id='box5' name='box5' value='Bars'></input>
+        <input type="checkbox" id='box3' name='categories' value='attractions'></input>
+        <label htmlFor="box3" >Attractions</label>
+        <input type="checkbox" id='box4' name='categories' value='performing_arts,comedy'></input>
+        <label htmlFor="box4" >Performing Arts</label>
+        <input type="checkbox" id='box5' name='categories' value='food,singles_social'></input>
         <label htmlFor="box5" >Bars</label>
-        <input type="checkbox" id='box6' name='box6' value='Other'></input>
-        <label htmlFor="box6" >All</label>
+        <input type="checkbox" id='box6' name='categories' value='festivals_parades,holiday'></input>
+        <label htmlFor="box6" >Festivals</label>
 
         </div>
        
