@@ -4,7 +4,35 @@ import './Nav.css'
 
 export default class Nav extends React.Component {
 
+/*
+static contextType = UserContext
 
+  handleLogoutClick = () => {
+    this.context.processLogout()
+  }
+
+  renderLogoutLink() {
+    return (
+      <>
+          <Link
+            onClick={this.handleLogoutClick}
+            to='/Login'
+            className="btn btn2">
+            Logout
+          </Link>
+      </>
+    )
+  }
+
+  renderLoginLink() {
+    return (
+      <>
+        <Link to='/signIn' className="btn btn2">Login</Link>
+        <Link to='/signUp' className="btn btn2">Sign up</Link>
+      </>
+    )
+  }
+*/
 
   
   render() {
