@@ -7,10 +7,29 @@
     font-family: sans-serif;
     display: flex;
     background: url("Desktop-1.png") no-repeat fixed center;
+    background-repeat: no-repeat;
+    background-size:fixed;
+    animation: slide 10s  infinite;
 }
+
+@keyframes slide {
+    0% {
+        background: url("topLeft.jpg") center;
+    }
+    25%{
+        background: url("topRight.jpg") center;
+    }
+    50%{
+        background: url("downLeft.jpg") center;
+    }
+    100%{
+        background: url("downRight.jpg") center;
+    }
+}
+
 @media (min-width: 800px) {
     .SearchPage {
-        height: 80vh;
+        height: 85vh;
     }
 }
 
