@@ -14,16 +14,16 @@
 
 @keyframes slide {
     0% {
-        background: url("topLeft.jpg") center;
+        background: url("topLeft.jpg") left;
     }
     25%{
-        background: url("topRight.jpg") center;
+        background: url("topRight.jpg") right;
     }
     50%{
         background: url("downLeft.jpg") center;
     }
     100%{
-        background: url("downRight.jpg") center;
+        background: url("downRight.jpg") left;
     }
 }
 
