@@ -2,7 +2,6 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import WeatherIcon from './WeatherIcon'
 import renderer from 'react-test-renderer'
-import { exportAllDeclaration } from '@babel/types'
 
 describe('<WeatherIcon', () => {
   it('renders without crashing', () => {
