@@ -91,6 +91,7 @@ margin: auto; */
     transition: 0.2s;
     width: 100%;
     border-radius: 7px;
+    background-color: rgba(255, 255, 255, 0);
   }
   .EventItem:hover{
     color: #255784;
@@ -108,8 +109,9 @@ margin: auto; */
     top: 0;
     left: -100%;
     width: 100%;
-    height: 2px;
-    background: linear-gradient(90deg,transparent,#2196f3);
+    height: 3px;
+    background: linear-gradient(90deg,transparent,red);
+    box-shadow: 0 0 10px #2196f3;
   }
   .EventItem:hover span:nth-child(1) {
     left: 100%;
@@ -119,20 +121,22 @@ margin: auto; */
     bottom: 0;
     right: -100%;
     width: 100%;
-    height: 2px;
-    background: linear-gradient(270deg,transparent,#2196f3);
+    height: 3px;
+    background: linear-gradient(270deg,transparent,red);
+    box-shadow: 0 0 10px #2196f3 ;
   }
   .EventItem:hover span:nth-child(3) {
-    left: 100%;
+    right: 100%;
     transition: 1s;
     transition-delay: 0.5s;
   }
   .EventItem span:nth-child(2) {
     top: -100%;
     right: 0;
-    width: 2px;
+    width: 3px;
     height: 100%;
-    background: linear-gradient(180deg,transparent,#2196f3);
+    background: linear-gradient(180deg,transparent,red);
+    box-shadow: 0 0 10px #2196f3 ;
   }
   .EventItem:hover span:nth-child(2) {
     top: 100%;
@@ -142,9 +146,10 @@ margin: auto; */
   .EventItem span:nth-child(4) {
     bottom: -100%;
     left: 0;
-    width: 2px;
+    width: 3px;
     height: 100%;
-    background: linear-gradient(360deg,transparent,#2196f3);
+    background: linear-gradient(360deg,transparent,red);
+    box-shadow: 0 0 10px #2196f3 ;
   }
   .EventItem:hover span:nth-child(4) {
     bottom: 100%;
