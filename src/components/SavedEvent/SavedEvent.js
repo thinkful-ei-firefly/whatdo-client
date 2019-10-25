@@ -1,7 +1,7 @@
 import React from 'react'
-import './EventItem.css'
+import '../EventItem/EventItem.css'
 
-export default function EventItem (props) {
+export default function SavedEvent (props) {
 
   const { name, url, description, venue, address, start_time } = props
 
@@ -12,7 +12,7 @@ export default function EventItem (props) {
   // }
 
   let eventTime = new Date(start_time)
-  eventTime = eventTime.toLocaleTimeString()
+  eventTime = eventTime.toLocaleString()
 
   return (
     <div className='.EventItem__Container'>
@@ -30,7 +30,7 @@ export default function EventItem (props) {
       {description}{" "}
       <a href={url}>Learn More</a>
       <br></br>
-      <button onClick={() => props.saveEvent(props)}>Add to favorites</button>
+      <button onClick={() => props.removeEvent(props.id)}>Remove</button>
     </div>
     </div>
     

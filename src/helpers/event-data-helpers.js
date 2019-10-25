@@ -26,6 +26,8 @@ const eventDataHelpers = {
         start_time: event.start_time,
         stop_time: event.stop_time,
         address: `${event.venue_address}, ${event.city_name}, ${event.region_name}`,
+        city_name: event.city_name,
+        region_name: event.region_name,
         venue: event.venue_name,
         image: event.image,
         url: event.url,
