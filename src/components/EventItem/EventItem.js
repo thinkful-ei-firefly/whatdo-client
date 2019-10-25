@@ -1,4 +1,5 @@
 import React from 'react'
+import './EventItem.css'
 
 export default function EventItem (props) {
 

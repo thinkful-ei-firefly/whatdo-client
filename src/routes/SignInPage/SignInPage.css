@@ -8,7 +8,7 @@
     /* background: #34495e; */
     /* background: linear-gradient(to bottom,white,rgb(72, 72, 72),white); */
     /* background: radial-gradient(to  right,black); */
-    height: 80vh;
+    min-height: 80vh;
     /* background: url(Desktop-1.png);
     background-repeat: no-repeat;
     background-size: 100%; */

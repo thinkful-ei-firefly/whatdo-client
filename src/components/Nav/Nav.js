@@ -45,7 +45,7 @@ static contextType = UserContext
     
         <ul className="menu">
 
-        <Link to='/' className="btn btn2">Home</Link>
+        <Link to='/eventsPage' className="btn btn2">Events</Link>
 
         <Link to='/myEventsPage' className="btn btn2">My Event</Link>
 
@@ -55,7 +55,7 @@ static contextType = UserContext
           : this.renderLoginLink()
         */}
         {/**demo  login & register*/}
-        <Link to='/signIn' className="btn btn2">Login</Link>
+        <Link to='/signIn' className="btn btn2">Sign in</Link>
         <Link to='/signUp' className="btn btn2">Sign up</Link>
 
 

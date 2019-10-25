@@ -12,7 +12,7 @@ export default class WeatherIcon extends React.Component {
 
     return (
       <div className="weathericon">
-        <h2 className="weathericon-time">{this.timestamp()}</h2>
+        <h3 className="weathericon-time">{this.timestamp()}</h3>
         <img className="weathericon-icon" src={this.props.iconUrl} alt={this.props.description}/>
         <p className="weathericon-temperature high">High: {this.props.temp_hi}</p>
         <p className="weathericon-temperature low">Low: {this.props.temp_low}</p>
