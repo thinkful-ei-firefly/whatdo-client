@@ -213,9 +213,10 @@ margin-right:auto;
 
 @media screen and (max-width:750px) {
   .show-menu-btn,.hide-menu-btn{
-    display: block;
+    /* display: flex; */
   }
   .menu{
+    display: flex;
     position: fixed;
     width: 100%;
     height: 100vh;
@@ -242,8 +243,6 @@ margin-right:auto;
   }
   #chk:checked ~ .menu{
     right: 0;
-
-    
   }
 
 }

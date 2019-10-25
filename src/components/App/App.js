@@ -21,6 +21,7 @@ import EventsPage from '../../routes/EventsPage/EventsPage'
 import SignInPage from '../../routes/SignInPage/SignInPage'
 import SignUpPage from '../../routes/SignUpPage/SignUpPage'
 import NotFoundPage from '../../routes/NotFoundPage/NotFoundPage'
+import MyEventsPage from '../../routes/MyEventsPage/MyEventsPage'
 
 class App extends React.Component {
 
@@ -84,6 +85,7 @@ class App extends React.Component {
             <PublicOnlyRoute path={'/signIn'} component={SignInPage} />
             <Route path={'/eventsPage'} component={EventsPage} />
             <PrivateOnlyRoute path={'/eventPage'} component={EventPage} />
+            <PrivateOnlyRoute path={'/myEvents'} component={MyEventsPage} />
             {/* <Route path={'/signUp'} component={SignUpPage} /> */}
             {/* <Route path={'/signIn'} component={SignInPage} /> */}
             {/* <Route path={'/eventsPage'} component={EventsPage} /> */}
