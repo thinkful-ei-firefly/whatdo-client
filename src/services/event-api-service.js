@@ -87,11 +87,13 @@ const EventApiService = {
       }
     });
 
+    console.log(res)
+
     if (!res.ok) {
-      return res.json().then(e => Promise.reject(e));
+      return res.then(e => Promise.reject(e));
     }
 
-    return res.json();
+    return res;
   },
 
   async patchEventInDB(event_id, patches) {

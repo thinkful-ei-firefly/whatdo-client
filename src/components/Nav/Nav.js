@@ -47,7 +47,7 @@ static contextType = UserContext
 
         <Link to='/eventsPage' className="btn btn2">Events</Link>
 
-        <Link to='/myEventsPage' className="btn btn2">My Event</Link>
+        <Link to='/myevents' className="btn btn2">My Event</Link>
 
         {/** 
         TokenService.hasAuthToken()

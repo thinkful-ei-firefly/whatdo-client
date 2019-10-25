@@ -13,17 +13,22 @@ export default class SearchResults extends React.Component {
 
     if (events.length > 0) {
       const eventList = events.map(event => 
-        <li>
+        <li key={event.id}>
           <EventItem 
             key={event.id}
+            fetch_id={Math.floor(Math.random()*9999)}
+            id={event.id}
             name={event.name}
             url={event.url}
-            description={event.description}
+            description={event.description || 'Visit the site for more information!'}
             venue={event.venue}
             address={event.address}
-            start={event.start_time}
-            stop={event.stop_time}
+            city_name={event.city_name}
+            region_name={event.region_name}
+            start_time={event.start_time}
+            stop_time={event.stop_time || event.start_time}
             image={event.image}
+            saveEvent={this.context.saveEvent}
           />
         </li>
       )

@@ -21,6 +21,7 @@ import EventsPage from '../../routes/EventsPage/EventsPage'
 import SignInPage from '../../routes/SignInPage/SignInPage'
 import SignUpPage from '../../routes/SignUpPage/SignUpPage'
 import NotFoundPage from '../../routes/NotFoundPage/NotFoundPage'
+import MyEventsPage from '../../routes/MyEventsPage/MyEventsPage'
 
 class App extends React.Component {
 
@@ -29,7 +30,8 @@ class App extends React.Component {
     zipCode: '30084',
     weather: [],
     date: new Date(Date.now()),
-    events: []
+    events: [],
+    savedEvents: []
   }
 
   apiSearch = async (
@@ -62,7 +64,37 @@ class App extends React.Component {
       } catch(err) {
         console.log(err)
       }
+  }
+
+  getSavedEvents = async () => {
+    try {
+      const myEvents = await EventApiService.getEventsFromDB()
+      this.setState({savedEvents: myEvents.events})
     }
+    catch (err) {
+      console.log(err)
+    }
+  }
+
+  saveEvent = async (event) => {
+    try {
+      const newFavorite = await EventApiService.postEventToDB(event)
+      this.setState({savedEvents: [...this.state.savedEvents, newFavorite]})
+    }
+    catch (err) {
+      console.log(err)
+    }    
+  }
+
+  removeEvent = async (eventId) => {
+    try {
+      EventApiService.deleteEventFromDB(eventId)
+      this.setState({savedEvents: this.state.savedEvents.filter(event => event.id !== eventId)})
+    }
+    catch (err) {
+      console.log(err)
+    }
+  }
 
   render () {
     const searchContextValue = {
@@ -71,7 +103,11 @@ class App extends React.Component {
       weather: this.state.weather,
       date: this.state.date,
       events: this.state.events,
-      apiSearch: this.apiSearch
+      savedEvents: this.state.savedEvents,
+      apiSearch: this.apiSearch,
+      getSavedEvents: this.getSavedEvents,
+      saveEvent: this.saveEvent,
+      removeEvent: this.removeEvent
     }
     
     return (
@@ -84,6 +120,7 @@ class App extends React.Component {
             <PublicOnlyRoute path={'/signIn'} component={SignInPage} />
             <Route path={'/eventsPage'} component={EventsPage} />
             <PrivateOnlyRoute path={'/eventPage'} component={EventPage} />
+            <Route path={'/myevents'} component={MyEventsPage} />
             {/* <Route path={'/signUp'} component={SignUpPage} /> */}
             {/* <Route path={'/signIn'} component={SignInPage} /> */}
             {/* <Route path={'/eventsPage'} component={EventsPage} /> */}
