@@ -15,18 +15,23 @@ export default function EventItem (props) {
   eventTime = eventTime.toLocaleTimeString()
 
   return (
-    <div>
+    <div className='.EventItem__Container'>
+    <div  className='EventItem'>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
       <h3>{name}</h3>
       {/* <p>
         <img src={imgsrc} alt="thumbnail"/>
       </p> */}
       <h4>{venue}, {eventTime}</h4>
-      <h5>{address}</h5>      
-
-      {description}
-
+      <h5>Address:{address}</h5>      
+      <p>{description}</p>
       <a href={url}>Learn More</a>
       <button>Add to favorites</button>
     </div>
+    </div>
+    
   )
 }

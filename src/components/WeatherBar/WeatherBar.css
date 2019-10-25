@@ -1,17 +1,9 @@
+
+
 .weatherbar{
-    /* min-height: 125vh; */
-    /* width:100%; */
     font-family: sans-serif;
     margin: 10px;
     border-radius: 7px;
-    /* background: url("Desktop-1.png") no-repeat fixed center; */
-    /* background-repeat: no-repeat;
-    background-size:fixed; */
-    /* animation: slide 20s  infinite; */
-    
-}
-
-.weatherbar{
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -32,7 +24,7 @@
 }
 
 .weatherbar h2{
-    width: 80%;
+    width: 95%;
     
     padding: 10px;
     text-align: center;
@@ -68,7 +60,8 @@
 
 .weathericon:hover {
     transform: scale(1.1);
-    /* border: 3px blue solid; */
+    /* border: 3px blue  ;
+    border-style: outset; */
     background: linear-gradient(to top, white ,rgba(82, 82, 248, 0.571));
     border-radius: 7px;
 }

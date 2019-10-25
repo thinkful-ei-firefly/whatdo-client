@@ -1,6 +1,7 @@
 import React from 'react'
 import EventItem from '../EventItem/EventItem'
 import SearchContext from '../../contexts/SearchContext'
+import './SearchResults.css'
 
 export default class SearchResults extends React.Component {
 
@@ -29,6 +30,7 @@ export default class SearchResults extends React.Component {
 
       return (
         <div className="SearchResults">
+        <h2>Search results for (options) within (x) miles of (location)</h2>
           <ul>
             {eventList}
           </ul>          
@@ -38,7 +40,7 @@ export default class SearchResults extends React.Component {
     else {
       return (
         <div className="SearchResults">
-          <h2>Sorry, we couldn't find any events near {this.context.zipCode}</h2>          
+          <h2 className='alert'>Sorry, we couldn't find any events near {this.context.zipCode}</h2>          
         </div>
       )
     }
