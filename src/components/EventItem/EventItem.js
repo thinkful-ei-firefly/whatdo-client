@@ -26,9 +26,10 @@ export default function EventItem (props) {
         <img src={imgsrc} alt="thumbnail"/>
       </p> */}
       <h4>{venue}, {eventTime}</h4>
-      <h5>Address:{address}</h5>      
-      <p>{description}</p>
+      <h5>{address}</h5>      
+      {description}{" "}
       <a href={url}>Learn More</a>
+      <br></br>
       <button>Add to favorites</button>
     </div>
     </div>
