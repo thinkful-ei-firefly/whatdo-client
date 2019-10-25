@@ -1,0 +1,163 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Search /> renders as expected 1`] = `
+<div
+  className="SearchPage"
+>
+  <div
+    className="Search"
+  >
+    <h2>
+      Search event near you
+    </h2>
+    <h3>
+      "Have fun, be yourself ,enjoy life and stay positive" - Tatiana Maslany
+    </h3>
+    <form
+      className="form"
+      onSubmit={[Function]}
+    >
+      <div
+        className="form-section"
+      >
+        <input
+          autoComplete="off"
+          className="input"
+          id="zipCode"
+          name="zipCode"
+          required={true}
+          type="text"
+        />
+        <label
+          className="label-name"
+          htmlFor="zipCode"
+        >
+          <span
+            className="content-name"
+          >
+            Enter your zipcode
+          </span>
+        </label>
+      </div>
+      <div
+        className="form-section"
+      >
+        <input
+          autoComplete="off"
+          className="input"
+          id="distance"
+          name="distance"
+          required={true}
+          type="text"
+        />
+        <label
+          className="label-name"
+          htmlFor="distance"
+        >
+          <span
+            className="content-name"
+          >
+            Miles around you
+          </span>
+        </label>
+      </div>
+      <div
+        className="form-section date"
+      >
+        <input
+          className="input"
+          defaultValue="2019-10-21"
+          id="date"
+          max="2019-12-31"
+          min="2019-01-01"
+          name="date"
+          type="date"
+        />
+      </div>
+      <h4>
+        Filter by event type
+      </h4>
+      <div
+        className="form-section checkbox__section"
+      >
+        <input
+          id="box1"
+          name="categories"
+          type="checkbox"
+          value="music"
+        />
+        <label
+          htmlFor="box1"
+        >
+          Music
+        </label>
+        <input
+          id="box2"
+          name="categories"
+          type="checkbox"
+          value="sports,outdoors_recreation"
+        />
+        <label
+          htmlFor="box2"
+        >
+          Sports
+        </label>
+        <input
+          id="box3"
+          name="categories"
+          type="checkbox"
+          value="attractions"
+        />
+        <label
+          htmlFor="box3"
+        >
+          Attractions
+        </label>
+        <input
+          id="box4"
+          name="categories"
+          type="checkbox"
+          value="performing_arts,comedy"
+        />
+        <label
+          htmlFor="box4"
+        >
+          Performing Arts
+        </label>
+        <input
+          id="box5"
+          name="categories"
+          type="checkbox"
+          value="food,singles_social"
+        />
+        <label
+          htmlFor="box5"
+        >
+          Bars
+        </label>
+        <input
+          id="box6"
+          name="categories"
+          type="checkbox"
+          value="festivals_parades,holiday"
+        />
+        <label
+          htmlFor="box6"
+        >
+          Festivals
+        </label>
+      </div>
+      <div
+        className="form-btn"
+      >
+        <button
+          className="searchForm__btn"
+          type="submit"
+        >
+          Search
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+`;

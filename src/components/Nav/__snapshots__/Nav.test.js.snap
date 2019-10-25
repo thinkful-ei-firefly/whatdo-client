@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Nav /> renders as expected 1`] = `
+<nav
+  className="login-controls"
+  role="navigation"
+>
+  <input
+    id="chk"
+    type="checkbox"
+  />
+  <label
+    className="show-menu-btn"
+    htmlFor="chk"
+  >
+    <i
+      className="fas fa-ellipsis-h"
+    />
+  </label>
+  <ul
+    className="menu"
+  >
+    <a
+      className="btn btn2"
+      href="/eventsPage"
+      onClick={[Function]}
+    >
+      Events
+    </a>
+    <a
+      className="btn btn2"
+      href="/myEventsPage"
+      onClick={[Function]}
+    >
+      My Event
+    </a>
+    <a
+      className="btn btn2"
+      href="/signIn"
+      onClick={[Function]}
+    >
+      Sign in
+    </a>
+    <a
+      className="btn btn2"
+      href="/signUp"
+      onClick={[Function]}
+    >
+      Sign up
+    </a>
+    <label
+      className="hide-menu-btn"
+      htmlFor="chk"
+    >
+      <i
+        className="fas fa-times"
+      />
+    </label>
+  </ul>
+</nav>
+`;

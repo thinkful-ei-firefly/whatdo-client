@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SignUpForm /> renders correctly 1`] = `
+<div
+  className="signup-form"
+>
+  <form
+    className="SignUpForm"
+    onSubmit={[Function]}
+  >
+    <div
+      className="alert"
+    />
+    <h1>
+      Sign Up
+    </h1>
+    <input
+      autoComplete="off"
+      className="txtb"
+      id="username"
+      name="username"
+      placeholder="Username"
+      required={true}
+      type="text"
+    />
+    <input
+      autoComplete="off"
+      className="txtb"
+      id="nickname"
+      name="nickname"
+      placeholder="Nickname"
+      required={true}
+      type="text"
+    />
+    <input
+      autoComplete="off"
+      className="txtb"
+      id="email"
+      name="email"
+      placeholder="Email"
+      required={true}
+      type="email"
+    />
+    <input
+      className="txtb"
+      id="password"
+      name="password"
+      placeholder="Password"
+      required={true}
+      type="password"
+    />
+    <input
+      className="signup-btn"
+      type="submit"
+      value="Sign Up!"
+    />
+    <a
+      className="alreadyHaveAcc"
+      href="/"
+      onClick={[Function]}
+    >
+      Already Have one ?
+    </a>
+  </form>
+</div>
+`;
