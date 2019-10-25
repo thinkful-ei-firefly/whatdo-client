@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<WeatherIcon renders properly 1`] = `
+<div
+  className="weathericon"
+>
+  <h3
+    className="weathericon-time"
+  >
+    8 PM
+  </h3>
+  <img
+    alt="hot"
+    className="weathericon-icon"
+    src=""
+  />
+  <p
+    className="weathericon-temperature high"
+  >
+    High: 
+    99
+  </p>
+  <p
+    className="weathericon-temperature low"
+  >
+    Low: 
+    0
+  </p>
+</div>
+`;

@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<EventItem /> renders as expected 1`] = `
+<div
+  className=".EventItem__Container"
+>
+  <div
+    className="EventItem"
+  >
+    <span />
+    <span />
+    <span />
+    <span />
+    <h3>
+      Event Name
+    </h3>
+    <h4>
+      Event Venue
+      , 
+      5:00:00 PM
+    </h4>
+    <h5>
+      9999 Event Avenue, Event Town, Florida 33301
+    </h5>
+    An event of events for events by events
+     
+    <a
+      href="https://www.event.com"
+    >
+      Learn More
+    </a>
+    <br />
+    <button>
+      Add to favorites
+    </button>
+  </div>
+</div>
+`;

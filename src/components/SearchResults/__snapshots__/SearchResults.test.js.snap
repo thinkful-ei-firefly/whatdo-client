@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SearchResults /> renders as expected 1`] = `
+<div
+  className="SearchResults"
+>
+  <h2
+    className="alert"
+  >
+    Sorry, we couldn't find any events near 
+    30084
+  </h2>
+</div>
+`;

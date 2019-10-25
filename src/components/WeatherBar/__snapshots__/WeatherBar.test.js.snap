@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<WeatherBar /> renders properly 1`] = `
+<div
+  className="weatherbar"
+>
+  <h2
+    className="alert"
+  >
+    No Weather data available for 
+    10/25/2019
+  </h2>
+</div>
+`;
