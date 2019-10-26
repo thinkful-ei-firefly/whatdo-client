@@ -100,21 +100,13 @@
 
 }
 
-.EventsPage__checkbox__section input +  label  {
-    /* width:25%; */
-
-    flex-basis:25%;
-    
-
-}
 
 .EventsPage__checkbox__section input + label  {
-    /* display: inline-block; */
-    /* align-items: center; */
+
     margin:0.2em;
     cursor: pointer;
     padding:  0.2em;
-    
+    flex-basis:25%;
 }
 
 
@@ -309,4 +301,11 @@ EventsPage__checkbox__section input:checked:disabled  + label:before{
     }
 
 
-
+    @media screen and (max-width:750px) {
+        .EventsPage__form-section {
+            width:80%; 
+        }
+        .EventsPage__checkbox__section input + label  {
+            flex-basis:40%;
+        }
+    }

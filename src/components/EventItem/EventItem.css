@@ -163,7 +163,7 @@ transition: 0.2s;
 
   .EventItem:hover   .button{
     bottom: -20%;
-    transition: 1s;
+    transition: 1.5s;
     transition-delay: 1s;
   }
 

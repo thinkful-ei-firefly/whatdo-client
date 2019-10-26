@@ -119,6 +119,7 @@ margin-right:auto;
   /* color:black; */
   /* border: #212121 solid ; */
   text-align: right;
+  height: 100%;
 }
 .menu a{
   /* color: black; */
@@ -161,7 +162,7 @@ margin-right:auto;
     /* display: flex; */
     position: fixed;
     width: 100%;
-    height: 100vh;
+    /* height: 100vh; */
     background: #487eb0;
     right: -100%;
     top: 0;
@@ -186,6 +187,7 @@ margin-right:auto;
   #chk:checked ~ .menu{
     right: 0;
   }
+
 
 }
 
