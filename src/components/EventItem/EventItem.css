@@ -140,7 +140,7 @@ transition: 0.2s;
     font-weight: bold;
   }
   .button:after, .button:before {
-    content: 'Add to favorite';
+    content: 'Favorite';
     position: absolute;
     left: 50%;
     top: 50%;
@@ -167,9 +167,36 @@ transition: 0.2s;
     transition-delay: 1s;
   }
 
+  .button:hover  {
+    width: 70px;
+    /* transition: .05s; */
+    border-radius: 70px;
+  
+  }
+
+  .button:hover {
+    /* transition: .05s; */
+    /* color:red; */
+      /* transition-delay: 1s; */
+  }
+
+  .button:focus  {
+    /* transition: .05s; */
+    background: radial-gradient(#ff0000,rgb(255, 255, 255));
+      /* transition-delay: 1s; */
+  }
+  .button:focus   .button:before {
+    font-family: 'Ionicons';
+    content: '\f375';
+    font-size: 40px;
+    top: 190%;
+  }
+
   .EventItem:hover   .EventItem__description{
       display: block;
   }
+
+
 
   .EventItem__remove{
     min-height: 60px;
@@ -178,17 +205,13 @@ transition: 0.2s;
     font-family: 'helvetica Neue';
     position: relative;
   }
-  
-  .EventItem__removebtn{
-      
-  }
-  .EventItem__removebtn {
+    .EventItem__removebtn {
     width: 200px;
     height: 50px;
     background-image: radial-gradient(#ff1900,rgb(255, 255, 255));
     position: absolute;
     left: 50%;
-    bottom: -160%;
+    bottom: -20%;
     transform: translate(-50%, -50%);
     border-radius: 3px;
     overflow: hidden;
@@ -219,9 +242,23 @@ transition: 0.2s;
     top: 50%;
   }
 
+  .EventItem__removebtn:hover  {
+    width: 70px;
+    transition: 0.5s;
+    border-radius: 70px;
+    /* transition-delay: 1s; */
+  }
+
   .EventItem:hover   .EventItem__removebtn{
     bottom: -20%;
     transition: 1s;
     transition-delay: 1s;
   }
 
+  .EventItem__removebtn:focus   .button:before {
+    font-family: 'Ionicons';
+    content: '\f141';
+    font-size: 40px;
+    top: 190%;
+    background: blue;
+  }

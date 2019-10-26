@@ -29,7 +29,7 @@ export default function SavedEvent (props) {
       </p> */}
       <h4 className='EventItem__time' >{venue}, {eventTime}</h4>
       <h5 className='EventItem__address' >{address}</h5>      
-      <div className='EventItem__description'>
+      <div >
       <p >{description}</p>
       </div>
       
