@@ -1,4 +1,4 @@
-
+@import url('http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css');
 /* .EventItem__Container {
     width: 95%;
     text-align: center;
@@ -89,11 +89,139 @@
     transition-delay: 0.75s;
   }
 
+  .EventItems {
+      display: inline;
+      /* flex-direction:column ;
+      justify-content: center; */
+      align-items: center;
+      text-align: center;
 
+  }
 
+  .EventItem__description{
+    /* position: relative;
+    display: inline-block;
+text-decoration: none;
+overflow: hidden;
+transition: 0.2s;
+    width: 100%;
+    border-radius: 7px; */
+    /* height: 100px; */
+    display: none;
+  }
+  .EventItem__description p{
+  /* position: absolute; */
+  /* display: block; */
+  /* text-align: justify; */
+  /* text-align: center; */
+  /* z-index: 2; */
+  }
 
+  .EventItem__favorite{
+    min-height: 60px;
+    margin:0px;
+    padding: 0px;
+    font-family: 'helvetica Neue';
+    position: relative;
+  }
+  .button {
+    width: 200px;
+    height: 50px;
+    background-image: radial-gradient(#0048ff,rgb(255, 255, 255));
+    position: absolute;
+    left: 50%;
+    bottom: -160%;
+    transform: translate(-50%, -50%);
+    border-radius: 3px;
+    overflow: hidden;
+    cursor: pointer;
+    color: white;
+    font-size: large;
+    font-weight: bold;
+  }
+  .button:after, .button:before {
+    content: 'Add to favorite';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transition: all 0.3s;
+    transform: translate(-50%, -50%);
+    width: 100%;
+  }
+  .button:hover:after {
+    top: -50%;
+  }
+  .button:before {
+    font-family: 'Ionicons';
+    content: '\f141';
+    font-size: 40px;
+    top: 190%;
+  }
+  .button:hover:before {
+    top: 50%;
+  }
 
+  .EventItem:hover   .button{
+    bottom: -20%;
+    transition: 1s;
+    transition-delay: 1s;
+  }
 
+  .EventItem:hover   .EventItem__description{
+      display: block;
+  }
 
+  .EventItem__remove{
+    min-height: 60px;
+    margin:0px;
+    padding: 0px;
+    font-family: 'helvetica Neue';
+    position: relative;
+  }
+  
+  .EventItem__removebtn{
+      
+  }
+  .EventItem__removebtn {
+    width: 200px;
+    height: 50px;
+    background-image: radial-gradient(#ff1900,rgb(255, 255, 255));
+    position: absolute;
+    left: 50%;
+    bottom: -160%;
+    transform: translate(-50%, -50%);
+    border-radius: 3px;
+    overflow: hidden;
+    cursor: pointer;
+    color: white;
+    font-size: large;
+    font-weight: bold;
+  }
+  .EventItem__removebtn:after, .EventItem__removebtn:before {
+    content: 'Remove';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transition: all 0.3s;
+    transform: translate(-50%, -50%);
+    width: 100%;
+  }
+  .EventItem__removebtn:hover:after {
+    top: -50%;
+  }
+  .EventItem__removebtn:before {
+    font-family: 'Ionicons';
+    content: '\f252';
+    font-size: 40px;
+    top: 190%;
+  }
+  .EventItem__removebtn:hover:before {
+    top: 50%;
+  }
 
+  .EventItem:hover   .EventItem__removebtn{
+    bottom: -20%;
+    transition: 1s;
+    transition-delay: 1s;
+  }
 

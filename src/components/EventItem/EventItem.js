@@ -21,27 +21,30 @@ export default function EventItem (props) {
     <span></span>
     <span></span>
     <span></span>
+      
+      <div className='EventItems'>
+      
       <h3 className='EventItem__header'>{name}</h3>
       {/* <p>
         <img src={imgsrc} alt="thumbnail"/>
       </p> */}
       <h4 className='EventItem__time'>{venue}, {eventTime}</h4>
       <h5 className='EventItem__address'>{address}</h5>      
-      <p className='EventItem__description'>{description}</p>
-      {" "}
+      <div className='EventItem__description'>
+      <p >{description}</p>
+      </div>
+      
       <div className='EventItem__learnMore' ><a  href={url}>Learn More</a></div>
       
       <br></br>
       <div className='EventItem__favorite'>
 
-        <input className='EventItem__favorite__input'  onClick={() => props.saveEvent(props)} type="checkbox" id='sub'></input>
-        <label htmlFor='sub' >
-          <heart><i className="fas fa-heart"></i></heart>
-          <sync><i className="fas fa-sync-alt fa-spin"></i></sync>
-          <check><i className="fas fa-check-circle"></i></check>
-        </label>
+      <button className='button'  onClick={() => props.saveEvent(props)} ></button>
+
+        
       </div>
-      
+
+      </div>
 
     </div>
     </div>

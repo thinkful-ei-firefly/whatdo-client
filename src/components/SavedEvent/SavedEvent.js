@@ -21,19 +21,37 @@ export default function SavedEvent (props) {
     <span></span>
     <span></span>
     <span></span>
+      <div className='EventItems'>
+      
       <h3 className='EventItem__header' >{name}</h3>
       {/* <p>
         <img src={imgsrc} alt="thumbnail"/>
       </p> */}
       <h4 className='EventItem__time' >{venue}, {eventTime}</h4>
       <h5 className='EventItem__address' >{address}</h5>      
-      <p className='EventItem__description' >{description}</p>
+      <div className='EventItem__description'>
+      <p >{description}</p>
+      </div>
+      
       <div className='EventItem__learnMore' ><a href={url}>Learn More</a></div>
       
       <br></br>
-      <button className='EventItem__removebtn' onClick={() => props.removeEvent(props.id)}>Remove</button>
+
+      <div className='EventItem__remove'>
+
+      
+      
+      <button className='EventItem__removebtn' onClick={() => props.removeEvent(props.id)}></button>
+
+    </div>
+
+      
+      </div>
     </div>
     </div>
     
   )
 }
+
+
+//      
