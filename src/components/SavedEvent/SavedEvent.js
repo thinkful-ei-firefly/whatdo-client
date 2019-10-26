@@ -15,22 +15,23 @@ export default function SavedEvent (props) {
   eventTime = eventTime.toLocaleString()
 
   return (
-    <div className='.EventItem__Container'>
+    <div className='EventItem__Container'>
     <div  className='EventItem'>
     <span></span>
     <span></span>
     <span></span>
     <span></span>
-      <h3>{name}</h3>
+      <h3 className='EventItem__header' >{name}</h3>
       {/* <p>
         <img src={imgsrc} alt="thumbnail"/>
       </p> */}
-      <h4>{venue}, {eventTime}</h4>
-      <h5>{address}</h5>      
-      {description}{" "}
-      <a href={url}>Learn More</a>
+      <h4 className='EventItem__time' >{venue}, {eventTime}</h4>
+      <h5 className='EventItem__address' >{address}</h5>      
+      <p className='EventItem__description' >{description}</p>
+      <div className='EventItem__learnMore' ><a href={url}>Learn More</a></div>
+      
       <br></br>
-      <button onClick={() => props.removeEvent(props.id)}>Remove</button>
+      <button className='EventItem__removebtn' onClick={() => props.removeEvent(props.id)}>Remove</button>
     </div>
     </div>
     

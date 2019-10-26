@@ -29,7 +29,7 @@ export default class WeatherBar extends React.Component {
     else {
       return (
         <div className="weatherbar">
-        <h2 className='alert'>No Weather data available for {this.context.date.toLocaleDateString()}</h2>
+        <h2 >No Weather data available for {this.context.date.toLocaleDateString()}</h2>
         </div>
       )
     }
