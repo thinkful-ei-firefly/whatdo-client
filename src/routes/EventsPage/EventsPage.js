@@ -11,10 +11,9 @@ export default class EventsPage extends React.Component {
 
   handleSubmit(ev) {
     ev.preventDefault();
-    console.log("form submitted!");
     const zipCode = ev.target.zipCode.value;
     const distance = ev.target.distance.value;
-    const date = new Date(ev.target.date.value);
+    const date = new Date(`${ev.target.date.value}T12:00:00`);
 
     let categories = [];
 

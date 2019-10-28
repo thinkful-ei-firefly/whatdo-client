@@ -16,7 +16,7 @@ export default class SearchResults extends React.Component {
         <li key={event.id}>
           <EventItem 
             key={event.id}
-            fetch_id={Math.floor(Math.random()*9999)}
+            fetch_id={event.id}
             id={event.id}
             name={event.name}
             url={event.url}
