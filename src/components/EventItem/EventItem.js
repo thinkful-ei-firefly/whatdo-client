@@ -5,6 +5,8 @@ export default function EventItem (props) {
 
   const { name, url, description, venue, address, start_time } = props
 
+  const newEvent = { name, url, description, venue, address, start_time }
+
   // let imgsrc='https://www.nationalpetregister.org/assets/img/no-photo.jpg'
 
   // if (image && image.medium && image.medium.url) {
@@ -39,7 +41,7 @@ export default function EventItem (props) {
       <br></br>
       <div className='EventItem__favorite'>
 
-      <button className='button'  onClick={() => props.saveEvent(props)} ></button>
+      <button className='button'  onClick={() => props.saveEvent(newEvent)} ></button>
 
         
       </div>

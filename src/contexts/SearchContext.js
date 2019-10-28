@@ -8,4 +8,6 @@ const SearchContext = React.createContext({
   events: []
 })
 
+
+
 export default SearchContext
