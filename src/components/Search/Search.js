@@ -88,9 +88,9 @@ export default class Search extends React.Component {
             type="date"
             id="date"
             name="date"
-            defaultValue="2019-10-21"
-            min="2019-01-01"
-            max="2019-12-31"
+            // defaultValue="2019-10-21"
+            // min="2019-01-01"
+            // max="2019-12-31"
           />
           </div>
           <h4>Filter by event type</h4>

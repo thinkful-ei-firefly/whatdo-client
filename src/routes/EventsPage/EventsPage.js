@@ -52,7 +52,7 @@ export default class EventsPage extends React.Component {
           
           <input type="text"
           className='input'
-          
+          defaultValue='23451'
             id='zipCode'
             name='zipCode'
             autoComplete='off'
@@ -70,7 +70,7 @@ export default class EventsPage extends React.Component {
           <input
           type="text"
           className='input'
-          
+          defaultValue='50'
             id='distance'
             name='distance'
             autoComplete='off'
@@ -108,7 +108,7 @@ export default class EventsPage extends React.Component {
         <input type="checkbox" id='box3' name='categories' value='attractions'></input>
         <label htmlFor="box3" >Attractions</label>
         <input type="checkbox" id='box4' name='categories' value='performing_arts,comedy'></input>
-        <label htmlFor="box4" >Performing Arts</label>
+        <label htmlFor="box4" >Arts</label>
         <input type="checkbox" id='box5' name='categories' value='food,singles_social'></input>
         <label htmlFor="box5" >Bars</label>
         <input type="checkbox" id='box6' name='categories' value='festivals_parades,holiday'></input>

@@ -120,7 +120,7 @@ class App extends React.Component {
             <PublicOnlyRoute path={'/signIn'} component={SignInPage} />
             <Route path={'/eventsPage'} component={EventsPage} />
             <PrivateOnlyRoute path={'/eventPage'} component={EventPage} />
-            <Route path={'/myEventsPage'} component={MyEventsPage} />
+            <PrivateOnlyRoute path={'/myEventsPage'} component={MyEventsPage} />
             {/* <Route path={'/signUp'} component={SignUpPage} /> */}
             {/* <Route path={'/signIn'} component={SignInPage} /> */}
             {/* <Route path={'/eventsPage'} component={EventsPage} /> */}

@@ -1,0 +1,264 @@
+@import url('http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css');
+/* .EventItem__Container {
+    width: 95%;
+    text-align: center;
+    margin-left:auto;
+    margin-right:auto;
+    align-items: center;
+    position: relative;
+    min-height: 200px;
+} */
+
+.EventItem{
+    position: relative;
+    display: inline-block;
+    padding: 15px 30px;
+    /* color: #2196f3; */
+    /* text-transform: uppercase; */
+    /* letter-spacing: 4px; */
+    text-decoration: none;
+    /* font-size: 24px; */
+    overflow: hidden;
+    transition: 0.2s;
+    width: 100%;
+    border-radius: 7px;
+    /* background-color: rgba(255, 255, 255, 0); */
+  }
+  .EventItem:hover{
+    color: #255784;
+    /* background: #2196f3; */
+    box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3;
+    transition-delay: 1s;
+    border-radius: 7px;
+    transform: scale(1.05);
+  }
+
+  .EventItem span{
+    position: absolute;
+    display: block;
+  }
+  .EventItem span:nth-child(1)  {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg,transparent,red);
+    box-shadow: 0 0 10px #2196f3;
+  }
+  .EventItem:hover span:nth-child(1) {
+    left: 100%;
+    transition: 1s;
+  }
+  .EventItem span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(270deg,transparent,red);
+    box-shadow: 0 0 10px #2196f3 ;
+  }
+  .EventItem:hover span:nth-child(3) {
+    right: 100%;
+    transition: 1s;
+    transition-delay: 0.5s;
+  }
+  .EventItem span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(180deg,transparent,red);
+    box-shadow: 0 0 10px #2196f3 ;
+  }
+  .EventItem:hover span:nth-child(2) {
+    top: 100%;
+    transition: 1s;
+    transition-delay: 0.25s;
+  }
+  .EventItem span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(360deg,transparent,red);
+    box-shadow: 0 0 10px #2196f3 ;
+  }
+  .EventItem:hover span:nth-child(4) {
+    bottom: 100%;
+    transition: 1s;
+    transition-delay: 0.75s;
+  }
+
+  .EventItems {
+      display: inline;
+      /* flex-direction:column ;
+      justify-content: center; */
+      align-items: center;
+      text-align: center;
+
+  }
+
+  .EventItem__description{
+    /* position: relative;
+    display: inline-block;
+text-decoration: none;
+overflow: hidden;
+transition: 0.2s;
+    width: 100%;
+    border-radius: 7px; */
+    /* height: 100px; */
+    display: none;
+  }
+  .EventItem__description p{
+  /* position: absolute; */
+  /* display: block; */
+  /* text-align: justify; */
+  /* text-align: center; */
+  /* z-index: 2; */
+  }
+
+  .EventItem__favorite{
+    min-height: 60px;
+    margin:0px;
+    padding: 0px;
+    font-family: 'helvetica Neue';
+    position: relative;
+  }
+  .button {
+    width: 200px;
+    height: 50px;
+    background-image: radial-gradient(#0048ff,rgb(255, 255, 255));
+    position: absolute;
+    left: 50%;
+    bottom: -160%;
+    transform: translate(-50%, -50%);
+    border-radius: 3px;
+    overflow: hidden;
+    cursor: pointer;
+    color: white;
+    font-size: large;
+    font-weight: bold;
+  }
+  .button:after, .button:before {
+    content: 'Favorite';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transition: all 0.3s;
+    transform: translate(-50%, -50%);
+    width: 100%;
+  }
+  .button:hover:after {
+    top: -50%;
+  }
+  .button:before {
+    font-family: 'Ionicons';
+    content: '\f141';
+    font-size: 40px;
+    top: 190%;
+  }
+  .button:hover:before {
+    top: 50%;
+  }
+
+  .EventItem:hover   .button{
+    bottom: -20%;
+    transition: 1.5s;
+    transition-delay: 1s;
+  }
+
+  .button:hover  {
+    width: 70px;
+    /* transition: .05s; */
+    border-radius: 70px;
+  
+  }
+
+  .button:hover {
+    /* transition: .05s; */
+    /* color:red; */
+      /* transition-delay: 1s; */
+  }
+
+  .button:focus  {
+    /* transition: .05s; */
+    background: radial-gradient(#ff0000,rgb(255, 255, 255));
+      /* transition-delay: 1s; */
+  }
+  .button:focus   .button:before {
+    font-family: 'Ionicons';
+    content: '\f375';
+    font-size: 40px;
+    top: 190%;
+  }
+
+  .EventItem:hover   .EventItem__description{
+      display: block;
+  }
+
+
+
+  .EventItem__remove{
+    min-height: 60px;
+    margin:0px;
+    padding: 0px;
+    font-family: 'helvetica Neue';
+    position: relative;
+  }
+    .EventItem__removebtn {
+    width: 200px;
+    height: 50px;
+    background-image: radial-gradient(#ff1900,rgb(255, 255, 255));
+    position: absolute;
+    left: 50%;
+    bottom: -20%;
+    transform: translate(-50%, -50%);
+    border-radius: 3px;
+    overflow: hidden;
+    cursor: pointer;
+    color: white;
+    font-size: large;
+    font-weight: bold;
+  }
+  .EventItem__removebtn:after, .EventItem__removebtn:before {
+    content: 'Remove';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transition: all 0.3s;
+    transform: translate(-50%, -50%);
+    width: 100%;
+  }
+  .EventItem__removebtn:hover:after {
+    top: -50%;
+  }
+  .EventItem__removebtn:before {
+    font-family: 'Ionicons';
+    content: '\f252';
+    font-size: 40px;
+    top: 190%;
+  }
+  .EventItem__removebtn:hover:before {
+    top: 50%;
+  }
+
+  .EventItem__removebtn:hover  {
+    width: 70px;
+    transition: 0.5s;
+    border-radius: 70px;
+    /* transition-delay: 1s; */
+  }
+
+  .EventItem:hover   .EventItem__removebtn{
+    bottom: -20%;
+    transition: 1s;
+    transition-delay: 1s;
+  }
+
+  .EventItem__removebtn:focus   .button:before {
+    font-family: 'Ionicons';
+    content: '\f141';
+    font-size: 40px;
+    top: 190%;
+    background: blue;
+  }

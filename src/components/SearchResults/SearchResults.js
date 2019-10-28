@@ -45,7 +45,7 @@ export default class SearchResults extends React.Component {
     else {
       return (
         <div className="SearchResults">
-          <h2 className='alert'>Sorry, we couldn't find any events near {this.context.zipCode}</h2>          
+          <h2 >Sorry, we couldn't find any events near {this.context.zipCode}</h2>          
         </div>
       )
     }

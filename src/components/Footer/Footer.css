@@ -6,6 +6,10 @@
   background: linear-gradient(to bottom,white,white,white,rgb(12, 19, 91));
 
 }
+.footer p{
+  margin-bottom: 0;
+  /* padding: 0; */
+}
 
 
 
