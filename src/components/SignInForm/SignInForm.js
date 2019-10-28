@@ -9,9 +9,7 @@ export default class SignInForm extends React.Component{
 
   handleSubmit = async e => {
     e.preventDefault()
-    console.log('Clicked LogIn')
     const {username, password} = e.target
-    // console.log(username.value, password.value)
     const loginCredentials = {
       username: username.value,
       password: password.value

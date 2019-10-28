@@ -6,7 +6,7 @@ const weatherDataHelpers = {
   },
 
   getIconUrl (iconCode) {
-    return `http://openweathermap.org/img/wn/${iconCode}@2x.png`
+    return `https://openweathermap.org/img/wn/${iconCode}@2x.png`
   },
 
   //takes a JSON server response and returns only the data we need

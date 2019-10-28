@@ -16,10 +16,13 @@ export default class MyEventsPage extends React.Component {
   render(){
     if (this.state.loading) {
       return (
+        <div className='MyEventsPage__container'>
         <div className='MyEventsPage'>
           <h2>My saved events</h2>
           <h3>Loading....</h3>
         </div>
+        </div>
+        
       )
     }
 
@@ -27,10 +30,14 @@ export default class MyEventsPage extends React.Component {
 
     if (myEvents.length === 0) {
       return(
+        <div className='MyEventsPage__container'>
         <div className='MyEventsPage'>
           <h2>My saved events</h2>
-          <h3>You currently have no saved events</h3>
+          <h3 className='h3'>You currently have no saved events</h3>
         </div>
+        </div>
+        
+        
       )
     }
 
@@ -53,12 +60,16 @@ export default class MyEventsPage extends React.Component {
     )
 
     return (
+      <div className='MyEventsPage__container'>
       <div className='MyEventsPage'>
-        <h2>My saved events</h2>
-        <ul>
-          {eventList}
-        </ul>        
-      </div>
+      <h2>My saved events</h2>
+      <ul>
+        {eventList}
+      </ul>        
+    </div>
+        </div>
+        
+      
     )
     
   }

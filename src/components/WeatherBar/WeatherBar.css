@@ -72,8 +72,8 @@
 }
 
 .weathericon-icon {
-    margin-top: -20px;
-    margin-bottom: -20px;
+
+    margin: -20px -3px;
     
 }
 
@@ -89,4 +89,13 @@
 
 .low {
     color: darkblue;
+}
+
+@media screen and (max-width:750px) {
+    .EventsPage__form-section {
+        width:80%; 
+    }
+    .EventsPage__checkbox__section input + label  {
+        flex-basis:40%;
+    }
 }

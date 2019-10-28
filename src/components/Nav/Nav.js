@@ -13,7 +13,7 @@ export default class Nav extends React.Component {
 
   render() {
     return (
-      <nav className="login-controls" role="navigation">
+      <nav className="header__nav" role="navigation">
         <input type="checkbox" id="chk"></input>
         <label htmlFor="chk" className="show-menu-btn">
           <i className="fas fa-ellipsis-h"></i>
