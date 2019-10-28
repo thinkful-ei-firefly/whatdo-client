@@ -52,7 +52,7 @@ const EventApiService = {
   },
 
   async getEventsFromDB() {
-    const res = await fetch(`${config.API_ENDPOINT}/event`, {
+    const res = await fetch(`${config.REACT_APP_API_ENDPOINT}/event`, {
       headers: {
         authorization: `Bearer ${TokenService.getAuthToken()}`
       }
@@ -66,7 +66,7 @@ const EventApiService = {
   },
 
   async getEventFromDBById(event_id) {
-    const res = await fetch(`${config.API_ENDPOINT}/event/${event_id}`, {
+    const res = await fetch(`${config.REACT_APP_API_ENDPOINT}/event/${event_id}`, {
       headers: {
         authorization: `Bearer ${TokenService.getAuthToken()}`
       }
@@ -80,7 +80,7 @@ const EventApiService = {
   },
 
   async deleteEventFromDB(event_id) {
-    const res = await fetch(`${config.API_ENDPOINT}/event/${event_id}`, {
+    const res = await fetch(`${config.REACT_APP_API_ENDPOINT}/event/${event_id}`, {
       method: 'DELETE',
       headers: {
         authorization: `Bearer ${TokenService.getAuthToken()}`
@@ -97,7 +97,7 @@ const EventApiService = {
   },
 
   async patchEventInDB(event_id, patches) {
-    const res = await fetch(`${config.API_ENDPOINT}/event/${event_id}`, {
+    const res = await fetch(`${config.REACT_APP_API_ENDPOINT}/event/${event_id}`, {
       method: 'PATCH',
       headers: {
         'content-type': 'application/json',
