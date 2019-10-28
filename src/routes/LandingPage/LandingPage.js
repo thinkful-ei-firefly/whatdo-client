@@ -5,11 +5,15 @@ import WeatherBar from '../../components/WeatherBar/WeatherBar'
 
 export default class LandingPage extends React.Component{
 
+  handleSubmit = () => {
+    this.props.history.push('/eventsPage')
+  }
+
   render(){
     return(
       <div>
         
-        <Search />
+        <Search handleSubmit={this.handleSubmit}/>
         
       </div>
     )

@@ -8,10 +8,11 @@ export default class Search extends React.Component {
   
   handleSubmit (ev) {
     ev.preventDefault()
-    console.log('form submitted!')
+    // console.log('form submitted!')
+    // console.log(ev.target.date.value)
     const zipCode = ev.target.zipCode.value
     const distance = ev.target.distance.value
-    const date = new Date(ev.target.date.value)
+    const date = new Date(`${ev.target.date.value}T12:00:00`)
 
     let categories = []
 
@@ -26,6 +27,7 @@ export default class Search extends React.Component {
     this.context.apiSearch(zipCode, distance, date, categories)
     //once SearchResults page is hooked up to context, modify apiSearch to return a promise
     //then add a .then chain to history.push the user to the results page
+    this.props.handleSubmit()
 
   }
 
