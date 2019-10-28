@@ -8,7 +8,7 @@
     /* background: #34495e; */
     /* background: linear-gradient(to bottom,white,rgb(72, 72, 72),white); */
     /* background: radial-gradient(to  right,black); */
-    height: 80vh;
+    min-height: 80vh;
     /* background: url(Desktop-1.png);
     background-repeat: no-repeat;
     background-size: 100%; */
@@ -24,7 +24,7 @@
     top:50%;
     left:50%;
     transform: translate(-50%, -50%); */
-    background: #191919;
+    background: #040132e2;
    
     /* background: url(CBG.png); */
     /* background-image: url(https://rockymountevents.com/wp-content/uploads/2019/06/Concert-crowd-with-silhouettes-of-people-hold-their-hands-up.jpg); */
@@ -57,6 +57,46 @@
     font-size: large;
     border-radius: 24px;
     transition:  0.25s;
+    
+
+}
+
+.box input[type = "text"] {
+  animation: mymove1 5s ease ;
+}
+.box input[type= "password"] {
+  animation: mymove2 5s ease ;
+}
+
+
+@keyframes mymove1 {
+    0% {
+        width: 18ch;
+        
+    }
+
+    25% {
+        width: 100%;
+        background-color: darkblue;
+    }
+   
+    50% {
+        width: 18ch;
+    }
+}
+@keyframes mymove2 {
+  50% {
+      width: 18ch;;
+  }
+
+  75% {
+      width: 100%;
+      background-color: darkblue;
+  }
+ 
+  100% {
+      width: 18ch;
+  }
 }
 
 .box input[type = "text"]:focus, .box input[type= "password"]:focus {
@@ -79,7 +119,7 @@
     transition:  0.25s;
     cursor: pointer;
     font-size: large;
-    /* animation: anim 7s linear infinite; */
+    animation: anim 7s linear infinite;
 
 }
 @keyframes anim {

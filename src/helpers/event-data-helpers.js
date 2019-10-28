@@ -7,6 +7,12 @@ const eventDataHelpers = {
     return dateStr;
   },
 
+  searchDateStr (date) {
+    let dateStr = `${date.getFullYear()}${date.getMonth()+1}${date.getDate()}00`
+    dateStr = `${dateStr}-${dateStr}`
+    return dateStr;
+  },
+
   allCatStr () {
     return 'music,comedy,learning_education,family_fun_kids,festivals_parades,movies_film,food,fundraisers,art,holiday,books,attractions,singles_social,outdoors_recreation,performing_arts,politics_activism,science,religion_spirituality,sports,technology'
   },
@@ -20,7 +26,10 @@ const eventDataHelpers = {
         start_time: event.start_time,
         stop_time: event.stop_time,
         address: `${event.venue_address}, ${event.city_name}, ${event.region_name}`,
+        city_name: event.city_name,
+        region_name: event.region_name,
         venue: event.venue_name,
+        image: event.image,
         url: event.url,
       }
       return eventSnapshot

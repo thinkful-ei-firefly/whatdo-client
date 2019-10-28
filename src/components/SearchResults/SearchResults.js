@@ -1,16 +1,54 @@
 import React from 'react'
 import EventItem from '../EventItem/EventItem'
+import SearchContext from '../../contexts/SearchContext'
+import './SearchResults.css'
 
-export default class SearchResults extends React.Component{
+export default class SearchResults extends React.Component {
 
-  render(){
-    return(
-      <div className="SearchResults">
-        <ul>
-          <li><EventItem /></li>
-        </ul>
-        
-      </div>
-    )
+  static contextType = SearchContext
+
+  render () {
+
+    const events = this.context.events;
+
+    if (events.length > 0) {
+      const eventList = events.map(event => 
+        <li key={event.id}>
+          <EventItem 
+            key={event.id}
+            fetch_id={Math.floor(Math.random()*9999)}
+            id={event.id}
+            name={event.name}
+            url={event.url}
+            description={event.description || 'Visit the site for more information!'}
+            venue={event.venue}
+            address={event.address}
+            city_name={event.city_name}
+            region_name={event.region_name}
+            start_time={event.start_time}
+            stop_time={event.stop_time || event.start_time}
+            image={event.image}
+            saveEvent={this.context.saveEvent}
+          />
+        </li>
+      )
+
+      return (
+        <div className="SearchResults">
+        <h2>Search results for (options) within (x) miles of (location)</h2>
+          <ul>
+            {eventList}
+          </ul>          
+        </div>
+      )
+    }
+    else {
+      return (
+        <div className="SearchResults">
+          <h2 >Sorry, we couldn't find any events near {this.context.zipCode}</h2>          
+        </div>
+      )
+    }
+    
   }
 }

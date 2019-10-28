@@ -1,44 +1,38 @@
 import React from 'react'
-import WeatherApiService from '../../services/weather-api-service'
-import weatherDataHelper from '../../helpers/weather-data-helpers'
-import EventApiService from '../../services/event-api-service'
-import eventDataHelpers from '../../helpers/event-data-helpers'
+import WeatherIcon from '../WeatherIcon/WeatherIcon'
+import SearchContext from '../../contexts/SearchContext'
+import './WeatherBar.css'
 
-export default class WeatherBar extends React.Component{
-  handleButtonClickWeather = async (ev) => {
-    ev.preventDefault()
-    try {
-      const jsonData = await WeatherApiService.weatherReport('30084')
-      console.log(jsonData)
-      const weatherReport = weatherDataHelper.parseWeatherReport(jsonData)
-      console.log(weatherReport)
+export default class WeatherBar extends React.Component {
 
-    } catch(err) {
-      console.log(err)
+  static contextType = SearchContext;
+
+  dateToStringFormat (date) {
+    return date.toISOString().slice(0, 10)
+  } 
+
+  render () {
+    const dailyWeather = this.context.weather.filter(snapshot => {
+      const dateTime = new Date(snapshot.dt)
+      return dateTime.toLocaleDateString() === this.context.date.toLocaleDateString()
+    })
+
+    if (dailyWeather.length > 0) {
+      const weatherSnapshots = dailyWeather.map(snapshot => <WeatherIcon key={snapshot.date_time} {...snapshot}/>)
+      return (
+        <div className="weatherbar">
+          <h2 className="weatherbar-header">Upcoming weather near {this.context.zipCode} on {this.context.date.toLocaleDateString()}</h2>
+          {weatherSnapshots}
+        </div>
+      )
+    }
+    else {
+      return (
+        <div className="weatherbar">
+        <h2 >No Weather data available for {this.context.date.toLocaleDateString()}</h2>
+        </div>
+      )
     }
     
-  }
-
-  handleButtonClickEvents = async (ev) => {
-    ev.preventDefault()
-    try {
-      const jsonData = await EventApiService.eventSearch('30084')
-      console.log(jsonData)
-      const eventList = eventDataHelpers.parseEventList(jsonData)
-      console.log(eventList)
-
-    } catch(err) {
-      console.log(err)
-    }
-    
-  }
-
-  render(){
-    return(
-      <div>
-        <button type="button" onClick={ev => this.handleButtonClickEvents(ev)}>Click me!</button>
-        <button type="button" onClick={() => console.log(eventDataHelpers.todayStr())}>DateString</button>
-      </div>
-    )
   }
 }

@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SignInForm/> renders correctly 1`] = `
+<div
+  className="SignInForm"
+>
+  <form
+    className="box"
+    onSubmit={[Function]}
+  >
+    <div
+      className="alert "
+    />
+    <h1>
+      Login
+    </h1>
+    <input
+      autoComplete="off"
+      id="username"
+      name="username"
+      placeholder="Username"
+      required={true}
+      type="text"
+    />
+    <input
+      id="password"
+      name="password"
+      placeholder="Password"
+      required={true}
+      type="password"
+    />
+    <input
+      type="submit"
+      value="Sign In"
+    />
+  </form>
+</div>
+`;

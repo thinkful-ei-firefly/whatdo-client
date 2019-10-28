@@ -15,6 +15,7 @@ const weatherDataHelpers = {
   parseWeatherReport (json) {
     const weatherData = json.list.map(hourForecast => {
       let weatherSnapshot = {
+        dt: hourForecast.dt*1000,
         date_time: hourForecast.dt_txt,
         temp_low: this.tempKtoF(hourForecast.main.temp_min),
         temp_hi: this.tempKtoF(hourForecast.main.temp_max),

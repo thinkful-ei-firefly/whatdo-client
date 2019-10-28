@@ -1,12 +1,19 @@
 .SignUpPage{
  
     /* background: #b9b9b9; */
-    height: 90vh;
+    min-height: 100vh;
     width: 100%;
     display: flex;
     margin: 0;
     padding: 0;
     background: rgb(196, 196, 196) url("Desktop-1.png") no-repeat fixed center;
+  }
+  @media (min-width: 800px) {
+    .SignUpPage {
+        min-height: 85vh;
+    }
+    
+
   }
   .signup-form{
     width: 400px;
@@ -39,16 +46,53 @@
     border: none;
     font-family: "montserrat",sans-serif;
   }
+
+  @keyframes changeInputColor {
+    0% {
+      /* background: rgb(255, 255, 255); */
+
+        
+    }
+
+    50% {
+        width: 100%;
+        background-color: #468ac9;
+        /* background-image: radial-gradient(rgb(255, 255, 255),blue); */
+
+    }
+   
+    100% {
+      background: rgba(255, 255, 255, 0.694);
+    }
+  }
+
+ .signup-form input[name='username'] {
+  animation: changeInputColor 2s linear ;
+ }
+ .signup-form input[name='nickname'] {
+  animation: changeInputColor 2s linear 1s ;
+}
+.signup-form input[name='email'] {
+  animation: changeInputColor 2s linear 2s ;
+}
+.signup-form input[name='password'] {
+  animation: changeInputColor 2s linear 3s ;
+}
+
+
   .txtb{
     margin: 20px 0;
-    background: rgba(255,255,255,.5);
+    background: rgba(255, 255, 255, 0.694);
     border-radius: 6px;
+    font-size: large;
+    
   }
   .signup-btn{
     margin-top: 60px;
     margin-bottom: 20px;
     background: #487eb0;
     color: #fff;
+    font-size: large;
     border-radius: 44px;
     cursor: pointer;
     transition: 0.8s;
@@ -64,6 +108,8 @@
     padding: 10px;
     transition: 0.8s;
     display: block;
+    font-size: large;
+
   }
   .signup-form .alreadyHaveAcc:hover{
     background: rgba(0,0,0,.3);
