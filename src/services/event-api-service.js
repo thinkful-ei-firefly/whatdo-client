@@ -35,7 +35,7 @@ const EventApiService = {
   },
 
   async postEventToDB(event) {
-    const res = await fetch(`${config.API_ENDPOINT}/event`, {
+    const res = await fetch(`${config.REACT_APP_API_ENDPOINT}/event`, {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
