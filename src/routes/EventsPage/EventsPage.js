@@ -1,20 +1,20 @@
-import React from 'react';
-import SearchContext from '../../contexts/SearchContext';
+import React from "react";
+import SearchContext from "../../contexts/SearchContext";
 
 import Search from "../../components/Search/Search";
 import SearchResults from "../../components/SearchResults/SearchResults";
 import WeatherBar from "../../components/WeatherBar/WeatherBar";
 import "./EventsPage.css";
-import CurrLocBtn from "../../components/CurrLocBtn/CurrLocBtn";
 
 export default class EventsPage extends React.Component {
   static contextType = SearchContext;
 
   handleSubmit(ev) {
     ev.preventDefault();
+    console.log("form submitted!");
     const zipCode = ev.target.zipCode.value;
     const distance = ev.target.distance.value;
-    const date = new Date(`${ev.target.date.value}T12:00:00`);
+    const date = new Date(ev.target.date.value);
 
     let categories = [];
 
@@ -27,7 +27,7 @@ export default class EventsPage extends React.Component {
 
     if (!categories)
       categories =
-        'music,sports,outdoors_recreation,attractions,performing_arts,comedy,food,singles_social,festivals_parades,holiday';
+        "music,sports,outdoors_recreation,attractions,performing_arts,comedy,food,singles_social,festivals_parades,holiday";
 
     this.context.apiSearch(zipCode, distance, date, categories);
     //once SearchResults page is hooked up to context, modify apiSearch to return a promise
@@ -35,7 +35,6 @@ export default class EventsPage extends React.Component {
   }
 
   render() {
-    console.log(this.context.date);
     return (
       <div className="EventsPage">
         <div className="EventsPage__Search">
@@ -43,7 +42,7 @@ export default class EventsPage extends React.Component {
             className="EventsPage__form "
             onSubmit={ev => this.handleSubmit(ev)}
           >
-            {/*
+            {/**
       <div role='alert' className='alert' >
           {error && <p>{error}</p>}
         </div>
@@ -53,7 +52,7 @@ export default class EventsPage extends React.Component {
               <input
                 type="text"
                 className="input"
-                value={this.context.zipCode}
+                defaultValue="33301"
                 id="zipCode"
                 name="zipCode"
                 autoComplete="off"
@@ -62,14 +61,13 @@ export default class EventsPage extends React.Component {
               <label className="label-name" htmlFor="zipCode">
                 <span className="content-name">Enter your zipcode</span>
               </label>
-              <CurrLocBtn />
             </div>
 
             <div className="EventsPage__form-section">
               <input
                 type="text"
                 className="input"
-                value={this.context.distance}
+                defaultValue="5"
                 id="distance"
                 name="distance"
                 autoComplete="off"
@@ -86,7 +84,7 @@ export default class EventsPage extends React.Component {
                 type="date"
                 id="date"
                 name="date"
-                value={this.context.date}
+                defaultValue="2019-10-29"
                 min="2019-01-01"
                 max="2019-12-31"
               />
