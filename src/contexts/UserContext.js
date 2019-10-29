@@ -1,30 +1,31 @@
-import React from 'react'
-import TokenService from '../services/token-service'
+import React from "react";
+import TokenService from "../services/token-service";
 
-export const UserContext = React.createContext()
+export const UserContext = React.createContext();
 
-export class UserProvider extends React.Component{
+export class UserProvider extends React.Component {
   state = {
-    user:null,
-    error:null
-  }
+    user: null,
+    error: null
+  };
 
   setUser = user => {
     // console.log('set user')
-    this.setState({user})
-  }
-  logoutUser =() => {
-    TokenService.clearAuthToken()
-    this.setState({user: null})
-  }
+    this.setState({ user });
+  };
+  logoutUser = () => {
+    document.getElementById("chk").checked = false;
+    TokenService.clearAuthToken();
+    this.setState({ user: null });
+  };
   setError = err => {
-    this.setError({err})
-  }
+    this.setError({ err });
+  };
   clearError = err => {
-    this.set({err})
-  }
+    this.set({ err });
+  };
 
-  render(){
+  render() {
     // console.log('UserContext')
     const value = {
       user: this.state.user,
@@ -32,14 +33,14 @@ export class UserProvider extends React.Component{
       setUser: this.setUser,
       logoutUser: this.logoutUser,
       setError: this.setError,
-      clearError: this.clearError 
-    }
+      clearError: this.clearError
+    };
     return (
       <UserContext.Provider value={value}>
         {this.props.children}
       </UserContext.Provider>
-    )
+    );
   }
 }
 
-export const UserContextConsumer = UserContext.Consumer
+export const UserContextConsumer = UserContext.Consumer;

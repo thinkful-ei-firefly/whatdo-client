@@ -32,7 +32,11 @@ export default class Nav extends React.Component {
             Events
           </Link>
 
-          <Link to="/myEventsPage" className="btn btn2">
+          <Link
+            to="/myEventsPage"
+            className="btn btn2"
+            onClick={this.handleUncheck}
+          >
             My Event
           </Link>
 
@@ -42,10 +46,18 @@ export default class Nav extends React.Component {
             </Link>
           ) : (
             <>
-              <Link to="/signIn" className="btn btn2">
+              <Link
+                to="/signIn"
+                className="btn btn2"
+                onClick={this.handleUncheck}
+              >
                 Sign in
               </Link>{" "}
-              <Link to="/signUp" className="btn btn2">
+              <Link
+                to="/signUp"
+                className="btn btn2"
+                onClick={this.handleUncheck}
+              >
                 Sign up
               </Link>
             </>
