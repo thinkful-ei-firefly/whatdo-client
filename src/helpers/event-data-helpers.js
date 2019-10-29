@@ -19,10 +19,12 @@ const eventDataHelpers = {
 
   parseEventList (json) {
     const eventData = json.events.event.map(event => {
+      let description = event.description || 'Visit the site for more information!'
+      description = this.strip(description)
       let eventSnapshot = {
         id: event.id,
         name: event.title,
-        description: event.description,
+        description: description || 'Visit the site for more information!',
         start_time: event.start_time,
         stop_time: event.stop_time,
         address: `${event.venue_address}, ${event.city_name}, ${event.region_name}`,
@@ -35,6 +37,12 @@ const eventDataHelpers = {
       return eventSnapshot
     })
     return eventData
+  },
+
+  strip (html) {
+    let text = new DOMParser().parseFromString(html, 'text/html');
+    text = text.body.textContent || ''
+    return text.replace(/(<([^>]+)>)/ig,"");
   }
 
 }

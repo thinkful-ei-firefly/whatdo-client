@@ -1,26 +1,29 @@
 import React from 'react'
 import EventItem from '../EventItem/EventItem'
 import SearchContext from '../../contexts/SearchContext'
+import PageBar from '../../components/PageBar/PageBar'
 import './SearchResults.css'
 
 export default class SearchResults extends React.Component {
+  static contextType = SearchContext;
 
-  static contextType = SearchContext
-
-  render () {
-
+  render() {
     const events = this.context.events;
+    const categoryString =
+      'music,comedy,learning_education,family_fun_kids,festivals_parades,movies_film,food,fundraisers,art,holiday,books,attractions,singles_social,outdoors_recreation,performing_arts,politics_activism,science,religion_spirituality,sports,technology';
 
     if (events.length > 0) {
-      const eventList = events.map(event => 
+      const eventList = events.map(event => (
         <li key={event.id}>
-          <EventItem 
+          <EventItem
             key={event.id}
             fetch_id={event.id}
             id={event.id}
             name={event.name}
             url={event.url}
-            description={event.description || 'Visit the site for more information!'}
+            description={
+              event.description || 'Visit the site for more information!'
+            }
             venue={event.venue}
             address={event.address}
             city_name={event.city_name}
@@ -31,24 +34,29 @@ export default class SearchResults extends React.Component {
             saveEvent={this.context.saveEvent}
           />
         </li>
-      )
+      ));
 
       return (
         <div className="SearchResults">
-        <h2>Search results for (options) within (x) miles of (location)</h2>
-          <ul>
-            {eventList}
-          </ul>          
+          <h2>
+            Search results for{' '}
+            {this.context.categories === categoryString
+              ? 'all events'
+              : this.context.categories + ' events'}{' '}
+            within {this.context.distance} miles of {this.context.city}
+          </h2>
+          <ul>{eventList}</ul>
+          <PageBar />
         </div>
-      )
-    }
-    else {
+      );
+    } else {
       return (
         <div className="SearchResults">
-          <h2 >Sorry, we couldn't find any events near {this.context.zipCode}</h2>          
+          <h2>
+            Sorry, we couldn't find any events near {this.context.zipCode}
+          </h2>
         </div>
-      )
+      );
     }
-    
   }
 }

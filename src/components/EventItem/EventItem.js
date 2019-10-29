@@ -36,7 +36,7 @@ export default function EventItem (props) {
       <p >{description}</p>
       </div>
       
-      <div className='EventItem__learnMore' ><a  href={url}>Learn More</a></div>
+      <div className='EventItem__learnMore' ><a  href={url} target="_blank" rel="noopener noreferrer">Learn More</a></div>
       
       <br></br>
       <div className='EventItem__favorite'>
