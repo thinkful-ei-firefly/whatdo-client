@@ -60,7 +60,7 @@ export default class SignInForm extends React.Component {
 
           <input className="signin-btn" type="submit" value="Sign In" />
           <Link to="/signUp" className="haventAccYet">
-            Haven't one yet ?
+            Don’t have an account ?
           </Link>
         </form>
       </div>
