@@ -1,15 +1,19 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import './Nav.css'
-import TokenService from '../../services/token-service'
-import { UserContext } from '../../contexts/UserContext'
+import React from "react";
+import { Link } from "react-router-dom";
+import "./Nav.css";
+import TokenService from "../../services/token-service";
+import { UserContext } from "../../contexts/UserContext";
 
 export default class Nav extends React.Component {
-  static contextType = UserContext
+  static contextType = UserContext;
 
   handleLogoutClick = () => {
-    this.context.logoutUser()
-  }
+    this.context.logoutUser();
+  };
+
+  handleUncheck = () => {
+    document.getElementById("chk").checked = false;
+  };
 
   render() {
     return (
@@ -20,7 +24,11 @@ export default class Nav extends React.Component {
         </label>
 
         <ul className="menu">
-          <Link to="/eventsPage" className="btn btn2">
+          <Link
+            to="/eventsPage"
+            className="btn btn2"
+            onClick={this.handleUncheck} //.prop("checked", false)}
+          >
             Events
           </Link>
 
@@ -36,7 +44,7 @@ export default class Nav extends React.Component {
             <>
               <Link to="/signIn" className="btn btn2">
                 Sign in
-              </Link>{' '}
+              </Link>{" "}
               <Link to="/signUp" className="btn btn2">
                 Sign up
               </Link>
@@ -53,6 +61,6 @@ export default class Nav extends React.Component {
           </label>
         </ul>
       </nav>
-    )
+    );
   }
 }
