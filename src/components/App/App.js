@@ -31,6 +31,9 @@ class App extends React.Component {
     weather: [],
     date: new Date(Date.now()),
     events: [],
+    pageNum: 1,
+    pageCount: 1,
+    searchParams: {},
     savedEvents: []
   }
 
@@ -54,9 +57,13 @@ class App extends React.Component {
         const newState = {
           city: weatherJsonData.city.name,
           zipCode,
+          distance,
+          categories,
           weather: weatherReport,
           date: date,
-          events: eventList
+          events: eventList,
+          pageNum: 1,
+          pageCount: eventJsonData.page_count,
         }
 
         this.setState(newState)
@@ -64,6 +71,50 @@ class App extends React.Component {
       } catch(err) {
         console.log(err)
       }
+  }
+
+  nextPage = async () => {
+    if (this.state.pageNum < this.state.pageCount) {
+      try {
+        //call the API method for the next page, if not already on the last results page
+        //and update the page number and listed events in state
+        const { zipCode, date, distance, categories, pageNum } = this.state
+        const eventJsonData = await EventApiService.eventSearch(zipCode, distance, eventDataHelpers.searchDateStr(date), categories, pageNum+1, 10)
+        const eventList = eventDataHelpers.parseEventList(eventJsonData)
+
+        const newState = {
+          pageNum: this.state.pageNum + 1,
+          events: eventList
+        }
+
+        this.setState(newState)
+      }
+      catch (err) {
+        console.log(err)
+      }
+    }    
+  }
+
+  prevPage = async () => {
+    if (this.state.pageNum > 1) {
+      try {
+        //call the API method for the previous page, if not already on the first page
+        //and update the page number and listed events in state
+        const { zipCode, date, distance, categories, pageNum } = this.state
+        const eventJsonData = await EventApiService.eventSearch(zipCode, distance, eventDataHelpers.searchDateStr(date), categories, pageNum-1, 10)
+        const eventList = eventDataHelpers.parseEventList(eventJsonData)
+
+        const newState = {
+          pageNum: this.state.pageNum - 1,
+          events: eventList
+        }
+        
+        this.setState(newState)
+      }
+      catch (err) {
+        console.log(err)
+      }
+    }    
   }
 
   getSavedEvents = async () => {
@@ -107,7 +158,11 @@ class App extends React.Component {
       apiSearch: this.apiSearch,
       getSavedEvents: this.getSavedEvents,
       saveEvent: this.saveEvent,
-      removeEvent: this.removeEvent
+      removeEvent: this.removeEvent,
+      pageNum: this.state.pageNum,
+      pageCount: this.state.pageCount,
+      prevPage: this.prevPage,
+      nextPage: this.nextPage
     }
     
     return (

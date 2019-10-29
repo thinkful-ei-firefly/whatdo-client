@@ -1,6 +1,7 @@
 import React from 'react'
 import EventItem from '../EventItem/EventItem'
 import SearchContext from '../../contexts/SearchContext'
+import PageBar from '../../components/PageBar/PageBar'
 import './SearchResults.css'
 
 export default class SearchResults extends React.Component {
@@ -38,7 +39,8 @@ export default class SearchResults extends React.Component {
         <h2>Search results for (options) within (x) miles of (location)</h2>
           <ul>
             {eventList}
-          </ul>          
+          </ul>
+          <PageBar />
         </div>
       )
     }
