@@ -65,7 +65,6 @@ export default class Search extends React.Component {
           htmlFor='zipCode'>
           <span className='content-name' >Enter your zipcode</span>  
           </label>
-          <CurrLocBtn></CurrLocBtn>
         </div>
 
         <div className='form-section'>
