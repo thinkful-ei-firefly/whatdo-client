@@ -32,6 +32,17 @@ export default class Search extends React.Component {
     this.props.handleSubmit();
   }
 
+  getDate() {
+    const today = new Date();
+    const date =
+      today.getFullYear() +
+      '-' +
+      (today.getMonth() + 1) +
+      '-' +
+      today.getDate();
+    return date;
+  }
+
   render() {
     return (
       <div className="SearchPage">
@@ -43,7 +54,7 @@ export default class Search extends React.Component {
           </h3>
 
           <form className="form" onSubmit={ev => this.handleSubmit(ev)}>
-            {/**
+            {/*
       <div role='alert' className='alert' >
           {error && <p>{error}</p>}
         </div>
@@ -70,6 +81,7 @@ export default class Search extends React.Component {
                 id="distance"
                 name="distance"
                 autoComplete="off"
+                defaultValue="10"
                 required
               />
               <label className="label-name" htmlFor="distance">
@@ -83,7 +95,7 @@ export default class Search extends React.Component {
                 type="date"
                 id="date"
                 name="date"
-                // defaultValue="2019-10-21"
+                defaultValue={this.getDate()}
                 // min="2019-01-01"
                 // max="2019-12-31"
               />
