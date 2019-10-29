@@ -1,6 +1,7 @@
-import React from 'react';
-import './Search.css';
-import SearchContext from '../../contexts/SearchContext';
+import React from 'react'
+import './Search.css'
+import SearchContext from '../../contexts/SearchContext'
+import CurrLocBtn from '../CurrLocBtn/CurrLocBtn'
 
 export default class Search extends React.Component {
   static contextType = SearchContext;
@@ -72,6 +73,7 @@ export default class Search extends React.Component {
               <label className="label-name" htmlFor="zipCode">
                 <span className="content-name">Enter your zipcode</span>
               </label>
+              <CurrLocBtn />
             </div>
 
             <div className="form-section">
