@@ -33,7 +33,6 @@ class App extends React.Component {
     events: [],
     pageNum: 1,
     pageCount: 1,
-    searchParams: {},
     savedEvents: []
   }
 

@@ -1,5 +1,6 @@
 import React from 'react'
 import SearchContext from '../../contexts/SearchContext'
+import './PageBar.css'
 
 export default class PageBar extends React.Component {
   state = { loading: false }
@@ -26,19 +27,19 @@ export default class PageBar extends React.Component {
 
   render () {
     return (
-      <div>
+      <div className="pagination-bar">
         <button 
-          className="prev-next-button" 
+          className="pagination-prev-next-button" 
           disabled={this.state.loading}
           onClick={this.handlePagePrev}
         >
           {'<< Prev'}
         </button>
 
-        <span>  -  Page {this.context.pageNum} of {this.context.pageCount}  -  </span>
+        <span className="pagination-page-num">  -  Page {this.context.pageNum} of {this.context.pageCount}  -  </span>
 
         <button 
-          className="prev-next-button" 
+          className="pagination-prev-next-button" 
           disabled={this.state.loading}
           onClick={this.handlePageNext}
         >
