@@ -1,9 +1,9 @@
 import React from 'react'
 import GeocodingApiService from '../../services/geocoding-api-service'
-import {SearchProvider} from '../../contexts/SearchContext'
+// import {SearchProvider} from '../../contexts/SearchContext'
 
 export default class CurrLocBtn extends React.Component{
-  static contextType = SearchContext
+  // static contextType = SearchContext
   state = {loading: false}
 
   getLocation = () => {

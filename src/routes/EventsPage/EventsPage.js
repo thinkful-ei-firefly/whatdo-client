@@ -5,6 +5,7 @@ import Search from "../../components/Search/Search";
 import SearchResults from "../../components/SearchResults/SearchResults";
 import WeatherBar from "../../components/WeatherBar/WeatherBar";
 import "./EventsPage.css";
+import CurrLocBtn from "../../components/CurrLocBtn/CurrLocBtn";
 
 export default class EventsPage extends React.Component {
   static contextType = SearchContext;
@@ -60,6 +61,7 @@ export default class EventsPage extends React.Component {
               <label className="label-name" htmlFor="zipCode">
                 <span className="content-name">Enter your zipcode</span>
               </label>
+              <CurrLocBtn></CurrLocBtn>
             </div>
 
             <div className="EventsPage__form-section">

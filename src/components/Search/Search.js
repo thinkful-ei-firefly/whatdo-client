@@ -1,6 +1,7 @@
 import React from 'react'
 import './Search.css'
 import SearchContext from '../../contexts/SearchContext'
+import CurrLocBtn from '../CurrLocBtn/CurrLocBtn'
 
 export default class Search extends React.Component {
 
@@ -64,6 +65,7 @@ export default class Search extends React.Component {
           htmlFor='zipCode'>
           <span className='content-name' >Enter your zipcode</span>  
           </label>
+          <CurrLocBtn></CurrLocBtn>
         </div>
 
         <div className='form-section'>
