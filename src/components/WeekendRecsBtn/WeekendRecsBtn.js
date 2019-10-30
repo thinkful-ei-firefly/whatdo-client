@@ -22,7 +22,6 @@ export default class WeekendRecsBtn extends React.Component {
       const {latitude, longitude} = pos.coords
       try{
         const res = await GeocodingApiService.getZip(latitude, longitude)
-        console.log(res.results[0].address_components[0].long_name)
         this.setState({zip: res.results[0].address_components[0].long_name})
       } catch(err){
         console.log(err.message)
@@ -53,9 +52,12 @@ export default class WeekendRecsBtn extends React.Component {
     //get the current/registered zip code of the user
     const zipCode = this.state.zip || '05477'
     
+    //pass everything to the search
     this.context.apiSearch(zipCode, 15, date, userFavorites)
 
-    //history.push to the events page
+    //redirect to the results page
+    this.props.redirectToEvents()
+
   }
 
   componentDidMount() {
