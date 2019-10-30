@@ -1,49 +1,46 @@
-import React from 'react'
-import './MyEventsPage.css'
-import SearchContext from '../../contexts/SearchContext'
-import SavedEvent from '../../components/SavedEvent/SavedEvent'
+import React from 'react';
+import './MyEventsPage.css';
+import SearchContext from '../../contexts/SearchContext';
+import SavedEvent from '../../components/SavedEvent/SavedEvent';
+
 export default class MyEventsPage extends React.Component {
+  state = { loading: true };
 
-  state = {loading: true}
+  static contextType = SearchContext;
 
-  static contextType = SearchContext
-
-  componentDidMount () {
-    this.context.getSavedEvents()
-    this.setState({loading: false})
+  componentDidMount() {
+    this.context.getSavedEvents();
+    this.setState({ loading: false });
   }
 
-  render(){
+  render() {
     if (this.state.loading) {
       return (
-        <div className='MyEventsPage__container'>
-        <div className='MyEventsPage'>
-          <h2>My saved events</h2>
-          <h3>Loading....</h3>
+        <div className="MyEventsPage__container">
+          <div className="MyEventsPage">
+            <h2>My saved events</h2>
+            <h3>Loading....</h3>
+          </div>
         </div>
-        </div>
-        
-      )
+      );
     }
 
-    const myEvents = this.context.savedEvents
+    const myEvents = this.context.savedEvents;
 
     if (myEvents.length === 0) {
-      return(
-        <div className='MyEventsPage__container'>
-        <div className='MyEventsPage'>
-          <h2>My saved events</h2>
-          <h3 className='h3'>You currently have no saved events</h3>
+      return (
+        <div className="MyEventsPage__container">
+          <div className="MyEventsPage">
+            <h2>My saved events</h2>
+            <h3 className="h3">You currently have no saved events</h3>
+          </div>
         </div>
-        </div>
-        
-        
-      )
+      );
     }
 
-    const eventList = myEvents.map(event => 
+    const eventList = myEvents.map(event => (
       <li key={event.fetch_id}>
-        <SavedEvent 
+        <SavedEvent
           key={event.id}
           id={event.id}
           name={event.name}
@@ -57,20 +54,15 @@ export default class MyEventsPage extends React.Component {
           removeEvent={this.context.removeEvent}
         />
       </li>
-    )
+    ));
 
     return (
-      <div className='MyEventsPage__container'>
-      <div className='MyEventsPage'>
-      <h2>My saved events</h2>
-      <ul>
-        {eventList}
-      </ul>        
-    </div>
+      <div className="MyEventsPage__container">
+        <div className="MyEventsPage">
+          <h2>My saved events</h2>
+          <ul>{eventList}</ul>
         </div>
-        
-      
-    )
-    
+      </div>
+    );
   }
 }

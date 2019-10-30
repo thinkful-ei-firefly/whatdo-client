@@ -1,16 +1,53 @@
-import React from 'react'
-import EventItem from '../EventItem/EventItem'
-import SearchContext from '../../contexts/SearchContext'
-import PageBar from '../../components/PageBar/PageBar'
-import './SearchResults.css'
+import React from 'react';
+import EventItem from '../EventItem/EventItem';
+import SearchContext from '../../contexts/SearchContext';
+import PageBar from '../../components/PageBar/PageBar';
+import './SearchResults.css';
 
 export default class SearchResults extends React.Component {
   static contextType = SearchContext;
 
   render() {
     const events = this.context.events;
-    const categoryString =
-      'music,comedy,learning_education,family_fun_kids,festivals_parades,movies_film,food,fundraisers,art,holiday,books,attractions,singles_social,outdoors_recreation,performing_arts,politics_activism,science,religion_spirituality,sports,technology';
+    const {
+      music,
+      sports,
+      attractions,
+      performingArts,
+      bars,
+      festivals
+    } = this.context;
+
+    const checkboxes = {
+      music,
+      sports,
+      attractions,
+      performingArts,
+      bars,
+      festivals
+    };
+
+    let categories = '';
+    for (const [key, value] of Object.entries(checkboxes)) {
+      if (value === true) {
+        let tag = '';
+
+        if (key === 'performingArts') {
+          tag = 'performing arts';
+        } else {
+          tag = key;
+        }
+        if (categories === '') {
+          categories += tag;
+        } else {
+          categories += `, ${tag}`;
+        }
+      }
+    }
+
+    if (categories === '') {
+      categories = 'all types';
+    }
 
     if (events.length > 0) {
       const eventList = events.map(event => (
@@ -39,11 +76,8 @@ export default class SearchResults extends React.Component {
       return (
         <div className="SearchResults">
           <h2>
-            Search results for{' '}
-            {this.context.categories === categoryString
-              ? 'all events'
-              : this.context.categories + ' events'}{' '}
-            within {this.context.distance} miles of {this.context.city}
+            Search results for events matching {categories} within{' '}
+            {this.context.distance} miles of {this.context.city}
           </h2>
           <ul>{eventList}</ul>
           <PageBar />
