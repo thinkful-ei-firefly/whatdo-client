@@ -13,9 +13,7 @@ export default class WeatherBar extends React.Component {
   render() {
     const dailyWeather = this.context.weather.filter(snapshot => {
       const dateTime = new Date(snapshot.dt);
-      return (
-        dateTime.toLocaleDateString() === this.context.date.toLocaleDateString()
-      );
+      return dateTime.toLocaleDateString() === this.context.date;
     });
 
     if (dailyWeather.length > 0) {
@@ -25,8 +23,7 @@ export default class WeatherBar extends React.Component {
       return (
         <div className="weatherbar">
           <h2 className="weatherbar-header">
-            Upcoming weather near {this.context.zipCode} on{' '}
-            {this.context.date.toLocaleDateString()}
+            Upcoming weather near {this.context.zipCode} on {this.context.date}
           </h2>
           {weatherSnapshots}
         </div>

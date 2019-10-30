@@ -10,21 +10,56 @@ export default class Search extends React.Component {
     ev.preventDefault();
     const zipCode = this.context.zipCode;
     const distance = this.context.distance;
-    const date = new Date(`${this.context.date}T12:00:00`);
+    const date = this.context.date;
 
-    let categories = [];
+    const {
+      music,
+      sports,
+      attractions,
+      performingArts,
+      bars,
+      festivals
+    } = this.context;
 
-    for (let i = 1; i <= 6; i++) {
-      if (this.context[`box${i}`].checked) {
-        const category = `${this.context[`box${i}`]}`;
-        categories.push(category);
+    const checkboxes = {
+      music,
+      sports,
+      attractions,
+      performingArts,
+      bars,
+      festivals
+    };
+
+    let categories = '';
+
+    for (const [key, value] of Object.entries(checkboxes)) {
+      if (value === true) {
+        let tag = '';
+
+        switch (key) {
+          case 'sports':
+            tag = 'sports,outdoors_recreation';
+            break;
+          case 'performingArts':
+            tag = 'performing_arts,comedy';
+            break;
+          case 'bars':
+            tag = 'food,singles_social';
+            break;
+          case 'festivals':
+            tag = 'festivals_parades,holiday';
+            break;
+          default:
+            tag = key;
+        }
+        categories += tag;
       }
     }
-    categories = categories.join();
 
-    if (!categories)
+    if (categories === '') {
       categories =
         'music,sports,outdoors_recreation,attractions,performing_arts,comedy,food,singles_social,festivals_parades,holiday';
+    }
 
     this.context.apiSearch(zipCode, distance, date, categories);
     //once SearchResults page is hooked up to context, modify apiSearch to return a promise

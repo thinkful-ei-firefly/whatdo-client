@@ -70,7 +70,7 @@ class App extends React.Component {
       const eventJsonData = await EventApiService.eventSearch(
         zipCode,
         distance,
-        eventDataHelpers.searchDateStr(date),
+        date,
         categories,
         pageNum,
         pageSize
@@ -84,11 +84,7 @@ class App extends React.Component {
 
       const newState = {
         city: weatherJsonData.city.name,
-        zipCode,
-        distance,
-        categories,
         weather: weatherReport,
-        date: date,
         events: eventList,
         pageNum: 1,
         pageCount: eventJsonData.page_count

@@ -13,24 +13,61 @@ export default class EventsPage extends React.Component {
     ev.preventDefault();
     const zipCode = this.context.zipCode;
     const distance = this.context.distance;
-    const date = new Date(this.context.date);
+    const date = new Date(`${this.context.date}T12:00:00`);
 
-    let categories = [];
+    const {
+      music,
+      sports,
+      attractions,
+      performingArts,
+      bars,
+      festivals
+    } = this.context;
 
-    // for (let i = 1; i <= 6; i++) {
-    //   if (this.context.[`box${i}`].checked)
-    //     categories.push(`${ev.target[`box${i}`]}`);
-    // }
+    const checkboxes = {
+      music,
+      sports,
+      attractions,
+      performingArts,
+      bars,
+      festivals
+    };
 
-    categories = categories.join();
+    let categories = '';
 
-    if (!categories)
+    for (const [key, value] of Object.entries(checkboxes)) {
+      if (value === true) {
+        let tag = '';
+
+        switch (key) {
+          case 'sports':
+            tag = 'sports,outdoors_recreation';
+            break;
+          case 'performingArts':
+            tag = 'performing_arts,comedy';
+            break;
+          case 'bars':
+            tag = 'food,singles_social';
+            break;
+          case 'festivals':
+            tag = 'festivals_parades,holiday';
+            break;
+          default:
+            tag = key;
+        }
+        categories += tag;
+      }
+    }
+
+    if (categories === '') {
       categories =
         'music,sports,outdoors_recreation,attractions,performing_arts,comedy,food,singles_social,festivals_parades,holiday';
+    }
 
     this.context.apiSearch(zipCode, distance, date, categories);
     //once SearchResults page is hooked up to context, modify apiSearch to return a promise
     //then add a .then chain to history.push the user to the results page
+    // this.props.handleSubmit();
   }
 
   render() {
