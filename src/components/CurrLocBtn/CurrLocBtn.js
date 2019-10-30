@@ -24,7 +24,7 @@ export default class CurrLocBtn extends React.Component{
         console.log(res.results[0].address_components[0].long_name)
         // this.context.
       } catch(err){
-        console.log(err)
+        console.log(err.message)
       }
       this.setState({loading: false})
     }
