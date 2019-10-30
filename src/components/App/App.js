@@ -27,15 +27,21 @@ class App extends React.Component {
   state = {
     city: 'Tucker',
     zipCode: '30084',
-    weather: [],
+    distance: 10,
     date: this.getDate(),
+    categories: '',
+    prettyCategories: '',
+    music: false,
+    attractions: false,
+    bars: false,
+    sports: false,
+    performingArts: false,
+    festivals: false,
+    weather: [],
     events: [],
     pageNum: 1,
     pageCount: 1,
-    savedEvents: [],
-    distance: 10,
-    categories: '',
-    prettyCategories: ''
+    savedEvents: []
   };
 
   getDate() {
@@ -181,20 +187,17 @@ class App extends React.Component {
     }
   };
 
-  setZipCode = ev => {
-    this.setState({ zipCode: ev.target.value });
+  setSearchTerm = ev => {
+    const key = ev.target.name;
+    this.setState({ [key]: ev.target.value });
   };
 
-  setDistance = ev => {
-    this.setState({ distance: ev.target.value });
-  };
-
-  setDate = ev => {
-    this.setState({ date: ev.target.value });
+  setChecked = ev => {
+    const key = ev.target.name;
+    this.setState({ [key]: !this.state[key] });
   };
 
   render() {
-    console.log(this.state.date);
     const searchContextValue = {
       city: this.state.city,
       zipCode: this.state.zipCode,
@@ -204,13 +207,18 @@ class App extends React.Component {
       savedEvents: this.state.savedEvents,
       distance: this.state.distance,
       categories: this.state.categories,
+      music: this.state.music,
+      attractions: this.state.attractions,
+      bars: this.state.bars,
+      sports: this.state.sports,
+      performingArts: this.state.performingArts,
+      festivals: this.state.festivals,
       apiSearch: this.apiSearch,
       getSavedEvents: this.getSavedEvents,
       saveEvent: this.saveEvent,
       removeEvent: this.removeEvent,
-      setZipCode: this.setZipCode,
-      setDistance: this.setDistance,
-      setDate: this.setDate,
+      setSearchTerm: this.setSearchTerm,
+      setChecked: this.setChecked,
       pageNum: this.state.pageNum,
       pageCount: this.state.pageCount,
       prevPage: this.prevPage,
@@ -228,10 +236,6 @@ class App extends React.Component {
             <Route path={'/eventsPage'} component={EventsPage} />
             <PrivateOnlyRoute path={'/eventPage'} component={EventPage} />
             <PrivateOnlyRoute path={'/myEventsPage'} component={MyEventsPage} />
-            {/* <Route path={'/signUp'} component={SignUpPage} /> */}
-            {/* <Route path={'/signIn'} component={SignInPage} /> */}
-            {/* <Route path={'/eventsPage'} component={EventsPage} /> */}
-            {/* <Route path={'/eventPage'} component={EventPage} /> */}
             <Route component={NotFoundPage} />
           </Switch>
           <Footer />

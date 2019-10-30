@@ -55,7 +55,7 @@ export default class EventsPage extends React.Component {
                 name="zipCode"
                 autoComplete="off"
                 value={this.context.zipCode}
-                onChange={this.context.setZipCode}
+                onChange={this.context.setSearchTerm}
                 required
               />
               <label className="label-name" htmlFor="zipCode">
@@ -72,7 +72,7 @@ export default class EventsPage extends React.Component {
                 name="distance"
                 autoComplete="off"
                 value={this.context.distance}
-                onChange={this.context.setDistance}
+                onChange={this.context.setSearchTerm}
                 required
               />
               <label className="label-name" htmlFor="distance">
@@ -87,7 +87,7 @@ export default class EventsPage extends React.Component {
                 id="date"
                 name="date"
                 value={this.context.date}
-                onChange={this.context.setDate}
+                onChange={this.context.setSearchTerm}
               />
             </div>
 
@@ -95,43 +95,55 @@ export default class EventsPage extends React.Component {
               <input
                 type="checkbox"
                 id="box1"
-                name="categories"
+                name="music"
                 value="music"
+                checked={this.context.music}
+                onChange={this.context.setChecked}
               ></input>
               <label htmlFor="box1">Music</label>
               <input
                 type="checkbox"
                 id="box2"
-                name="categories"
+                name="sports"
                 value="sports,outdoors_recreation"
+                checked={this.context.sports}
+                onChange={this.context.setChecked}
               ></input>
               <label htmlFor="box2">Sports</label>
               <input
                 type="checkbox"
                 id="box3"
-                name="categories"
+                name="attractions"
                 value="attractions"
+                checked={this.context.attractions}
+                onChange={this.context.setChecked}
               ></input>
               <label htmlFor="box3">Attractions</label>
               <input
                 type="checkbox"
                 id="box4"
-                name="categories"
+                name="performingArts"
                 value="performing_arts,comedy"
+                checked={this.context.performingArts}
+                onChange={this.context.setChecked}
               ></input>
               <label htmlFor="box4">Performing Arts</label>
               <input
                 type="checkbox"
                 id="box5"
-                name="categories"
+                name="bars"
                 value="food,singles_social"
+                checked={this.context.bars}
+                onChange={this.context.setChecked}
               ></input>
               <label htmlFor="box5">Bars</label>
               <input
                 type="checkbox"
                 id="box6"
-                name="categories"
+                name="festivals"
                 value="festivals_parades,holiday"
+                checked={this.context.festivals}
+                onChange={this.context.setChecked}
               ></input>
               <label htmlFor="box6">Festivals</label>
             </div>
