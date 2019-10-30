@@ -9,12 +9,13 @@
   padding: 0;
   background-color: transparent;
 }
-.CurrLocBtn:focus{
+.no-focus-CurrLocBtn:focus{
   outline: none;
 }
 .CurrLocBtn:hover{
   cursor: pointer;
 }
+
 
 .loc{
   overflow: visible;
