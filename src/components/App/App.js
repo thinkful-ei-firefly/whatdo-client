@@ -35,87 +35,109 @@ class App extends React.Component {
     savedEvents: [],
     distance: 10,
     categories: ''
-  }
+  };
 
   apiSearch = async (
-    zipCode, 
-    distance=10, 
-    date, 
-    categories=eventDataHelpers.allCatStr(), 
-    pageNum=1, 
-    pageSize=10) => {
-      //send api request to get weather
-      //send api request to get events
-      //update state
-      try {
-        const eventJsonData = await EventApiService.eventSearch(zipCode, distance, eventDataHelpers.searchDateStr(date), categories, pageNum, pageSize)
-        const eventList = eventDataHelpers.parseEventList(eventJsonData)
+    zipCode,
+    distance = 10,
+    date,
+    categories = eventDataHelpers.allCatStr(),
+    prettyCategories,
+    pageNum = 1,
+    pageSize = 10
+  ) => {
+    //send api request to get weather
+    //send api request to get events
+    //update state
+    try {
+      const eventJsonData = await EventApiService.eventSearch(
+        zipCode,
+        distance,
+        eventDataHelpers.searchDateStr(date),
+        categories,
+        pageNum,
+        pageSize
+      );
+      const eventList = eventDataHelpers.parseEventList(eventJsonData);
 
-        const weatherJsonData = await WeatherApiService.weatherReport(zipCode)
-        const weatherReport = weatherDataHelpers.parseWeatherReport(weatherJsonData)
+      const weatherJsonData = await WeatherApiService.weatherReport(zipCode);
+      const weatherReport = weatherDataHelpers.parseWeatherReport(
+        weatherJsonData
+      );
 
-        const newState = {
-          city: weatherJsonData.city.name,
-          zipCode,
-          distance,
-          categories,
-          weather: weatherReport,
-          date: date,
-          events: eventList,
-          pageNum: 1,
-          pageCount: eventJsonData.page_count,
-        }
+      const newState = {
+        city: weatherJsonData.city.name,
+        zipCode,
+        distance,
+        categories: prettyCategories,
+        weather: weatherReport,
+        date: date,
+        events: eventList,
+        pageNum: 1,
+        pageCount: eventJsonData.page_count
+      };
 
-        this.setState(newState)
-  
-      } catch(err) {
-        console.log(err)
-      }
-  }
+      this.setState(newState);
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   nextPage = async () => {
     if (this.state.pageNum < this.state.pageCount) {
       try {
         //call the API method for the next page, if not already on the last results page
         //and update the page number and listed events in state
-        const { zipCode, date, distance, categories, pageNum } = this.state
-        const eventJsonData = await EventApiService.eventSearch(zipCode, distance, eventDataHelpers.searchDateStr(date), categories, pageNum+1, 10)
-        const eventList = eventDataHelpers.parseEventList(eventJsonData)
+        const { zipCode, date, distance, categories, pageNum } = this.state;
+        const eventJsonData = await EventApiService.eventSearch(
+          zipCode,
+          distance,
+          eventDataHelpers.searchDateStr(date),
+          categories,
+          pageNum + 1,
+          10
+        );
+        const eventList = eventDataHelpers.parseEventList(eventJsonData);
 
         const newState = {
           pageNum: this.state.pageNum + 1,
           events: eventList
-        }
+        };
 
-        this.setState(newState)
+        this.setState(newState);
+      } catch (err) {
+        console.log(err);
       }
-      catch (err) {
-        console.log(err)
-      }
-    }    
-  }
+    }
+  };
 
   prevPage = async () => {
     if (this.state.pageNum > 1) {
       try {
         //call the API method for the previous page, if not already on the first page
         //and update the page number and listed events in state
-        const { zipCode, date, distance, categories, pageNum } = this.state
-        const eventJsonData = await EventApiService.eventSearch(zipCode, distance, eventDataHelpers.searchDateStr(date), categories, pageNum-1, 10)
-        const eventList = eventDataHelpers.parseEventList(eventJsonData)
+        const { zipCode, date, distance, categories, pageNum } = this.state;
+        const eventJsonData = await EventApiService.eventSearch(
+          zipCode,
+          distance,
+          eventDataHelpers.searchDateStr(date),
+          categories,
+          pageNum - 1,
+          10
+        );
+        const eventList = eventDataHelpers.parseEventList(eventJsonData);
 
         const newState = {
           pageNum: this.state.pageNum - 1,
           events: eventList
-        }
-        
-        this.setState(newState)
+        };
+
+        this.setState(newState);
+      } catch (err) {
+        console.log(err);
       }
-      catch (err) {
-        console.log(err)
-      }
-    }    
-  }
+    }
+  };
 
   getSavedEvents = async () => {
     try {
@@ -166,8 +188,8 @@ class App extends React.Component {
       pageCount: this.state.pageCount,
       prevPage: this.prevPage,
       nextPage: this.nextPage
-    }
-    
+    };
+
     return (
       <div className="App">
         <SearchContext.Provider value={searchContextValue}>
