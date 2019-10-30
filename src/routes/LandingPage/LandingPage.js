@@ -1,21 +1,16 @@
-import React from 'react'
-import Search from '../../components/Search/Search'
-import SearchResults from '../../components/SearchResults/SearchResults'
-import WeatherBar from '../../components/WeatherBar/WeatherBar'
+import React from 'react';
+import Search from '../../components/Search/Search';
 
-export default class LandingPage extends React.Component{
-
+export default class LandingPage extends React.Component {
   handleSubmit = () => {
-    this.props.history.push('/eventsPage')
-  }
+    this.props.history.push('/eventsPage');
+  };
 
-  render(){
-    return(
+  render() {
+    return (
       <div>
-        
-        <Search handleSubmit={this.handleSubmit}/>
-        
+        <Search handleSubmit={this.handleSubmit} />
       </div>
-    )
+    );
   }
 }

@@ -27,22 +27,39 @@ class App extends React.Component {
   state = {
     city: 'Tucker',
     zipCode: '30084',
+    distance: 10,
+    date: this.getDate(),
+    categories: '',
+    prettyCategories: '',
+    music: false,
+    attractions: false,
+    bars: false,
+    sports: false,
+    performingArts: false,
+    festivals: false,
     weather: [],
-    date: new Date(Date.now()),
     events: [],
     pageNum: 1,
     pageCount: 1,
-    savedEvents: [],
-    distance: 10,
-    categories: ''
+    savedEvents: []
   };
+
+  getDate() {
+    const today = new Date();
+    const date =
+      today.getFullYear() +
+      '-' +
+      (today.getMonth() + 1) +
+      '-' +
+      today.getDate();
+    return date;
+  }
 
   apiSearch = async (
     zipCode,
     distance = 10,
     date,
     categories = eventDataHelpers.allCatStr(),
-    prettyCategories,
     pageNum = 1,
     pageSize = 10
   ) => {
@@ -53,7 +70,7 @@ class App extends React.Component {
       const eventJsonData = await EventApiService.eventSearch(
         zipCode,
         distance,
-        eventDataHelpers.searchDateStr(date),
+        date,
         categories,
         pageNum,
         pageSize
@@ -67,11 +84,7 @@ class App extends React.Component {
 
       const newState = {
         city: weatherJsonData.city.name,
-        zipCode,
-        distance,
-        categories: prettyCategories,
         weather: weatherReport,
-        date: date,
         events: eventList,
         pageNum: 1,
         pageCount: eventJsonData.page_count
@@ -170,6 +183,16 @@ class App extends React.Component {
     }
   };
 
+  setSearchTerm = ev => {
+    const key = ev.target.name;
+    this.setState({ [key]: ev.target.value });
+  };
+
+  setChecked = ev => {
+    const key = ev.target.name;
+    this.setState({ [key]: !this.state[key] });
+  };
+
   render() {
     const searchContextValue = {
       city: this.state.city,
@@ -180,10 +203,18 @@ class App extends React.Component {
       savedEvents: this.state.savedEvents,
       distance: this.state.distance,
       categories: this.state.categories,
+      music: this.state.music,
+      attractions: this.state.attractions,
+      bars: this.state.bars,
+      sports: this.state.sports,
+      performingArts: this.state.performingArts,
+      festivals: this.state.festivals,
       apiSearch: this.apiSearch,
       getSavedEvents: this.getSavedEvents,
       saveEvent: this.saveEvent,
       removeEvent: this.removeEvent,
+      setSearchTerm: this.setSearchTerm,
+      setChecked: this.setChecked,
       pageNum: this.state.pageNum,
       pageCount: this.state.pageCount,
       prevPage: this.prevPage,
@@ -197,14 +228,10 @@ class App extends React.Component {
           <Switch>
             <Route exact path={'/'} component={LandingPage} />
             <PublicOnlyRoute path={'/signUp'} component={SignUpPage} />
-            <PublicOnlyRoute path={'/signIn'} component={SignInPage} />
+            <PublicOnlyRoute path={'/signIn'} component={() => <SignInPage getFavs={this.getSavedEvents} />} />
             <Route path={'/eventsPage'} component={EventsPage} />
             <PrivateOnlyRoute path={'/eventPage'} component={EventPage} />
             <PrivateOnlyRoute path={'/myEventsPage'} component={MyEventsPage} />
-            {/* <Route path={'/signUp'} component={SignUpPage} /> */}
-            {/* <Route path={'/signIn'} component={SignInPage} /> */}
-            {/* <Route path={'/eventsPage'} component={EventsPage} /> */}
-            {/* <Route path={'/eventPage'} component={EventPage} /> */}
             <Route component={NotFoundPage} />
           </Switch>
           <Footer />
