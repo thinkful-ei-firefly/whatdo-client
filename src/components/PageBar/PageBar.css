@@ -1,11 +1,12 @@
 .pagination-bar {
-    text-align: center;
+  text-align: center;
+  margin-top: 20px;
 }
 
 .pagination-prev-next-button {
-    /* button styles */
+  /* button styles */
 }
 
 .pagination-page-num {
-    /* page number styles */
+  /* page number styles */
 }

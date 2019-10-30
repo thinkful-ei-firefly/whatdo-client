@@ -1,50 +1,51 @@
-.SearchResults{
-    font-family: sans-serif;
-    margin: 10px;
-    border-radius: 7px;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-content: center;
-    border-radius: 7px;
-    /* height: 100%; */
-    align-content: stretch;
-    justify-content: space-around;
-    text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
-    -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
-    -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
-    transition: all 0.4s ease 0s;
-    padding: 10px;
+.SearchResults {
+  font-family: sans-serif;
+  margin: 10px auto;
+  max-width: 800px;
+  border-radius: 7px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  border-radius: 7px;
+  /* height: 100%; */
+  align-content: stretch;
+  justify-content: space-around;
+  text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
+  -webkit-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+  -moz-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+  transition: all 0.4s ease 0s;
+  padding: 10px;
+  background-color: rgb(241, 251, 253);
+  /* background-image: radial-gradient(#487eb0da, rgb(255, 255, 255)); */
 }
-.SearchResults h2{
-    width: 95%;
-    
-    padding: 10px;
-    text-align: center;
-    margin:5px auto;
-    border-radius: 7px ;
-    text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
-    -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
-    -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
-    transition: all 0.4s ease 0s;
-    background: rgba(250, 248, 241, 0.666);
+.SearchResults h2 {
+  width: 95%;
 
+  padding: 10px;
+  text-align: center;
+  margin: 5px auto;
+  border-radius: 7px;
+  text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
+  -webkit-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+  -moz-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+  transition: all 0.4s ease 0s;
+  background: rgba(250, 248, 241, 0.666);
 }
 
 .SearchResults ul {
-    padding: 0px;
-        /* display: inline-block;
+  padding: 0px;
+  /* display: inline-block;
     margin: 5px; */
-/* background-color: red;     */
-    /* display: flex; */
-    /* flex-direction: column;
+  /* background-color: red;     */
+  /* display: flex; */
+  /* flex-direction: column;
     flex-wrap: wrap;
     align-content: center;
     border-radius: 7px; */
-    /* height: 100%; */
-    /* align-content: stretch; */
-    /* justify-content: space-evenly; */
-    width: 95%;
-    margin: auto;
+  /* height: 100%; */
+  /* align-content: stretch; */
+  /* justify-content: space-evenly; */
+  width: 95%;
+  margin: auto;
 }
-

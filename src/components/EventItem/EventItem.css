@@ -22,12 +22,14 @@
   transition: 0.2s;
   width: 100%;
   border-radius: 7px;
-  /* background-color: rgba(255, 255, 255, 0); */
+  /* background-color: rgba(108, 173, 233, 0.968); */
 }
 .EventItem:hover {
-  color: #255784;
+  /* color: #ffffff; */
   /* background: #2196f3; */
   box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3;
+  background-color: #daeefee7;
+
   transition-delay: 1s;
   border-radius: 7px;
   transform: scale(1.05);
@@ -127,7 +129,7 @@ transition: 0.2s;
 .button {
   width: 200px;
   height: 50px;
-  background-image: radial-gradient(#0048ff, rgb(255, 255, 255));
+  background-image: radial-gradient(#2196f3, rgb(255, 255, 255));
   position: absolute;
   left: 50%;
   bottom: -160%;

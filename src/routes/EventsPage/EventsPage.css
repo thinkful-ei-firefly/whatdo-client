@@ -1,41 +1,60 @@
-.EventsPage{
-    margin: 0 auto;
-    padding: 0;
-    min-height: 80vh;
-    max-width: 800px;
-    /* align-items: center; */
+.EventsPage {
+  margin: 0 auto;
+  padding: 0;
+  min-height: 80vh;
+  /* max-width: 800px; */
+  /* align-items: center; */
+  width: 100%;
+  /* margin: 0; */
+  /* text-align: center; */
+  /* height: 100vh; */
+  padding-top: 70px;
+  /* box-sizing: border-box; */
+  background: gray
+    url(https://github.com/thinkful-ei-firefly/whatdo-client/blob/master/src/routes/SignInPage/Desktop-1.png?raw=true)
+    repeat 0 0;
+  animation: slide 20s linear infinite;
+}
+
+@keyframes slide {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -400px 0;
+  }
 }
 
 /*--------------------- SearchBar --------------- */
 
-.EventsPage__Search{
-    /* min-height: 125vh; */
-    /* width:100%; */
-    font-family: sans-serif;
-    margin: 10px;
-    border-radius: 7px;
-    /* background: url("Desktop-1.png") no-repeat fixed center; */
-    /* background-repeat: no-repeat;
+.EventsPage__Search {
+  /* min-height: 125vh; */
+  /* width:100%; */
+  font-family: sans-serif;
+  margin: 10px auto;
+  border-radius: 7px;
+  /* background: url("Desktop-1.png") no-repeat fixed center; */
+  /* background-repeat: no-repeat;
     background-size:fixed; */
-    /* animation: slide 20s  infinite; */
-    
+  /* animation: slide 20s  infinite; */
+  max-width: 800px;
+  background-image: radial-gradient(#487eb0da, rgb(255, 255, 255));
 }
 
-.EventsPage__form{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-content: center;
-    border-radius: 7px;
-    /* height: 100%; */
-    align-content: stretch;
-    justify-content: space-around;
-        text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
-    -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
-    -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
-    transition: all 0.4s ease 0s;
+.EventsPage__form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  border-radius: 7px;
+  /* height: 100%; */
+  align-content: stretch;
+  justify-content: space-around;
+  text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
+  -webkit-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+  -moz-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+  transition: all 0.4s ease 0s;
 }
-
 
 /* @media (min-width: 800px) {
     .SearchPage {
@@ -46,267 +65,228 @@
     }
 } */
 
+.EventsPage__form h4 {
+  width: 80%;
 
-
-.EventsPage__form h4{
-    width: 80%;
-    
-    padding: 10px;
-    text-align: center;
-    margin:0 auto;
-    border-radius: 7px 7px 0   0;
-    text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
-    -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
-    -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
-    transition: all 0.4s ease 0s;
-    background: rgba(250, 248, 241, 0.666);
-
+  padding: 10px;
+  text-align: center;
+  margin: 0 auto;
+  border-radius: 7px 7px 0 0;
+  text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
+  -webkit-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+  -moz-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+  transition: all 0.4s ease 0s;
+  background: rgba(250, 248, 241, 0.666);
 }
-
-
-
 
 .EventsPage__form-section {
-    margin: 10px  auto;
-    position: relative;
-    height: 50px;
-    border-radius:0 0 7px 7px;
-    z-index: 1;
-    width:30%;
-    display: flex;
-    /* flex-grow:1; */
-    /* text-align: center; */
-    /* background: blue; */
-    /* overflow:hidden; */
-
-
+  margin: 10px auto;
+  position: relative;
+  height: 50px;
+  border-radius: 0 0 7px 7px;
+  z-index: 1;
+  width: 30%;
+  display: flex;
+  /* flex-grow:1; */
+  /* text-align: center; */
+  /* background: blue; */
+  /* overflow:hidden; */
 }
 
-.EventsPage__checkbox__section{
-    /* position: relative; */
-    /* padding :auto; */
-    /* margin:0px !important;   */
-    /* padding: 10px; */
-    /* text-align: center; */
-    /* margin:2px auto; */
-    /* min-height: 170px; */
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    align-content: center;
-    /* height: 100%; */
-    /* align-content: stretch; */
-    /* background: rgba(250, 248, 241, 0.666); */
-    justify-content: space-evenly;
-
+.EventsPage__checkbox__section {
+  /* position: relative; */
+  /* padding :auto; */
+  /* margin:0px !important;   */
+  /* padding: 10px; */
+  /* text-align: center; */
+  /* margin:2px auto; */
+  /* min-height: 170px; */
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  align-content: center;
+  /* height: 100%; */
+  /* align-content: stretch; */
+  /* background: rgba(250, 248, 241, 0.666); */
+  justify-content: space-evenly;
 }
 
-
-.EventsPage__checkbox__section input + label  {
-
-    margin:0.2em;
-    cursor: pointer;
-    padding:  0.2em;
-    flex-basis:25%;
+.EventsPage__checkbox__section input + label {
+  margin: 0.2em;
+  cursor: pointer;
+  padding: 0.2em;
+  flex-basis: 25%;
 }
-
-
 
 .EventsPage__checkbox__section input {
-    display: none;
-    
+  display: none;
 }
 
-.EventsPage__checkbox__section input +label:before{
-    content: "\2714";
-    border:0.1em solid #000;
-    border-radius: 0.2em;
-    display: inline-block;
-    width: 1em;
-    height: 1em;
-    padding-left:0.2em;
-    padding-bottom:0.3em;
-    margin-right:0.2em;
-    vertical-align:bottom ;
-    color:transparent;
-    transition: .3s;
+.EventsPage__checkbox__section input + label:before {
+  content: "\2714";
+  border: 0.1em solid #000;
+  border-radius: 0.2em;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  padding-left: 0.2em;
+  padding-bottom: 0.3em;
+  margin-right: 0.2em;
+  vertical-align: bottom;
+  color: transparent;
+  transition: 0.3s;
 }
 
-.EventsPage__checkbox__section input  + label:active:before {
-    transform:scale(0);
-
+.EventsPage__checkbox__section input + label:active:before {
+  transform: scale(0);
 }
 
-.EventsPage__checkbox__section input:checked  + label:before{
-    background-color: rgb(97, 132, 248) ;
-    border-color:rgb(97, 132, 248);
-    color:#fff;
+.EventsPage__checkbox__section input:checked + label:before {
+  background-color: rgb(97, 132, 248);
+  border-color: rgb(97, 132, 248);
+  color: #fff;
 }
 
-.EventsPage__checkbox__section input:disabled  + label:before{
-    transform:scale(1);
-    border-color:#aaa;
-
+.EventsPage__checkbox__section input:disabled + label:before {
+  transform: scale(1);
+  border-color: #aaa;
 }
 
-EventsPage__checkbox__section input:checked:disabled  + label:before{
-    transform:scale(1);
-    border-color:rgb(157, 199, 250);
-    background-color:rgb(157, 199, 250); ;
+EventsPage__checkbox__section input:checked:disabled + label:before {
+  transform: scale(1);
+  border-color: rgb(157, 199, 250);
+  background-color: rgb(157, 199, 250);
 }
-
 
 .input {
-    width: 100%;
-    height: 100%;
-    color: grey;
-    padding-top: 10px;
-    font-size: 20px;
-    border: none;
-    text-align: center;
-    outline: none;
-    border-radius: 50px;
-     text-align: center;
-
+  width: 100%;
+  height: 100%;
+  color: grey;
+  padding-top: 10px;
+  font-size: 20px;
+  border: none;
+  text-align: center;
+  outline: none;
+  border-radius: 50px;
+  text-align: center;
 }
 .label-name {
-    position: absolute;
-    bottom:0px;
-    left:0%;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    border-bottom: 2px solid lightcoral;
-    text-align: center;
-    border-radius: 50px;
-
+  position: absolute;
+  bottom: 0px;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  border-bottom: 2px solid lightcoral;
+  text-align: center;
+  border-radius: 50px;
 }
 
 .label-name::after {
-    content: '';
-    position: absolute;
-    left:0px;
-    bottom:-2px;
-    height: 100%;
-    width:100%;
-    border-bottom: 4px solid #487eb0;
-    transform: translateY(-3%);
-    transition: transform 0.3s ease;
-    border-radius: 50px;
- 
+  content: "";
+  position: absolute;
+  left: 0px;
+  bottom: -2px;
+  height: 100%;
+  width: 100%;
+  border-bottom: 4px solid #487eb0;
+  transform: translateY(-3%);
+  transition: transform 0.3s ease;
+  border-radius: 50px;
 }
 
 .content-name {
-    position: absolute;
-    bottom:5px;
-    left:0px;
-    right:0px;
-    transition:  all 0.3s ease;
-    
-
+  position: absolute;
+  bottom: 5px;
+  left: 0px;
+  right: 0px;
+  transition: all 0.3s ease;
 }
-
-
 
 .input:focus + .label-name .content-name,
 .input:valid + .label-name .content-name {
-    transform: translateY(-150%);
-    font-size:14px;
-    color:#487eb0;
-    
+  transform: translateY(-150%);
+  font-size: 14px;
+  color: #487eb0;
 }
 
 .input:focus + .label-name::after,
 .input:valid + .label-name::after {
-    transform: translateX(0%);
-
+  transform: translateX(0%);
 }
-
-
 
 .form-btn {
-    width: 60%;
-    text-align: center;
-    margin-left:auto;
-    margin-right:auto;
-    align-items: center;
-    position: relative;
-    height: 70px;
+  width: 60%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+  position: relative;
+  height: 70px;
 }
 
-
-    .EventsPage__searchForm__btn{
-        /* position: absolute; */
-    /* bottom:5px;
+.EventsPage__searchForm__btn {
+  /* position: absolute; */
+  /* bottom:5px;
     left:0px;
     right:0px; */
-    transition:  all 0.3s ease;
-     position: absolute;
-     top: 50%;
-     left: 50%;
-     transform: translate(-50%, -50%);
-     width: 100%;
-     /* height: 60px; */
-     padding-top:0;
-     text-align: center;
-     line-height: 30px;
-     color: #fff;
-     font-size: 24px;
-     text-transform: uppercase;
-     text-decoration: none;
-     font-family: sans-serif;
-     box-sizing: border-box;
-     background: linear-gradient(90deg, #03a9f4, #6e41f4, #ffeb3b, #03a9f4);
-     background-size: 400%;
-     border-radius: 30px;
-     /* z-index: 1; */
-    }
-    .EventsPage__searchForm__btn:hover
-    {
-     animation: animate 5s linear infinite;
-    }
-    @keyframes animate
-    {
-     0%
-     {
-      background-position: 0%;
-     }
-     100%
-     {
-      background-position: 400%;
-     }
-    }
-    .EventsPage__searchForm__btn:before
-    {
-     content: '';
-     position: absolute;
-     top: -5px;
-     left: -5px;
-     right: -5px;
-     bottom: -5px;
-     z-index: -1;
-     background: linear-gradient(90deg, #03a9f4, #c983f5, #ffeb3b, #03a9f4);
-     background-size: 400%;
-     border-radius: 40px;
-     opacity: 0;
-     transition: 0.5s;
-    
-     
-    }
-    .EventsPage__searchForm__btn:hover:before
-    {
-     
-     filter: blur(20px);
-     opacity:1;
-     animation: animate 5s linear infinite;
-    }
+  transition: all 0.3s ease;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  /* height: 60px; */
+  padding-top: 0;
+  text-align: center;
+  line-height: 30px;
+  color: #fff;
+  font-size: 24px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-family: sans-serif;
+  box-sizing: border-box;
+  background: linear-gradient(90deg, #03a9f4, #6e41f4, #ffeb3b, #03a9f4);
+  background-size: 400%;
+  border-radius: 30px;
+  /* z-index: 1; */
+}
+.EventsPage__searchForm__btn:hover {
+  animation: animate 5s linear infinite;
+}
+@keyframes animate {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 400%;
+  }
+}
+.EventsPage__searchForm__btn:before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  z-index: -1;
+  background: linear-gradient(90deg, #03a9f4, #c983f5, #ffeb3b, #03a9f4);
+  background-size: 400%;
+  border-radius: 40px;
+  opacity: 0;
+  transition: 0.5s;
+}
+.EventsPage__searchForm__btn:hover:before {
+  filter: blur(20px);
+  opacity: 1;
+  animation: animate 5s linear infinite;
+}
 
-
-    @media screen and (max-width:750px) {
-        .EventsPage__form-section {
-            width:80%; 
-        }
-        .EventsPage__checkbox__section input + label  {
-            flex-basis:40%;
-        }
-    }
+@media screen and (max-width: 750px) {
+  .EventsPage__form-section {
+    width: 80%;
+  }
+  .EventsPage__checkbox__section input + label {
+    flex-basis: 40%;
+  }
+}
