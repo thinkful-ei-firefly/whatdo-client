@@ -13,7 +13,7 @@ export default class CurrLocBtn extends React.Component{
 
     const options = {
       timeout: 5000,
-      enableHighAccuracy: true,
+      enableHighAccuracy: false,
       maximumAge: 0
     }
 
@@ -24,18 +24,18 @@ export default class CurrLocBtn extends React.Component{
         console.log(res.results[0].address_components[0].long_name)
         // this.context.
       } catch(err){
-        console.log(err.message)
+        console.log(err)
       }
       this.setState({loading: false})
     }
 
     const error = (err) => {
-      console.log(err)
+      // console.log('ERROR')
+      // console.log(err.message)
       this.setState({loading: false})
     }
 
-    // eslint-disable-next-line no-unused-vars
-    const currLoc = navigator.geolocation.getCurrentPosition(success, error, options)
+    navigator.geolocation.getCurrentPosition(success, error, options)
   }
 
   render(){
