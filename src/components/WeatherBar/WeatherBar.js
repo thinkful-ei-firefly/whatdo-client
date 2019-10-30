@@ -13,7 +13,8 @@ export default class WeatherBar extends React.Component {
   render() {
     const dailyWeather = this.context.weather.filter(snapshot => {
       const dateTime = new Date(snapshot.dt);
-      return dateTime.toLocaleDateString() === this.context.date;
+      const searchDate = new Date(`${this.context.date}T12:00:00`);
+      return dateTime.toLocaleDateString() === searchDate.toLocaleDateString();
     });
 
     if (dailyWeather.length > 0) {

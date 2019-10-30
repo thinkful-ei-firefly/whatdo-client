@@ -86,6 +86,9 @@ class App extends React.Component {
         city: weatherJsonData.city.name,
         weather: weatherReport,
         events: eventList,
+        zipCode,
+        distance,
+        date,
         pageNum: 1,
         pageCount: eventJsonData.page_count
       };
@@ -105,7 +108,7 @@ class App extends React.Component {
         const eventJsonData = await EventApiService.eventSearch(
           zipCode,
           distance,
-          eventDataHelpers.searchDateStr(date),
+          date,
           categories,
           pageNum + 1,
           10
@@ -133,7 +136,7 @@ class App extends React.Component {
         const eventJsonData = await EventApiService.eventSearch(
           zipCode,
           distance,
-          eventDataHelpers.searchDateStr(date),
+          date,
           categories,
           pageNum - 1,
           10
