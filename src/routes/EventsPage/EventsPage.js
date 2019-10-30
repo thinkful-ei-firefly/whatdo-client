@@ -13,7 +13,7 @@ export default class EventsPage extends React.Component {
     ev.preventDefault();
     const zipCode = this.context.zipCode;
     const distance = this.context.distance;
-    const date = new Date(`${this.context.date}T12:00:00`);
+    const date = this.context.date;
 
     const {
       music,
