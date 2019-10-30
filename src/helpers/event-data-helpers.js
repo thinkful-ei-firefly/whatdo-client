@@ -18,6 +18,7 @@ const eventDataHelpers = {
   },
 
   parseEventList (json) {
+    if (!json.events) return [];
     const eventData = json.events.event.map(event => {
       let description = event.description || 'Visit the site for more information!'
       description = this.strip(description)
