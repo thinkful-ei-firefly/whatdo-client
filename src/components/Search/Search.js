@@ -1,7 +1,7 @@
-import React from 'react'
-import './Search.css'
-import SearchContext from '../../contexts/SearchContext'
-import CurrLocBtn from '../CurrLocBtn/CurrLocBtn'
+import React from 'react';
+import './Search.css';
+import SearchContext from '../../contexts/SearchContext';
+import CurrLocBtn from '../CurrLocBtn/CurrLocBtn';
 
 export default class Search extends React.Component {
   static contextType = SearchContext;
@@ -15,19 +15,31 @@ export default class Search extends React.Component {
     const date = new Date(`${ev.target.date.value}T12:00:00`);
 
     let categories = [];
+    const prettyCategories = [];
 
     for (let i = 1; i <= 6; i++) {
-      if (ev.target[`box${i}`].checked)
-        categories.push(`${ev.target[`box${i}`].value}`);
+      if (ev.target[`box${i}`].checked) {
+        const category = `${ev.target[`box${i}`].value}`;
+        let prettified = category.replace(/_/g, ' ');
+        prettified = prettified.replace(/,/g, ', ');
+        categories.push(category);
+        prettyCategories.push(prettified);
+      }
     }
-
+    console.log(prettyCategories);
     categories = categories.join();
 
     if (!categories)
       categories =
         'music,sports,outdoors_recreation,attractions,performing_arts,comedy,food,singles_social,festivals_parades,holiday';
 
-    this.context.apiSearch(zipCode, distance, date, categories);
+    this.context.apiSearch(
+      zipCode,
+      distance,
+      date,
+      categories,
+      prettyCategories
+    );
     //once SearchResults page is hooked up to context, modify apiSearch to return a promise
     //then add a .then chain to history.push the user to the results page
     this.props.handleSubmit();
