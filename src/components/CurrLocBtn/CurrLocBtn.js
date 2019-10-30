@@ -1,11 +1,11 @@
-import React from 'react'
-import GeocodingApiService from '../../services/geocoding-api-service'
-// import {SearchProvider} from '../../contexts/SearchContext'
+import React from 'react';
+import GeocodingApiService from '../../services/geocoding-api-service';
+import SearchContext from '../../contexts/SearchContext';
 
-import './CurrLocBtn.css'
+import './CurrLocBtn.css';
 
 export default class CurrLocBtn extends React.Component {
-  // static contextType = SearchContext
+  static contextType = SearchContext
   state = { loading: false, enableOutline: false }
 
   getLocation = () => {
@@ -15,19 +15,19 @@ export default class CurrLocBtn extends React.Component {
       timeout: 5000,
       enableHighAccuracy: false,
       maximumAge: 0
-    }
+    };
 
     const success = async pos => {
-      const { latitude, longitude } = pos.coords
       try {
-        const res = await GeocodingApiService.getZip(latitude, longitude)
-        console.log(res.results[0].address_components[0].long_name)
-        // this.context.
+        const { latitude, longitude } = pos.coords;
+        const res = await GeocodingApiService.getZip(latitude, longitude);
+        const zipCode = res.results[0].address_components[0].long_name;
+        this.context.setZipCode(zipCode);
+        this.setState({ loading: false });
       } catch (err) {
-        console.log(err)
+        console.log(err);
       }
-      this.setState({ loading: false })
-    }
+    };
 
     const error = err => {
       // console.log('ERROR')

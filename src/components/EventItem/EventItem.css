@@ -197,7 +197,7 @@ transition: 0.2s;
 }
 
 .EventItem__remove {
-  min-height: 60px;
+  min-height: 70px;
   margin: 0px;
   padding: 0px;
   font-family: "helvetica Neue";
@@ -255,6 +255,73 @@ transition: 0.2s;
 }
 
 .EventItem__removebtn:focus .button:before {
+  font-family: "Ionicons";
+  content: "\f141";
+  font-size: 40px;
+  top: 190%;
+  background: blue;
+}
+
+.EventItem__unfavorite {
+  min-height: 60px;
+  margin: 0px;
+  padding: 0px;
+  font-family: "helvetica Neue";
+  position: relative;
+}
+
+.EventItem__unfavoritebtn {
+  width: 200px;
+  height: 50px;
+  background-image: radial-gradient(#ff1900, rgb(255, 255, 255));
+  position: absolute;
+  left: 50%;
+  bottom: -20%;
+  transform: translate(-50%, -50%);
+  border-radius: 3px;
+  overflow: hidden;
+  cursor: pointer;
+  color: white;
+  font-size: large;
+  font-weight: bold;
+}
+.EventItem__unfavoritebtn:after,
+.EventItem__unfavoritebtn:before {
+  content: " Remove From Favorites";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transition: all 0.3s;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+.EventItem__unfavoritebtn:hover:after {
+  top: -60%;
+}
+.EventItem__unfavoritebtn:before {
+  font-family: "Ionicons";
+  content: "\f252";
+  font-size: 40px;
+  top: 190%;
+}
+.EventItem__unfavoritebtn:hover:before {
+  top: 50%;
+}
+
+.EventItem__unfavoritebtn:hover {
+  width: 70px;
+  transition: 0.5s;
+  border-radius: 70px;
+  /* transition-delay: 1s; */
+}
+
+.EventItem:hover .EventItem__unfavoritebtn {
+  bottom: -20%;
+  transition: 1s;
+  transition-delay: 1s;
+}
+
+.EventItem__unfavoritebtn:focus .button:before {
   font-family: "Ionicons";
   content: "\f141";
   font-size: 40px;

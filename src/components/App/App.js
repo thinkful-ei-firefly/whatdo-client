@@ -193,6 +193,10 @@ class App extends React.Component {
     this.setState({ [key]: !this.state[key] });
   };
 
+  setZipCode = zipCode => {
+    this.setState({ zipCode });
+  };
+
   render() {
     const searchContextValue = {
       city: this.state.city,
@@ -215,6 +219,7 @@ class App extends React.Component {
       removeEvent: this.removeEvent,
       setSearchTerm: this.setSearchTerm,
       setChecked: this.setChecked,
+      setZipCode: this.setZipCode,
       pageNum: this.state.pageNum,
       pageCount: this.state.pageCount,
       prevPage: this.prevPage,
@@ -228,7 +233,10 @@ class App extends React.Component {
           <Switch>
             <Route exact path={'/'} component={LandingPage} />
             <PublicOnlyRoute path={'/signUp'} component={SignUpPage} />
-            <PublicOnlyRoute path={'/signIn'} component={() => <SignInPage getFavs={this.getSavedEvents} />} />
+            <PublicOnlyRoute
+              path={'/signIn'}
+              component={() => <SignInPage getFavs={this.getSavedEvents} />}
+            />
             <Route path={'/eventsPage'} component={EventsPage} />
             <PrivateOnlyRoute path={'/eventPage'} component={EventPage} />
             <PrivateOnlyRoute path={'/myEventsPage'} component={MyEventsPage} />
