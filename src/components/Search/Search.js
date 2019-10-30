@@ -8,52 +8,28 @@ export default class Search extends React.Component {
 
   handleSubmit(ev) {
     ev.preventDefault();
-    // console.log('form submitted!')
-    // console.log(ev.target.date.value)
-    const zipCode = ev.target.zipCode.value;
-    const distance = ev.target.distance.value;
-    const date = new Date(`${ev.target.date.value}T12:00:00`);
+    const zipCode = this.context.zipCode;
+    const distance = this.context.distance;
+    const date = new Date(`${this.context.date}T12:00:00`);
 
     let categories = [];
-    const prettyCategories = [];
 
     for (let i = 1; i <= 6; i++) {
-      if (ev.target[`box${i}`].checked) {
-        const category = `${ev.target[`box${i}`].value}`;
-        let prettified = category.replace(/_/g, ' ');
-        prettified = prettified.replace(/,/g, ', ');
+      if (this.context[`box${i}`].checked) {
+        const category = `${this.context[`box${i}`]}`;
         categories.push(category);
-        prettyCategories.push(prettified);
       }
     }
-    console.log(prettyCategories);
     categories = categories.join();
 
     if (!categories)
       categories =
         'music,sports,outdoors_recreation,attractions,performing_arts,comedy,food,singles_social,festivals_parades,holiday';
 
-    this.context.apiSearch(
-      zipCode,
-      distance,
-      date,
-      categories,
-      prettyCategories
-    );
+    this.context.apiSearch(zipCode, distance, date, categories);
     //once SearchResults page is hooked up to context, modify apiSearch to return a promise
     //then add a .then chain to history.push the user to the results page
     this.props.handleSubmit();
-  }
-
-  getDate() {
-    const today = new Date();
-    const date =
-      today.getFullYear() +
-      '-' +
-      (today.getMonth() + 1) +
-      '-' +
-      today.getDate();
-    return date;
   }
 
   render() {
@@ -68,10 +44,10 @@ export default class Search extends React.Component {
 
           <form className="form" onSubmit={ev => this.handleSubmit(ev)}>
             {/*
-      <div role='alert' className='alert' >
-          {error && <p>{error}</p>}
-        </div>
-      */}
+              <div role="alert" className="alert">
+                {error && <p>{error}</p>}
+              </div>
+            */}
 
             <div className="form-section">
               <input
@@ -80,6 +56,8 @@ export default class Search extends React.Component {
                 id="zipCode"
                 name="zipCode"
                 autoComplete="off"
+                value={this.context.zipCode}
+                onChange={this.context.setZipCode}
                 required
               />
               <label className="label-name" htmlFor="zipCode">
@@ -95,7 +73,8 @@ export default class Search extends React.Component {
                 id="distance"
                 name="distance"
                 autoComplete="off"
-                defaultValue="10"
+                value={this.context.distance}
+                onChange={this.context.setDistance}
                 required
               />
               <label className="label-name" htmlFor="distance">
@@ -109,9 +88,8 @@ export default class Search extends React.Component {
                 type="date"
                 id="date"
                 name="date"
-                defaultValue={this.getDate()}
-                // min="2019-01-01"
-                // max="2019-12-31"
+                value={this.context.date}
+                onChange={this.context.setDate}
               />
             </div>
             <h4>Filter by event type</h4>

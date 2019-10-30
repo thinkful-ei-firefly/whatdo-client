@@ -1,34 +1,32 @@
-import React from "react";
-import SearchContext from "../../contexts/SearchContext";
+import React from 'react';
+import SearchContext from '../../contexts/SearchContext';
 
-import Search from "../../components/Search/Search";
-import SearchResults from "../../components/SearchResults/SearchResults";
-import WeatherBar from "../../components/WeatherBar/WeatherBar";
-import "./EventsPage.css";
-import CurrLocBtn from "../../components/CurrLocBtn/CurrLocBtn";
+import SearchResults from '../../components/SearchResults/SearchResults';
+import WeatherBar from '../../components/WeatherBar/WeatherBar';
+import './EventsPage.css';
+import CurrLocBtn from '../../components/CurrLocBtn/CurrLocBtn';
 
 export default class EventsPage extends React.Component {
   static contextType = SearchContext;
 
   handleSubmit(ev) {
     ev.preventDefault();
-    console.log("form submitted!");
-    const zipCode = ev.target.zipCode.value;
-    const distance = ev.target.distance.value;
-    const date = new Date(ev.target.date.value);
+    const zipCode = this.context.zipCode;
+    const distance = this.context.distance;
+    const date = new Date(this.context.date);
 
     let categories = [];
 
-    for (let i = 1; i <= 6; i++) {
-      if (ev.target[`box${i}`].checked)
-        categories.push(`${ev.target[`box${i}`].value}`);
-    }
+    // for (let i = 1; i <= 6; i++) {
+    //   if (this.context.[`box${i}`].checked)
+    //     categories.push(`${ev.target[`box${i}`]}`);
+    // }
 
     categories = categories.join();
 
     if (!categories)
       categories =
-        "music,sports,outdoors_recreation,attractions,performing_arts,comedy,food,singles_social,festivals_parades,holiday";
+        'music,sports,outdoors_recreation,attractions,performing_arts,comedy,food,singles_social,festivals_parades,holiday';
 
     this.context.apiSearch(zipCode, distance, date, categories);
     //once SearchResults page is hooked up to context, modify apiSearch to return a promise
@@ -43,7 +41,7 @@ export default class EventsPage extends React.Component {
             className="EventsPage__form "
             onSubmit={ev => this.handleSubmit(ev)}
           >
-            {/**
+            {/*
       <div role='alert' className='alert' >
           {error && <p>{error}</p>}
         </div>
@@ -53,26 +51,28 @@ export default class EventsPage extends React.Component {
               <input
                 type="text"
                 className="input"
-                defaultValue="33301"
                 id="zipCode"
                 name="zipCode"
                 autoComplete="off"
+                value={this.context.zipCode}
+                onChange={this.context.setZipCode}
                 required
               />
               <label className="label-name" htmlFor="zipCode">
                 <span className="content-name">Enter your zipcode</span>
               </label>
-              <CurrLocBtn/>
+              <CurrLocBtn />
             </div>
 
             <div className="EventsPage__form-section">
               <input
                 type="text"
                 className="input"
-                defaultValue="5"
                 id="distance"
                 name="distance"
                 autoComplete="off"
+                value={this.context.distance}
+                onChange={this.context.setDistance}
                 required
               />
               <label className="label-name" htmlFor="distance">
@@ -86,13 +86,12 @@ export default class EventsPage extends React.Component {
                 type="date"
                 id="date"
                 name="date"
-                defaultValue="2019-10-29"
-                min="2019-01-01"
-                max="2019-12-31"
+                value={this.context.date}
+                onChange={this.context.setDate}
               />
             </div>
 
-            <div className="EventsPage__checkbox__section" role="checkbox">
+            <div className="EventsPage__checkbox__section">
               <input
                 type="checkbox"
                 id="box1"
@@ -120,7 +119,7 @@ export default class EventsPage extends React.Component {
                 name="categories"
                 value="performing_arts,comedy"
               ></input>
-              <label htmlFor="box4">Arts</label>
+              <label htmlFor="box4">Performing Arts</label>
               <input
                 type="checkbox"
                 id="box5"

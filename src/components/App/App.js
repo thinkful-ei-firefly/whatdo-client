@@ -28,21 +28,32 @@ class App extends React.Component {
     city: 'Tucker',
     zipCode: '30084',
     weather: [],
-    date: new Date(Date.now()),
+    date: this.getDate(),
     events: [],
     pageNum: 1,
     pageCount: 1,
     savedEvents: [],
     distance: 10,
-    categories: ''
+    categories: '',
+    prettyCategories: ''
   };
+
+  getDate() {
+    const today = new Date();
+    const date =
+      today.getFullYear() +
+      '-' +
+      (today.getMonth() + 1) +
+      '-' +
+      today.getDate();
+    return date;
+  }
 
   apiSearch = async (
     zipCode,
     distance = 10,
     date,
     categories = eventDataHelpers.allCatStr(),
-    prettyCategories,
     pageNum = 1,
     pageSize = 10
   ) => {
@@ -69,7 +80,7 @@ class App extends React.Component {
         city: weatherJsonData.city.name,
         zipCode,
         distance,
-        categories: prettyCategories,
+        categories,
         weather: weatherReport,
         date: date,
         events: eventList,
@@ -170,7 +181,20 @@ class App extends React.Component {
     }
   };
 
+  setZipCode = ev => {
+    this.setState({ zipCode: ev.target.value });
+  };
+
+  setDistance = ev => {
+    this.setState({ distance: ev.target.value });
+  };
+
+  setDate = ev => {
+    this.setState({ date: ev.target.value });
+  };
+
   render() {
+    console.log(this.state.date);
     const searchContextValue = {
       city: this.state.city,
       zipCode: this.state.zipCode,
@@ -184,6 +208,9 @@ class App extends React.Component {
       getSavedEvents: this.getSavedEvents,
       saveEvent: this.saveEvent,
       removeEvent: this.removeEvent,
+      setZipCode: this.setZipCode,
+      setDistance: this.setDistance,
+      setDate: this.setDate,
       pageNum: this.state.pageNum,
       pageCount: this.state.pageCount,
       prevPage: this.prevPage,
