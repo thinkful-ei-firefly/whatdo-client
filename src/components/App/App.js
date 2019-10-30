@@ -197,7 +197,7 @@ class App extends React.Component {
           <Switch>
             <Route exact path={'/'} component={LandingPage} />
             <PublicOnlyRoute path={'/signUp'} component={SignUpPage} />
-            <PublicOnlyRoute path={'/signIn'} component={SignInPage} />
+            <PublicOnlyRoute path={'/signIn'} component={() => <SignInPage getFavs={this.getSavedEvents} />} />
             <Route path={'/eventsPage'} component={EventsPage} />
             <PrivateOnlyRoute path={'/eventPage'} component={EventPage} />
             <PrivateOnlyRoute path={'/myEventsPage'} component={MyEventsPage} />
