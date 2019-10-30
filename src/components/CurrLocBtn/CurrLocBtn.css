@@ -1,0 +1,11 @@
+.CurrLocBtn{
+  width: 35px;
+  height: 35px;
+  background-image: url(../../assets/icons/loc.svg);
+  background-size: cover;
+  border: none;
+  border-radius: 10px;
+  position: absolute;
+  top: 10%;
+  left: 82%;
+}
