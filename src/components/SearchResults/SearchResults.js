@@ -32,7 +32,7 @@ export default class SearchResults extends React.Component {
       if (value === true) {
         let tag = '';
 
-        if (key === performingArts) {
+        if (key === 'performingArts') {
           tag = 'performing arts';
         } else {
           tag = key;
