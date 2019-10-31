@@ -33,7 +33,7 @@ export default class PageBar extends React.Component {
           disabled={this.state.loading}
           onClick={this.handlePagePrev}
         >
-          {'<< Prev'}
+          <a href="#scroll-target">{'<< Prev'}</a>          
         </button>
 
         <span className="pagination-page-num">  -  Page {this.context.pageNum} of {this.context.pageCount}  -  </span>
@@ -43,7 +43,7 @@ export default class PageBar extends React.Component {
           disabled={this.state.loading}
           onClick={this.handlePageNext}
         >
-          {'Next >>'}
+          <a href="#scroll-target">{'Next >>'}</a>
         </button>
       </div>
     );
