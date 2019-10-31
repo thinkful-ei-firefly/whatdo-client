@@ -1,11 +1,95 @@
-.CurrLocBtn{
+.CurrLocBtn {
   width: 35px;
   height: 35px;
-  background-image: url(../../assets/icons/loc.svg);
-  background-size: cover;
   border: none;
-  border-radius: 10px;
+  /* border-radius: 10px; */
   position: absolute;
   top: 10%;
   left: 82%;
+  padding: 0;
+  background-color: transparent;
 }
+.no-focus-CurrLocBtn:focus{
+  outline: none;
+}
+.CurrLocBtn:hover{
+  cursor: pointer;
+}
+
+
+.loc{
+  overflow: visible;
+}
+.loc-mid{
+  animation: mid-pulse 2s linear 0s infinite alternate;
+  transform-origin: 50% 50%;
+}
+
+@keyframes mid-pulse {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.4);
+  }
+}
+
+.loc-dots {
+  animation: pulse-dots 2s linear 0s infinite alternate;
+  transform-origin: 50% 50%;
+  transform: scale(1.4);
+}
+
+@keyframes pulse-dots{
+  from{transform: scale(.6);}
+  to{transform: scale(1.4);}
+}
+
+.loc-arrows {
+  /* animation: pulse-arrows 2s linear 0s infinite normal; */
+  transform-origin: 50% 50%;
+}
+@keyframes pulse-arrows{
+  from{transform: scale(1);}
+  to{transform: scale(1);}
+}
+/* LOADING LOCATION */
+.loc-mid-loading{
+  animation: mid 3s linear 0s infinite normal;
+  transform-origin: 50% 50%;
+  /* transform: scale(); */
+}
+
+.loc-mid-border-loading {
+  animation: mid 3s linear 0s infinite normal;
+  transform-origin: 50% 50%;
+}
+
+@keyframes mid {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loc-dots-loading {
+  animation: spin-dots 3s linear 0s infinite reverse;
+  transform-origin: 50% 50%;
+}
+
+@keyframes spin-dots{
+  from{transform: rotate(0deg);}
+  to{transform: rotate(360deg);}
+}
+
+.loc-arrows-loading {
+  animation: spin-arrows 2s linear 0s infinite normal;
+  transform-origin: 50% 50%;
+}
+@keyframes spin-arrows{
+  from{transform: rotate(0deg);}
+  to{transform: rotate(360deg);}
+}
+
