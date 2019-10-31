@@ -28,7 +28,7 @@ export default class WeatherBar extends React.Component {
         <WeatherIcon key={snapshot.date_time} {...snapshot} />
       ));
       return (
-        <div className="weatherbar">
+        <div className="weatherbar" id="scroll-target">
           <h2 className="weatherbar-header">
             Upcoming weather near {this.context.zipCode} on {this.context.date}
           </h2>
@@ -37,7 +37,7 @@ export default class WeatherBar extends React.Component {
       );
     } else {
       return (
-        <div className="weatherbar">
+        <div className="weatherbar" id="scroll-target">
           <h2>No Weather data available for {this.context.date}</h2>
         </div>
       );
