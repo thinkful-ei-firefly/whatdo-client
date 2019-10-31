@@ -1,0 +1,44 @@
+.LoadingLogin {
+  text-align: center;
+  background-image: linear-gradient(to top, #ffffffda, #73a7d7da, #ffffffda);
+  margin: 10px auto;
+  max-width: 800px;
+  min-height: 300px;
+  min-width: 80%;
+  border-radius: 7px;
+}
+
+.lock-container {
+  margin: 100px auto;
+  position: relative;
+  width: 200px;
+  height: 200px;
+  /* border: black 1px solid; */
+}
+
+.lock-svg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.lock-combo{
+  transform-origin: 50% 50%;
+  animation: unlock 4s linear 0s infinite normal;
+}
+
+@keyframes unlock{
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+  /* 0%{transform: rotate(0deg);}
+  25%{transform: rotate(180deg);}
+  50%{transform: rotate(90deg);}
+  75%{transform: rotate(0deg);}
+  100%{transform: rotate(35deg);} */
+}
