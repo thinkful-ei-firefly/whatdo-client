@@ -119,6 +119,10 @@ transition: 0.2s;
   /* z-index: 2; */
 }
 
+.EventItem__learnMore {
+  padding-top: 5px;
+}
+
 .EventItem__favorite {
   min-height: 60px;
   margin: 0px;
@@ -129,12 +133,12 @@ transition: 0.2s;
 .button {
   width: 200px;
   height: 50px;
-  background-image: radial-gradient(#2196f3, rgb(255, 255, 255));
+  background-image: radial-gradient(#2196f3, rgb(241, 251, 253));
   position: absolute;
   left: 50%;
   bottom: -160%;
   transform: translate(-50%, -50%);
-  border-radius: 3px;
+  border-radius: 7px;
   overflow: hidden;
   cursor: pointer;
   color: white;
@@ -171,7 +175,7 @@ transition: 0.2s;
 }
 
 .button:hover {
-  width: 70px;
+  width: 90px;
   /* transition: .05s; */
   border-radius: 70px;
 }
@@ -208,12 +212,12 @@ transition: 0.2s;
 .EventItem__removebtn {
   width: 200px;
   height: 50px;
-  background-image: radial-gradient(#ff1900, rgb(255, 255, 255));
+  background-image: radial-gradient(#ff1900, rgb(241, 251, 253));
   position: absolute;
   left: 50%;
   bottom: -20%;
   transform: translate(-50%, -50%);
-  border-radius: 3px;
+  border-radius: 7px;
   overflow: hidden;
   cursor: pointer;
   color: white;
@@ -280,11 +284,11 @@ transition: 0.2s;
   left: 50%;
   bottom: -20%;
   transform: translate(-50%, -50%);
-  border-radius: 3px;
+  border-radius: 7px;
   overflow: hidden;
   cursor: pointer;
   color: white;
-  font-size: large;
+  font-size: medium;
   font-weight: bold;
 }
 .EventItem__unfavoritebtn:after,
@@ -311,7 +315,7 @@ transition: 0.2s;
 }
 
 .EventItem__unfavoritebtn:hover {
-  width: 70px;
+  width: 110px;
   transition: 0.5s;
   border-radius: 70px;
   /* transition-delay: 1s; */
@@ -329,4 +333,64 @@ transition: 0.2s;
   font-size: 40px;
   top: 190%;
   background: blue;
+}
+
+.EventItem__goLogin {
+  min-height: 60px;
+  margin: 0px;
+  padding: 0px;
+  font-family: "helvetica Neue";
+  position: relative;
+}
+
+.EventItem__goLoginbtn {
+  width: 200px;
+  min-height: 50px;
+  background-image: radial-gradient(rgb(255, 255, 255), #009423);
+  position: absolute;
+  left: 50%;
+  bottom: -20%;
+  transform: translate(-50%, -50%);
+  border-radius: 7px;
+  overflow: hidden;
+  cursor: pointer;
+  color: rgb(3, 30, 80);
+  /* font-size: large; */
+  font-weight: bold;
+}
+.EventItem__goLoginbtn:after,
+.EventItem__goLoginbtn:before {
+  content: "Login to Save Favorites";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transition: all 0.3s;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+.EventItem__goLoginbtn:hover:after {
+  top: -200%;
+}
+.EventItem__goLoginbtn:before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f007";
+  font-size: 40px;
+  top: 190%;
+  /* font-weight: 900; */
+}
+.EventItem__goLoginbtn:hover:before {
+  top: 50%;
+}
+
+.EventItem__goLoginbtn:hover {
+  width: 110px;
+  transition: 0.5s;
+  border-radius: 70px;
+  /* transition-delay: 1s; */
+}
+
+.EventItem:hover .EventItem__goLoginbtn {
+  bottom: -20%;
+  transition: 1s;
+  transition-delay: 1s;
 }

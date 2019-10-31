@@ -12,9 +12,7 @@ export default class EventItem extends React.Component {
       //if not logged in, render a "login to save favorites" button that links to the login page
       return (
         <div className="EventItem__goLogin">
-          <Link className="button_login" to="/signIn">
-            Login to Save Favorites
-          </Link>
+          <Link className="EventItem__goLoginbtn" to="/signIn"></Link>
         </div>
       );
     }
