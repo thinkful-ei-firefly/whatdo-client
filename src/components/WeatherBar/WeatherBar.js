@@ -11,6 +11,8 @@ export default class WeatherBar extends React.Component {
   }
 
   render() {
+    const { zipCode, date } = this.context.searchedTerms;
+
     const dailyWeather = this.context.weather.filter(snapshot => {
       const dateTime = new Date(snapshot.dt);
       const searchDate = new Date(`${this.context.date}T12:00:00`);
@@ -24,7 +26,7 @@ export default class WeatherBar extends React.Component {
       return (
         <div className="weatherbar">
           <h2 className="weatherbar-header">
-            Upcoming weather near {this.context.zipCode} on {this.context.date}
+            Upcoming weather near {zipCode} on {date}
           </h2>
           {weatherSnapshots}
         </div>
@@ -32,7 +34,7 @@ export default class WeatherBar extends React.Component {
     } else {
       return (
         <div className="weatherbar">
-          <h2>No Weather data available for {this.context.date}</h2>
+          <h2>No Weather data available for {date}</h2>
         </div>
       );
     }

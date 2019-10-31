@@ -27,6 +27,17 @@ class App extends React.Component {
   state = {
     city: 'Tucker',
     zipCode: '30084',
+    searchedTerms: {
+      zipCode: '30084',
+      distance: 10,
+      date: this.getDate(),
+      music: false,
+      attractions: false,
+      bars: false,
+      sports: false,
+      performingArts: false,
+      festivals: false
+    },
     distance: 10,
     date: this.getDate(),
     categories: '',
@@ -82,13 +93,32 @@ class App extends React.Component {
         weatherJsonData
       );
 
+      const {
+        music,
+        sports,
+        attractions,
+        performingArts,
+        bars,
+        festivals
+      } = this.state;
+
+      const searchedTerms = {
+        zipCode,
+        distance,
+        date,
+        music,
+        sports,
+        attractions,
+        performingArts,
+        bars,
+        festivals
+      };
+
       const newState = {
         city: weatherJsonData.city.name,
         weather: weatherReport,
         events: eventList,
-        zipCode,
-        distance,
-        date,
+        searchedTerms,
         pageNum: 1,
         pageCount: eventJsonData.page_count
       };
@@ -216,6 +246,7 @@ class App extends React.Component {
       sports: this.state.sports,
       performingArts: this.state.performingArts,
       festivals: this.state.festivals,
+      searchedTerms: this.state.searchedTerms,
       apiSearch: this.apiSearch,
       getSavedEvents: this.getSavedEvents,
       saveEvent: this.saveEvent,

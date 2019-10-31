@@ -9,14 +9,17 @@ export default class SearchResults extends React.Component {
 
   render() {
     const events = this.context.events;
+
     const {
+      zipCode,
+      distance,
       music,
       sports,
       attractions,
       performingArts,
       bars,
       festivals
-    } = this.context;
+    } = this.context.searchedTerms;
 
     const checkboxes = {
       music,
@@ -76,8 +79,8 @@ export default class SearchResults extends React.Component {
       return (
         <div className="SearchResults">
           <h2>
-            Search results for events matching {categories} within{' '}
-            {this.context.distance} miles of {this.context.city}
+            Search results for events matching {categories} within {distance}{' '}
+            miles of {this.context.city}
           </h2>
           <ul>{eventList}</ul>
           <PageBar />
@@ -86,9 +89,7 @@ export default class SearchResults extends React.Component {
     } else {
       return (
         <div className="SearchResults">
-          <h2>
-            Sorry, we couldn't find any events near {this.context.zipCode}
-          </h2>
+          <h2>Sorry, we couldn't find any events near {zipCode}</h2>
         </div>
       );
     }
