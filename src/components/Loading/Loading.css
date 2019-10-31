@@ -1,0 +1,8 @@
+.Loading{
+  text-align: center;
+  background-image: linear-gradient(to top, #ffffffda, #73a7d7da, #ffffffda);
+  margin: 10px auto;
+  max-width: 800px;
+  min-height: 300px;
+  border-radius: 7px;
+}
