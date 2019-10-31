@@ -7,7 +7,7 @@ export default class WeekendRecsBtn extends React.Component {
 
   static contextType = SearchContext
 
-  state = { zip: ''}
+  state = { zip: '' }
 
   getLocation = async () => {
     this.setState({loading: true})
@@ -47,10 +47,10 @@ export default class WeekendRecsBtn extends React.Component {
     date = date.toISOString().slice(0,10)
 
     //get the favorite categories of the user
-    const userFavorites = 'music,festivals_parades,holiday'
+    const userFavorites = this.context.categories || 'music,sports,outdoors_recreation,attractions,performing_arts,comedy,food,singles_social,festivals_parades,holiday'
     
     //get the current/registered zip code of the user
-    const zipCode = this.state.zip || '05477'
+    const zipCode = this.state.zip || this.context.zipCode
     
     //pass everything to the search
     this.context.apiSearch(zipCode, 15, date, userFavorites)
