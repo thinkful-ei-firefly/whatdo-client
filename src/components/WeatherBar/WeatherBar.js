@@ -11,7 +11,7 @@ export default class WeatherBar extends React.Component {
   }
 
   render() {
-    const { zipCode, date } = this.context.searchedTerms;
+    const { zipCode } = this.context.searchedTerms;
 
     const dailyWeather = this.context.weather.filter(snapshot => {
       const dateTime = new Date(snapshot.dt);
@@ -23,8 +23,6 @@ export default class WeatherBar extends React.Component {
       );
     });
 
-    console.log(dailyWeather);
-
     if (dailyWeather.length > 0) {
       const weatherSnapshots = dailyWeather.map(snapshot => (
         <WeatherIcon key={snapshot.date_time} {...snapshot} />
@@ -32,7 +30,7 @@ export default class WeatherBar extends React.Component {
       return (
         <div className="weatherbar" id="scroll-target">
           <h2 className="weatherbar-header">
-            Upcoming weather near {zipCode} on {date}
+            Upcoming weather near {zipCode} on {this.context.date}
           </h2>
           {weatherSnapshots}
         </div>
@@ -40,7 +38,7 @@ export default class WeatherBar extends React.Component {
     } else {
       return (
         <div className="weatherbar" id="scroll-target">
-          <h2>No Weather data available for {date}</h2>
+          <h2>No Weather data available for {this.context.date}</h2>
         </div>
       );
     }
