@@ -8,21 +8,21 @@
   background: url("Desktop-1.png") no-repeat fixed center;
   background-repeat: no-repeat;
   background-size: fixed;
-  animation: slide 20s eas;
+  animation: landingPageSlide 25s ease infinite;
 }
 
-@keyframes slide {
+@keyframes landingPageSlide {
   0% {
-    background: url("topLeft.jpg") top;
+    background: url("topLeft.jpg") bottom;
   }
   25% {
-    background: url("topRight.jpg") left;
+    background: url("topRight.jpg") bottom;
   }
   50% {
     background: url("downLeft.jpg") bottom;
   }
   100% {
-    background: url("downRight.jpg") right;
+    background: url("downRight.jpg") bottom;
   }
 }
 
