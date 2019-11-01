@@ -5,8 +5,33 @@
 
 .pagination-prev-next-button {
   /* button styles */
+  padding: 10px 20px;
+  /* color: white; */
+  /* border: black 3px solid; */
+  border-radius:20px ;
+  background-color: #03a9f4;
+}
+
+.pagination-prev-next-button:hover{
+  cursor: pointer;
+}
+
+.pagination-prev-next-button a{
+  font-size: 17px;
+  color: white;
+  height: 100%;
+  width: 100%;
 }
 
 .pagination-page-num {
   /* page number styles */
+  /* font-weight: bold; */
+  background-image: radial-gradient(#487eb0da, rgb(255, 255, 255));
+  border-radius:20px ;
+  padding: 10px 20px;
+  margin: 10px;
+}
+
+.bold{
+  font-weight: bold;
 }
