@@ -58,12 +58,21 @@ class App extends React.Component {
 
   getDate() {
     const today = new Date();
-    let year = today.getFullYear();
-    let month = today.getMonth()+1;
-    if (month < 10) month = `0${month}`
+    let month = today.getMonth() + 1;
     let day = today.getDate();
-    if (day < 10) day = `0${day}`
-    const date =`${year}-${month}-${day}`
+
+    if (month < 10) {
+      month = '0' + month;
+    } else {
+      month = '' + month;
+    }
+    if (day < 10) {
+      day = '0' + day;
+    } else {
+      day = '' + day;
+    }
+
+    const date = today.getFullYear() + '-' + month + '-' + day;
     return date;
   }
 
@@ -75,7 +84,7 @@ class App extends React.Component {
     pageNum = 1,
     pageSize = 10
   ) => {
-    this.toggleLoading()
+    this.toggleLoading();
     //send api request to get weather
     //send api request to get events
     //update state
@@ -125,10 +134,8 @@ class App extends React.Component {
         pageCount: eventJsonData.page_count
       };
 
-      
       this.setState(newState);
-      this.toggleLoading()
-      
+      this.toggleLoading();
     } catch (err) {
       console.log(err);
     }
@@ -236,8 +243,8 @@ class App extends React.Component {
   };
 
   toggleLoading = () => {
-    this.setState({loading: !this.state.loading})
-  }
+    this.setState({ loading: !this.state.loading });
+  };
 
   render() {
     const searchContextValue = {
