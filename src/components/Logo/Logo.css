@@ -1,98 +1,94 @@
 #logo {
-    /* position: absolute; */
-    /* margin: 50%; */
-    /* margin-top: 2%; */
-    animation: fill 0.5s ease forwards  3s;
-       /* animation: anim 7s linear infinite; */
-
+  /* position: absolute; */
+  /* margin: 50%; */
+  /* margin-top: 2%; */
+  animation: fill 0.5s ease forwards 3s;
+  /* animation: anim 7s linear infinite; */
 }
 @keyframes anim {
-    0% {
-      transform: scale(1);
-      
-    }
-    50% {
-      transform: scale(1.1);
-    }
-    100%{
-      transform: scale(1);
-    }
+  0% {
+    transform: scale(1);
   }
-
-
-#logo path:nth-child(1){
-    stroke-dasharray: 801px;
-    stroke-dashoffset: 801px;
-    animation: line-anim 2s ease forwards;
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
-#logo path:nth-child(2){
-    stroke-dasharray: 534px;
-    stroke-dashoffset: 534px;
-    animation: line-anim 2s ease forwards 0.3s;
+#logo path:nth-child(1) {
+  stroke-dasharray: 801px;
+  stroke-dashoffset: 801px;
+  animation: line-anim 2s ease forwards;
 }
 
-#logo path:nth-child(3){
-    stroke-dasharray: 490px;
-    stroke-dashoffset: 490px;
-    animation: line-anim 2s ease forwards 0.9s;
+#logo path:nth-child(2) {
+  stroke-dasharray: 534px;
+  stroke-dashoffset: 534px;
+  animation: line-anim 2s ease forwards 0.3s;
 }
 
-#logo path:nth-child(4){
-    stroke-dasharray: 336px;
-    stroke-dashoffset: 336px;
-    animation: line-anim 2s ease forwards 1.5s;
+#logo path:nth-child(3) {
+  stroke-dasharray: 490px;
+  stroke-dashoffset: 490px;
+  animation: line-anim 2s ease forwards 0.9s;
 }
 
-#logo path:nth-child(5){
-    stroke-dasharray: 571px;
-    stroke-dashoffset: 571px;
-    animation: line-anim 2s ease forwards 2.0s;
+#logo path:nth-child(4) {
+  stroke-dasharray: 336px;
+  stroke-dashoffset: 336px;
+  animation: line-anim 2s ease forwards 1.5s;
 }
 
-#logo path:nth-child(6){
-    stroke-dasharray: 565px;
-    stroke-dashoffset: 565px;
-    animation: line-anim 2s ease forwards 2.5s;
+#logo path:nth-child(5) {
+  stroke-dasharray: 571px;
+  stroke-dashoffset: 571px;
+  animation: line-anim 2s ease forwards 2s;
 }
 
-@keyframes  line-anim{
-    to{
-        stroke-dashoffset: 0;
-    }
+#logo path:nth-child(6) {
+  stroke-dasharray: 565px;
+  stroke-dashoffset: 565px;
+  animation: line-anim 2s ease forwards 2.5s;
+}
+
+@keyframes line-anim {
+  to {
+    stroke-dashoffset: 0;
+  }
 }
 
 @keyframes fill {
-    from {
-        fill:transparent;
-    }
-    to {
-        fill:rgb(20, 18, 18);
-    }
+  from {
+    fill: transparent;
+  }
+  to {
+    fill: rgb(20, 18, 18);
+  }
 }
 
-#logo:hover path:nth-child(1){
-    fill:rgb(28, 33, 67);
-    transition: 0.2s;
+#logo:hover path:nth-child(1) {
+  fill: rgb(28, 33, 67);
+  transition: 0.2s;
 }
-#logo:hover path:nth-child(2){
-    fill:rgb(48, 55, 105);
-    transition: 0.4s;
+#logo:hover path:nth-child(2) {
+  fill: rgb(48, 55, 105);
+  transition: 0.4s;
 }
-#logo:hover path:nth-child(3){
-    fill:rgb(0, 26, 131);
-    transition: 0.6s;
+#logo:hover path:nth-child(3) {
+  fill: rgb(0, 26, 131);
+  transition: 0.6s;
 }
-#logo:hover path:nth-child(4){
-    fill:rgb(69, 82, 155);
-    transition: 0.8s;
+#logo:hover path:nth-child(4) {
+  fill: rgb(69, 82, 155);
+  transition: 0.8s;
 }
-#logo:hover path:nth-child(5){
-    fill:rgb(93, 106, 206);
-    transition: 1s;
+#logo:hover path:nth-child(5) {
+  fill: rgb(93, 106, 206);
+  transition: 1s;
 }
-#logo:hover path:nth-child(6){
-    fill:rgb(116, 131, 252);
-    transition: 1.2s;
+#logo:hover path:nth-child(6) {
+  fill: rgb(116, 131, 252);
+  transition: 1.2s;
 }
-

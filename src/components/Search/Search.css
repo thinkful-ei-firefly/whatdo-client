@@ -8,7 +8,7 @@
   background: url("Desktop-1.png") no-repeat fixed center;
   background-repeat: no-repeat;
   background-size: fixed;
-  animation: landingPageSlide 25s ease infinite;
+  /* animation: landingPageSlide 25s ease infinite; */
 }
 
 @keyframes landingPageSlide {

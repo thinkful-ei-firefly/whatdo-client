@@ -1,46 +1,50 @@
-.NotFoundPage{
-    min-height: 80vh;
-    margin: 0;
-    padding: 0;
-    font-family: "montserrat",sans-serif;
-    background-image: linear-gradient(130deg,white,#fcb6b5a4,white);
-    /* background-image: linear-gradient(125deg,#6a89cc,#e9b594); */
-
+.NotFoundPage {
+  min-height: 80vh;
+  margin: 0;
+  padding: 0;
+  font-family: "montserrat", sans-serif;
+  background-image: linear-gradient(130deg, white, #fcb6b5a4, white);
+  /* background-image: linear-gradient(125deg,#6a89cc,#e9b594); */
 }
 
-  .container{
-    width: 100%;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    text-align: center;
-    color: #343434
-  }
-  
-  .container h1{
-    font-size: 150px;
-    margin: 0;
-    font-weight: 900;
-    letter-spacing: 20px;
-    background: url(bg.jpg) center no-repeat;
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-     animation: anim 4s linear infinite;
-  }
+.container {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  color: #343434;
+}
 
-        
+.container h1 {
+  font-size: 150px;
+  margin: 0;
+  font-weight: 900;
+  letter-spacing: 20px;
+  background: url(bg.jpg) center no-repeat;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  /* animation: anim 4s ease infinite; */
+  /* animation: fill 0.5s ease forwards 3s; */
+}
 
+@keyframes fill {
+  from {
+    fill: transparent;
+  }
+  to {
+    fill: rgb(20, 18, 18);
+  }
+}
 
 @keyframes anim {
-    0% {
-      transform: scale(1);
-      
-    }
-    50% {
-      transform: scale(1.1);
-    }
-    100%{
-      transform: scale(1);
-    }
+  0% {
+    font-size: 150px;
   }
-  
+  50% {
+    font-size: 300px;
+  }
+  100% {
+    font-size: 150px;
+  }
+}

@@ -13,7 +13,7 @@
   /* background: rgb(203, 220, 252) url("Desktop-1.png") repeat 0 0; */
   background: rgb(203, 220, 252) url("Desktop-2.png") repeat 0 0;
 
-  animation: slide 30s linear infinite;
+  /* animation: slide 30s linear infinite; */
 }
 
 @keyframes slide {

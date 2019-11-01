@@ -5,7 +5,7 @@
   font-family: sans-serif;
   display: flex;
   min-height: 80vh;
-  background: rgb(196, 196, 196) url("Desktop-1.png") no-repeat fixed center;
+  background: rgb(196, 196, 196) url("Desktop-1.png") fixed center;
 }
 .box {
   width: 400px;
