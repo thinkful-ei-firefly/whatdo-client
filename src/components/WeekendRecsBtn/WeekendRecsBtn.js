@@ -47,25 +47,21 @@ export default class WeekendRecsBtn extends React.Component {
     while (date.getDay() > 0 && date.getDay() < 6) {
       date.setTime(date.getTime() + 86400000);
     }
-<<<<<<< HEAD
-    date = date.toISOString().slice(0, 10);
-=======
     let month = date.getMonth() + 1;
     let day = date.getDate();
 
     if (month < 10) {
-      month = '0' + month;
+      month = "0" + month;
     } else {
-      month = '' + month;
+      month = "" + month;
     }
     if (day < 10) {
-      day = '0' + day;
+      day = "0" + day;
     } else {
-      day = '' + day;
+      day = "" + day;
     }
 
-    date = date.getFullYear() + '-' + month + '-' + day;
->>>>>>> ff4c94ea9c892367600e6d4d01b3797a01d6ce27
+    date = date.getFullYear() + "-" + month + "-" + day;
 
     //get the favorite categories of the user
     const userFavorites =
