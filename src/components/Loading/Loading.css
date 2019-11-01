@@ -5,11 +5,11 @@
   margin: 10px auto;
   max-width: 800px;
   min-height: 300px;
-  min-width: 80%;
   border-radius: 7px;
 }
 
 .Loading-container{
+
   margin: 30px auto;
   position: relative;
   width: 200px;

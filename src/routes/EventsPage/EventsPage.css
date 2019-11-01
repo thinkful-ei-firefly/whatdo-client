@@ -252,6 +252,7 @@ EventsPage__checkbox__section input:checked:disabled + label:before {
   /* z-index: 1; */
 }
 .EventsPage__searchForm__btn:hover {
+  cursor: pointer;
   animation: animate 5s linear infinite;
 }
 @keyframes animate {

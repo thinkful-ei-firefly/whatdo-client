@@ -15,17 +15,17 @@ export default class PageBar extends React.Component {
           disabled={loading}
           onClick={this.context.prevPage}
         >
-          <a href="#scroll-target">{'<< Prev'}</a>          
+          <a href="#scroll-target"> Prev </a>          
         </button>
 
-        <span className="pagination-page-num">  -  Page {this.context.pageNum} of {this.context.pageCount}  -  </span>
+        <span className="pagination-page-num">    Page <span className="bold">{this.context.pageNum}</span> of {this.context.pageCount}   </span>
 
         <button 
           className="pagination-prev-next-button" 
           disabled={loading}
           onClick={this.context.nextPage}
         >
-          <a href="#scroll-target">{'Next >>'}</a>
+          <a href="#scroll-target">Next</a>
         </button>
       </div>
     );

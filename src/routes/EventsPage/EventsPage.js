@@ -6,6 +6,7 @@ import './EventsPage.css'
 import SearchContext from '../../contexts/SearchContext'
 import ErrorBar from '../../components/ErrorBar/ErrorBar'
 import Loading from '../../components/Loading/Loading'
+import PageBar from '../../components/PageBar/PageBar'
 
 export default class EventsPage extends React.Component {
   static contextType = SearchContext
@@ -25,6 +26,7 @@ export default class EventsPage extends React.Component {
       <div className="EventsPage">
          <SearchBar />
          {/* <Loading /> */}
+         {/* <PageBar /> */}
          {this.context.loading ? <Loading /> : this.loadingComplete()}
       </div>
     )
