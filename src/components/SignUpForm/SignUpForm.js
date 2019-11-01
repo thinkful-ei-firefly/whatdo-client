@@ -3,7 +3,7 @@ import AuthApiService from '../../services/auth-api-service'
 import { Link } from 'react-router-dom'
 import TokenService from '../../services/token-service'
 import { UserContext } from '../../contexts/UserContext'
-import Loading from '../Loading/Loading'
+import LoadingLogin from '../LoadingLogin/LoadingLogin'
 
 export default class SignUpForm extends React.Component {
   static contextType = UserContext
@@ -47,7 +47,7 @@ export default class SignUpForm extends React.Component {
     const { error, loading } = this.state
 
     if (loading) {
-      return <Loading />
+      return <LoadingLogin />
     } else {
       return (
         <div className="signup-form">

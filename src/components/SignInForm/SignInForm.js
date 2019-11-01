@@ -36,44 +36,44 @@ export default class SignInForm extends React.Component {
 
   render() {
     const { error, loading } = this.state
-    return <LoadingLogin />
-    // if (loading) {
-    //   return <LoadingLogin />
-    // } else {
-    //   return (
-    //     <div className="SignInForm">
-    //       <form className="box" onSubmit={this.handleSubmit}>
-    //         <div className="alert ">{error && <p>{error}</p>}</div>
-    //         <h1>Login</h1>
-    //         <input
-    //           className="txtb"
-    //           type="text"
-    //           autoComplete="off"
-    //           id="username"
-    //           name="username"
-    //           required
-    //           placeholder="Username"
-    //         />
-    //         {/**
-    //   <label htmlFor="pass">Password</label>
-    //   */}
+    // return <LoadingLogin />
+    if (loading) {
+      return <LoadingLogin />
+    } else {
+      return (
+        <div className="SignInForm">
+          <form className="box" onSubmit={this.handleSubmit}>
+            <div className="alert ">{error && <p>{error}</p>}</div>
+            <h1>Login</h1>
+            <input
+              className="txtb"
+              type="text"
+              autoComplete="off"
+              id="username"
+              name="username"
+              required
+              placeholder="Username"
+            />
+            {/**
+      <label htmlFor="pass">Password</label>
+      */}
 
-    //         <input
-    //           className="txtb"
-    //           type="password"
-    //           id="password"
-    //           name="password"
-    //           placeholder="Password"
-    //           required
-    //         />
+            <input
+              className="txtb"
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Password"
+              required
+            />
 
-    //         <input className="signin-btn" type="submit" value="Sign In" />
-    //         <Link to="/signUp" className="haventAccYet">
-    //           Don’t have an account ?
-    //         </Link>
-    //       </form>
-    //     </div>
-    //   )
-    // }
+            <input className="signin-btn" type="submit" value="Sign In" />
+            <Link to="/signUp" className="haventAccYet">
+              Don’t have an account ?
+            </Link>
+          </form>
+        </div>
+      )
+    }
   }
 }

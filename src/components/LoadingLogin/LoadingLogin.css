@@ -17,28 +17,32 @@
 }
 
 .lock-svg {
+  transform-origin: 50% 50%;
   position: absolute;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
+  /* animation: unlock 4s linear 0s infinite normal;  */
 }
 
 .lock-combo{
-  transform-origin: 50% 50%;
-  animation: unlock 4s linear 0s infinite normal;
+  transform-origin: 50% 65.5%;
+  animation: unlock 3s linear 0s infinite normal;
+  /* transform-origin: 50% 50%; */
+  /* fill: rgb(78, 78, 78) */
 }
 
 @keyframes unlock{
-  from {
+  /* from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
-  }
-  /* 0%{transform: rotate(0deg);}
+  } */
+  0%{transform: rotate(0deg);}
   25%{transform: rotate(180deg);}
   50%{transform: rotate(90deg);}
   75%{transform: rotate(0deg);}
-  100%{transform: rotate(35deg);} */
+  100%{transform: rotate(35deg);}
 }

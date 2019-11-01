@@ -1,4 +1,5 @@
 .Loading{
+  padding: 1px;
   text-align: center;
   background-image: linear-gradient(to top, #ffffffda, #73a7d7da, #ffffffda);
   margin: 10px auto;
@@ -6,4 +7,28 @@
   min-height: 300px;
   min-width: 80%;
   border-radius: 7px;
+}
+
+.Loading-container{
+  margin: 30px auto;
+  position: relative;
+  width: 200px;
+  height: 200px;
+  /* border: black 1px solid;  */
+  /* overflow: visible; */
+}
+.radar{
+  overflow: visible;
+}
+.dish{
+  /* overflow: visible; */
+  /* position: absolute; */
+  transform-origin: 208px 250px;
+  animation: dish 6s linear 0s infinite normal;
+}
+
+@keyframes dish{
+  0%{transform: rotate(-100deg);}
+  50%{transform: rotate(10deg);}
+  100%{transform: rotate(-100deg);}
 }
