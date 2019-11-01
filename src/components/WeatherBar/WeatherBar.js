@@ -15,7 +15,7 @@ export default class WeatherBar extends React.Component {
 
     const dailyWeather = this.context.weather.filter(snapshot => {
       const dateTime = new Date(snapshot.dt);
-      const searchDate = new Date(`${this.context.date}T12:00:00`);
+      const searchDate = new Date(`${this.context.searchedTerms.date}T12:00:00`);
       return (
         dateTime.toLocaleDateString() === searchDate.toLocaleDateString() &&
         dateTime.getHours() <= 23 &&
@@ -30,7 +30,7 @@ export default class WeatherBar extends React.Component {
       return (
         <div className="weatherbar" id="scroll-target">
           <h2 className="weatherbar-header">
-            Upcoming weather near {zipCode} on {this.context.date}
+            Upcoming weather near {zipCode} on {this.context.searchedTerms.date}
           </h2>
           {weatherSnapshots}
         </div>
@@ -38,7 +38,7 @@ export default class WeatherBar extends React.Component {
     } else {
       return (
         <div className="weatherbar" id="scroll-target">
-          <h2>No Weather data available for {this.context.date}</h2>
+          <h2>No Weather data available for {this.context.searchedTerms.date}</h2>
         </div>
       );
     }

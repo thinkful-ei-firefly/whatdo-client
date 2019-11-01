@@ -4,6 +4,7 @@ import SearchResults from '../../components/SearchResults/SearchResults'
 import WeatherBar from '../../components/WeatherBar/WeatherBar'
 import './EventsPage.css'
 import SearchContext from '../../contexts/SearchContext'
+import ErrorBar from '../../components/ErrorBar/ErrorBar'
 import Loading from '../../components/Loading/Loading'
 
 export default class EventsPage extends React.Component {
@@ -12,6 +13,7 @@ export default class EventsPage extends React.Component {
   loadingComplete() {
     return (
       <>
+        {this.context.fetchError && <ErrorBar />}
         <WeatherBar />
         <SearchResults />
       </>
