@@ -20,15 +20,21 @@ const eventDataHelpers = {
   parseEventList (json) {
     if (!json.events) return [];
     const eventData = json.events.event.map(event => {
+
+      let addressData = [event.venue_address, event.city_name, event.region_name];
+      addressData = addressData.filter(item => !!item);
+      addressData = addressData.join(', ')
+      
       let description = event.description || 'Visit the site for more information!'
       description = this.strip(description)
+
       let eventSnapshot = {
         id: event.id,
         name: event.title,
         description: description || 'Visit the site for more information!',
         start_time: event.start_time,
         stop_time: event.stop_time,
-        address: `${event.venue_address}, ${event.city_name}, ${event.region_name}`,
+        address: addressData,
         city_name: event.city_name,
         region_name: event.region_name,
         venue: event.venue_name,

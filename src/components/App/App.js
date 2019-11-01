@@ -40,7 +40,7 @@ class App extends React.Component {
     },
     distance: 10,
     date: this.getDate(),
-    categories: '',
+    categories: 'music,sports,outdoors_recreation,attractions,performing_arts,comedy,food,singles_social,festivals_parades,holiday',
     prettyCategories: '',
     music: false,
     attractions: false,
@@ -53,7 +53,8 @@ class App extends React.Component {
     pageNum: 1,
     pageCount: 1,
     savedEvents: [],
-    loading: false
+    loading: false,
+    fetchError: false
   };
 
   getDate() {
@@ -129,71 +130,45 @@ class App extends React.Component {
         city: weatherJsonData.city.name,
         weather: weatherReport,
         events: eventList,
+        categories,
         searchedTerms,
-        pageNum: 1,
-        pageCount: eventJsonData.page_count
+        pageNum,
+        pageCount: parseInt(eventJsonData.page_count),
+        fetchError: false
       };
 
       this.setState(newState);
       this.toggleLoading();
     } catch (err) {
+      this.toggleLoading();
+      this.setState({fetchError: true})
       console.log(err);
     }
   };
 
   nextPage = async () => {
     if (this.state.pageNum < this.state.pageCount) {
-      try {
-        //call the API method for the next page, if not already on the last results page
-        //and update the page number and listed events in state
-        const { zipCode, date, distance, categories, pageNum } = this.state;
-        const eventJsonData = await EventApiService.eventSearch(
-          zipCode,
-          distance,
-          date,
-          categories,
-          pageNum + 1,
-          10
-        );
-        const eventList = eventDataHelpers.parseEventList(eventJsonData);
-
-        const newState = {
-          pageNum: this.state.pageNum + 1,
-          events: eventList
-        };
-
-        this.setState(newState);
-      } catch (err) {
-        console.log(err);
-      }
-    }
+      const { zipCode, date, distance, categories, pageNum } = this.state;
+      this.apiSearch (
+        zipCode,
+        distance,
+        date,
+        categories,
+        pageNum + 1
+      )
+    }      
   };
 
   prevPage = async () => {
     if (this.state.pageNum > 1) {
-      try {
-        //call the API method for the previous page, if not already on the first page
-        //and update the page number and listed events in state
-        const { zipCode, date, distance, categories, pageNum } = this.state;
-        const eventJsonData = await EventApiService.eventSearch(
-          zipCode,
-          distance,
-          date,
-          categories,
-          pageNum - 1,
-          10
-        );
-        const eventList = eventDataHelpers.parseEventList(eventJsonData);
-
-        const newState = {
-          pageNum: this.state.pageNum - 1,
-          events: eventList
-        };
-
-        this.setState(newState);
-      } catch (err) {
-        console.log(err);
-      }
+      const { zipCode, date, distance, categories, pageNum } = this.state;
+      this.apiSearch (
+        zipCode,
+        distance,
+        date,
+        categories,
+        pageNum + 1
+      )
     }
   };
 
@@ -275,7 +250,8 @@ class App extends React.Component {
       prevPage: this.prevPage,
       nextPage: this.nextPage,
       loading: this.state.loading,
-      toggleLoading: this.toggleLoading
+      toggleLoading: this.toggleLoading,
+      fetchError: this.state.fetchError
     };
 
     return (

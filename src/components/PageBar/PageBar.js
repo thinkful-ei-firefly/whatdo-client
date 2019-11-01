@@ -3,35 +3,17 @@ import SearchContext from '../../contexts/SearchContext'
 import './PageBar.css'
 
 export default class PageBar extends React.Component {
-  state = { loading: false }
-
+  
   static contextType = SearchContext
 
-  asyncSetState = (state) => {
-    return new Promise((resolve) => {
-      this.setState(state, resolve)
-    });
-  }
-
-  handlePagePrev = async () => {
-    this.asyncSetState({loading: true})
-      .then(res => this.context.prevPage())
-      .then(res => this.setState({loading: false}))
-  }
-
-  handlePageNext = async () => {
-    this.asyncSetState({loading: true})
-      .then(res => this.context.nextPage())
-      .then(res => this.setState({loading: false}))    
-  }
-
   render () {
+    const loading = this.context.loading
     return (
       <div className="pagination-bar">
         <button 
           className="pagination-prev-next-button" 
-          disabled={this.state.loading}
-          onClick={this.handlePagePrev}
+          disabled={loading}
+          onClick={this.context.prevPage}
         >
           <a href="#scroll-target"> Prev </a>          
         </button>
@@ -40,8 +22,8 @@ export default class PageBar extends React.Component {
 
         <button 
           className="pagination-prev-next-button" 
-          disabled={this.state.loading}
-          onClick={this.handlePageNext}
+          disabled={loading}
+          onClick={this.context.nextPage}
         >
           <a href="#scroll-target">Next</a>
         </button>
