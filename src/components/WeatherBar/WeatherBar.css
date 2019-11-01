@@ -58,6 +58,8 @@
   border-top: solid 4px #487eb0;
   border-bottom: solid 4px #487eb0;
   margin: 10px auto 5px auto;
+  animation-duration: 6s;
+  animation-name: fadeIn;
 }
 
 .weathericon:hover {
@@ -75,8 +77,16 @@
 
 .weathericon-icon {
   margin: -20px -3px;
+  min-width: 100px;
+  min-height: 100px;
+  animation-duration: 6s;
+  animation-name: fadeIn;
 }
 
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
 .weathericon-temperature {
   text-align: center;
   margin: 0px;

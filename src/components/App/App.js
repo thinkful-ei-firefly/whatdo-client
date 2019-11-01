@@ -52,7 +52,8 @@ class App extends React.Component {
     events: [],
     pageNum: 1,
     pageCount: 1,
-    savedEvents: []
+    savedEvents: [],
+    loading: false
   };
 
   getDate() {
@@ -74,6 +75,7 @@ class App extends React.Component {
     pageNum = 1,
     pageSize = 10
   ) => {
+    this.toggleLoading()
     //send api request to get weather
     //send api request to get events
     //update state
@@ -123,7 +125,10 @@ class App extends React.Component {
         pageCount: eventJsonData.page_count
       };
 
+      
       this.setState(newState);
+      this.toggleLoading()
+      
     } catch (err) {
       console.log(err);
     }
@@ -230,6 +235,10 @@ class App extends React.Component {
     this.setState({ zipCode });
   };
 
+  toggleLoading = () => {
+    this.setState({loading: !this.state.loading})
+  }
+
   render() {
     const searchContextValue = {
       city: this.state.city,
@@ -257,7 +266,9 @@ class App extends React.Component {
       pageNum: this.state.pageNum,
       pageCount: this.state.pageCount,
       prevPage: this.prevPage,
-      nextPage: this.nextPage
+      nextPage: this.nextPage,
+      loading: this.state.loading,
+      toggleLoading: this.toggleLoading
     };
 
     return (
