@@ -22,6 +22,7 @@ import SignInPage from '../../routes/SignInPage/SignInPage';
 import SignUpPage from '../../routes/SignUpPage/SignUpPage';
 import NotFoundPage from '../../routes/NotFoundPage/NotFoundPage';
 import MyEventsPage from '../../routes/MyEventsPage/MyEventsPage';
+import ErrorBound from '../ErrorBound/ErrorBound';
 
 class App extends React.Component {
   state = {
@@ -257,20 +258,24 @@ class App extends React.Component {
     return (
       <div className="App">
         <SearchContext.Provider value={searchContextValue}>
-          <Header />
-          <Switch>
-            <Route exact path={'/'} component={LandingPage} />
-            <PublicOnlyRoute path={'/signUp'} component={SignUpPage} />
-            <PublicOnlyRoute
-              path={'/signIn'}
-              component={() => <SignInPage getFavs={this.getSavedEvents} />}
-            />
-            <Route path={'/eventsPage'} component={EventsPage} />
-            <PrivateOnlyRoute path={'/eventPage'} component={EventPage} />
-            <PrivateOnlyRoute path={'/myEventsPage'} component={MyEventsPage} />
-            <Route component={NotFoundPage} />
-          </Switch>
-          <Footer />
+          <ErrorBound>
+            <Header />
+            <ErrorBound>
+              <Switch>
+                <Route exact path={'/'} component={LandingPage} />
+                <PublicOnlyRoute path={'/signUp'} component={SignUpPage} />
+                <PublicOnlyRoute
+                  path={'/signIn'}
+                  component={() => <SignInPage getFavs={this.getSavedEvents} />}
+                />
+                <Route path={'/eventsPage'} component={EventsPage} />
+                <PrivateOnlyRoute path={'/eventPage'} component={EventPage} />
+                <PrivateOnlyRoute path={'/myEventsPage'} component={MyEventsPage} />
+                <Route component={NotFoundPage} />
+              </Switch>
+            </ErrorBound>
+            <Footer />
+          </ErrorBound>
         </SearchContext.Provider>
       </div>
     );

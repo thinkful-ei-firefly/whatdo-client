@@ -18,7 +18,6 @@ const EventApiService = {
     const res = await fetch(
       `${CORSanywhere}${config.EVENTFUL_SEARCH_ENDPOINT}&location=${zipCode}&within=${distance}&date=${date}&category=${categories}&page_size=${pageSize}&page_number=${pageNum}`
     );
-    console.log(res)
     if (!res.ok) {
       return res.json().then(e => Promise.reject(e));
     }
