@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import Search from './Search'
 import renderer from 'react-test-renderer'
+import SearchContext from '../../contexts/SearchContext'
 
 describe('<Search />', () => {
   it('renders without crashing', () => {
@@ -10,9 +11,12 @@ describe('<Search />', () => {
     ReactDOM.unmountComponentAtNode(div)
   })
   it('renders as expected', () => {
+    const value = {date:'12/12/12'}
     const tree = renderer
       .create(
-        <Search/>
+        <SearchContext.Provider value={value}>
+          <Search />
+        </SearchContext.Provider>
       )
       .toJSON()
 

@@ -17,13 +17,13 @@ exports[`<WeatherIcon renders properly 1`] = `
   <p
     className="weathericon-temperature high"
   >
-    High: 
+    High:
     99
   </p>
   <p
     className="weathericon-temperature low"
   >
-    Low: 
+    Low:
     0
   </p>
 </div>

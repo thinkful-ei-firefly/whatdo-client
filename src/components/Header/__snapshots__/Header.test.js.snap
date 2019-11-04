@@ -56,7 +56,7 @@ exports[` 1`] = `
     </a>
   </h1>
   <nav
-    className="login-controls"
+    className="header__nav"
     role="navigation"
   >
     <input
@@ -95,6 +95,7 @@ exports[` 1`] = `
       >
         Sign in
       </a>
+       
       <a
         className="btn btn2"
         href="/signUp"
