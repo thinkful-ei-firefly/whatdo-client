@@ -6,7 +6,7 @@ import SignUpForm from '../../components/SignUpForm/SignUpForm'
 export default class SignUpPage extends React.Component{
 
   onSuccessfulSignUp = () => {
-     // should update this to show a 'Success' message on next page
+     // redirect back to the events page
     return this.props.history.push('/eventsPage')
   }
 

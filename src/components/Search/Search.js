@@ -62,8 +62,6 @@ export default class Search extends React.Component {
     }
 
     this.context.apiSearch(zipCode, distance, date, categories);
-    //once SearchResults page is hooked up to context, modify apiSearch to return a promise
-    //then add a .then chain to history.push the user to the results page
     this.props.handleSubmit();
   }
 
@@ -71,18 +69,13 @@ export default class Search extends React.Component {
     return (
       <div className="SearchPage">
         <div className="Search">
-          <h2>Search event near you</h2>
+          <h2>Search events near you</h2>
           <h3>
             "Have fun, be yourself, enjoy life and stay positive" - Tatiana
             Maslany
           </h3>
 
           <form className="form" onSubmit={ev => this.handleSubmit(ev)}>
-            {/*
-              <div role="alert" className="alert">
-                {error && <p>{error}</p>}
-              </div>
-            */}
 
             <div className="form-section">
               <input
@@ -127,9 +120,10 @@ export default class Search extends React.Component {
                 onChange={this.context.setSearchTerm}
               />
             </div>
-            <h4>Filter by event type</h4>
 
+            <h4>Filter by event type</h4>
             <div className="form-section checkbox__section">
+
               <input
                 type="checkbox"
                 id="box1"
@@ -139,6 +133,7 @@ export default class Search extends React.Component {
                 onChange={this.context.setChecked}
               ></input>
               <label htmlFor="box1">Music</label>
+
               <input
                 type="checkbox"
                 id="box2"
@@ -148,6 +143,7 @@ export default class Search extends React.Component {
                 onChange={this.context.setChecked}
               ></input>
               <label htmlFor="box2">Sports</label>
+
               <input
                 type="checkbox"
                 id="box3"
@@ -157,6 +153,7 @@ export default class Search extends React.Component {
                 onChange={this.context.setChecked}
               ></input>
               <label htmlFor="box3">Attractions</label>
+
               <input
                 type="checkbox"
                 id="box4"
@@ -166,6 +163,7 @@ export default class Search extends React.Component {
                 onChange={this.context.setChecked}
               ></input>
               <label htmlFor="box4">Performing Arts</label>
+
               <input
                 type="checkbox"
                 id="box5"
@@ -175,6 +173,7 @@ export default class Search extends React.Component {
                 onChange={this.context.setChecked}
               ></input>
               <label htmlFor="box5">Bars</label>
+
               <input
                 type="checkbox"
                 id="box6"
@@ -184,6 +183,7 @@ export default class Search extends React.Component {
                 onChange={this.context.setChecked}
               ></input>
               <label htmlFor="box6">Festivals</label>
+
             </div>
 
             <div className="form-btn">
@@ -191,6 +191,7 @@ export default class Search extends React.Component {
                 Search
               </button>
             </div>
+            
           </form>
         </div>
       </div>

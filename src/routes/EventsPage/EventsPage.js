@@ -23,10 +23,8 @@ export default class EventsPage extends React.Component {
   render() {
     return (
       <div className="EventsPage">
-         <SearchBar />
-         {/* <Loading /> */}
-         {/* <PageBar /> */}
-         {this.context.loading ? <Loading /> : this.loadingComplete()}
+        <SearchBar />
+        {this.context.loading ? <Loading /> : this.loadingComplete()}
       </div>
     )
   }

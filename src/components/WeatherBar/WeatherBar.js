@@ -6,14 +6,11 @@ import './WeatherBar.css';
 export default class WeatherBar extends React.Component {
   static contextType = SearchContext;
 
-  dateToStringFormat(date) {
-    return date.toISOString().slice(0, 10);
-  }
-
   render() {
     const { zipCode } = this.context.searchedTerms;
 
     const dailyWeather = this.context.weather.filter(snapshot => {
+      //filter weather data to only display data from the given day during local times 8am-11pm
       const dateTime = new Date(snapshot.dt);
       const searchDate = new Date(`${this.context.searchedTerms.date}T12:00:00`);
       return (

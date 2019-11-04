@@ -22,7 +22,6 @@ export default class SignInForm extends React.Component {
       this.setState({ loading: !this.state.loading })
       const token = await AuthApiService.login(loginCredentials)
       TokenService.saveAuthToken(token.authToken)
-      // console.log('log in success!')
       // set context
       this.context.setUser({ username: username.value })
       // should update this to show a 'Success' message on next page
@@ -36,15 +35,16 @@ export default class SignInForm extends React.Component {
 
   render() {
     const { error, loading } = this.state
-    // return <LoadingLogin />
     if (loading) {
       return <LoadingLogin />
     } else {
       return (
         <div className="SignInForm">
           <form className="box" onSubmit={this.handleSubmit}>
+
             <div className="alert ">{error && <p>{error}</p>}</div>
             <h1>Login</h1>
+
             <input
               className="txtb"
               type="text"
@@ -54,9 +54,6 @@ export default class SignInForm extends React.Component {
               required
               placeholder="Username"
             />
-            {/**
-      <label htmlFor="pass">Password</label>
-      */}
 
             <input
               className="txtb"
@@ -71,6 +68,7 @@ export default class SignInForm extends React.Component {
             <Link to="/signUp" className="haventAccYet">
               Don’t have an account ?
             </Link>
+            
           </form>
         </div>
       )

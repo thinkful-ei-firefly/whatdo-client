@@ -1,6 +1,7 @@
 const eventDataHelpers = {
 
   todayStr () {
+    //returns a string in the format YYYYMMDD00-YYYYMMDD00 representing the current date
     const now = new Date(Date.now());
     let dateStr = `${now.getFullYear()}${now.getMonth()+1}${now.getDate()}00`
     dateStr = `${dateStr}-${dateStr}`
@@ -8,6 +9,7 @@ const eventDataHelpers = {
   },
 
   searchDateStr (date) {
+    //given a date object, returns a string in the format YYYYMMDD00-YYYYMMDD00
     let dateStr = `${date.getFullYear()}${date.getMonth()+1}${date.getDate()}00`
     dateStr = `${dateStr}-${dateStr}`
     return dateStr;
@@ -18,6 +20,7 @@ const eventDataHelpers = {
   },
 
   parseEventList (json) {
+    //takes an incoming JSON object and extracts the useful data, returning an array of events
     if (!json.events) return [];
     const eventData = json.events.event.map(event => {
 
@@ -47,6 +50,7 @@ const eventDataHelpers = {
   },
 
   strip (html) {
+    //removes HTML tags and other ugly characters and formatting from a block of text
     let text = new DOMParser().parseFromString(html, 'text/html');
     text = text.body.textContent || ''
     return text.replace(/(<([^>]+)>)/ig,"");

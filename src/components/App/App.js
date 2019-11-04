@@ -16,7 +16,6 @@ import SearchContext from '../../contexts/SearchContext';
 import './App.css';
 
 import LandingPage from '../../routes/LandingPage/LandingPage';
-import EventPage from '../../routes/EventPage/EventPage';
 import EventsPage from '../../routes/EventsPage/EventsPage';
 import SignInPage from '../../routes/SignInPage/SignInPage';
 import SignUpPage from '../../routes/SignUpPage/SignUpPage';
@@ -269,7 +268,6 @@ class App extends React.Component {
                   component={() => <SignInPage getFavs={this.getSavedEvents} />}
                 />
                 <Route path={'/eventsPage'} component={EventsPage} />
-                <PrivateOnlyRoute path={'/eventPage'} component={EventPage} />
                 <PrivateOnlyRoute path={'/myEventsPage'} component={MyEventsPage} />
                 <Route component={NotFoundPage} />
               </Switch>

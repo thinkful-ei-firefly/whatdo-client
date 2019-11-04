@@ -70,11 +70,6 @@ export default class SearchBar extends React.Component {
           className="EventsPage__form "
           onSubmit={ev => this.handleSubmit(ev)}
         >
-          {/*
-      <div role='alert' className='alert' >
-          {error && <p>{error}</p>}
-        </div>
-      */}
 
           <div className="EventsPage__form-section">
             <input
@@ -121,6 +116,7 @@ export default class SearchBar extends React.Component {
           </div>
 
           <div className="EventsPage__checkbox__section">
+
             <input
               type="checkbox"
               id="box1"
@@ -130,6 +126,7 @@ export default class SearchBar extends React.Component {
               onChange={this.context.setChecked}
             ></input>
             <label htmlFor="box1">Music</label>
+
             <input
               type="checkbox"
               id="box2"
@@ -139,6 +136,7 @@ export default class SearchBar extends React.Component {
               onChange={this.context.setChecked}
             ></input>
             <label htmlFor="box2">Sports</label>
+
             <input
               type="checkbox"
               id="box3"
@@ -148,6 +146,7 @@ export default class SearchBar extends React.Component {
               onChange={this.context.setChecked}
             ></input>
             <label htmlFor="box3">Attractions</label>
+
             <input
               type="checkbox"
               id="box4"
@@ -157,6 +156,7 @@ export default class SearchBar extends React.Component {
               onChange={this.context.setChecked}
             ></input>
             <label htmlFor="box4">Performing Arts</label>
+
             <input
               type="checkbox"
               id="box5"
@@ -166,6 +166,7 @@ export default class SearchBar extends React.Component {
               onChange={this.context.setChecked}
             ></input>
             <label htmlFor="box5">Bars</label>
+
             <input
               type="checkbox"
               id="box6"
@@ -175,6 +176,7 @@ export default class SearchBar extends React.Component {
               onChange={this.context.setChecked}
             ></input>
             <label htmlFor="box6">Festivals</label>
+
           </div>
 
           <div className="form-btn">
@@ -182,6 +184,7 @@ export default class SearchBar extends React.Component {
               Search
             </button>
           </div>
+          
         </form>
       </div>
     );

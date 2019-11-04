@@ -27,7 +27,7 @@ export default class Nav extends React.Component {
           <Link
             to="/eventsPage"
             className="btn btn2"
-            onClick={this.handleUncheck} //.prop("checked", false)}
+            onClick={this.handleUncheck}
           >
             Events
           </Link>
@@ -62,11 +62,6 @@ export default class Nav extends React.Component {
               </Link>
             </>
           )}
-
-          {/**demo  login & register*/}
-          {/* <Link to="/signUp" className="btn btn2">
-            Sign up
-          </Link> */}
 
           <label htmlFor="chk" className="hide-menu-btn">
             <i className="fas fa-times"></i>

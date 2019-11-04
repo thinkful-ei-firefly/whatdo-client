@@ -10,23 +10,25 @@ export class UserProvider extends React.Component {
   };
 
   setUser = user => {
-    // console.log('set user')
     this.setState({ user });
   };
+
   logoutUser = () => {
     document.getElementById("chk").checked = false;
     TokenService.clearAuthToken();
     this.setState({ user: null });
   };
+
   setError = err => {
     this.setError({ err });
   };
+
   clearError = err => {
     this.set({ err });
   };
 
   render() {
-    // console.log('UserContext')
+
     const value = {
       user: this.state.user,
       error: this.state.error,
@@ -35,6 +37,7 @@ export class UserProvider extends React.Component {
       setError: this.setError,
       clearError: this.clearError
     };
+    
     return (
       <UserContext.Provider value={value}>
         {this.props.children}

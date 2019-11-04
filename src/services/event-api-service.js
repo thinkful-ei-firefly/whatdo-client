@@ -24,16 +24,6 @@ const EventApiService = {
     return res.json();
   },
 
-  async getEventById(eventId) {
-    const res = await fetch(
-      `${config.EVENTFUL_SINGLE_EVENT_ENDPOINT}&id=${eventId}`
-    );
-    if (!res.ok) {
-      return res.json().then(e => Promise.reject(e));
-    }
-    return res.json();
-  },
-
   async postEventToDB(event) {
     const res = await fetch(`${config.REACT_APP_API_ENDPOINT}/event`, {
       method: 'POST',

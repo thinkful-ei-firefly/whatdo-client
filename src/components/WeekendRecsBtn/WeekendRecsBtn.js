@@ -33,7 +33,6 @@ export default class WeekendRecsBtn extends React.Component {
       this.setState({ loading: false });
     };
 
-    // eslint-disable-next-line no-unused-vars
     navigator.geolocation.getCurrentPosition(
       pos => success(pos),
       error,
@@ -47,6 +46,8 @@ export default class WeekendRecsBtn extends React.Component {
     while (date.getDay() > 0 && date.getDay() < 6) {
       date.setTime(date.getTime() + 86400000);
     }
+
+    //then format the date appropriately for our search functions
     let month = date.getMonth() + 1;
     let day = date.getDate();
 
@@ -63,12 +64,12 @@ export default class WeekendRecsBtn extends React.Component {
 
     date = date.getFullYear() + "-" + month + "-" + day;
 
-    //get the favorite categories of the user
+    //get the favorite categories of the user, or use a default value
     const userFavorites =
       this.context.categories ||
       "music,sports,outdoors_recreation,attractions,performing_arts,comedy,food,singles_social,festivals_parades,holiday";
 
-    //get the current/registered zip code of the user
+    //get the current zip code of the user, or use a default value
     const zipCode = this.state.zip || this.context.zipCode;
 
     //pass everything to the search
@@ -79,6 +80,7 @@ export default class WeekendRecsBtn extends React.Component {
   };
 
   componentDidMount() {
+    //attempt to fetch current location when the component is rendered
     this.getLocation();
   }
 
