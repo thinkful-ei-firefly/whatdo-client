@@ -56,7 +56,7 @@ exports[`<SignUpForm /> renders correctly 1`] = `
     />
     <a
       className="alreadyHaveAcc"
-      href="/"
+      href="/signIn"
       onClick={[Function]}
     >
       Already Have one ?

@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SavedEvent /> renders as expected 1`] = `
+<div
+  className="EventItem__Container"
+>
+  <div
+    className="EventItem"
+  >
+    <span />
+    <span />
+    <span />
+    <span />
+    <div
+      className="EventItems"
+    >
+      <h3
+        className="EventItem__header"
+      />
+      <h4
+        className="EventItem__time"
+      >
+        , 
+        Invalid Date
+      </h4>
+      <h5
+        className="EventItem__address"
+      />
+      <div>
+        <p />
+      </div>
+      <div
+        className="EventItem__learnMore"
+      >
+        <a
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Learn More
+        </a>
+      </div>
+      <br />
+      <div
+        className="EventItem__remove"
+      >
+        <button
+          className="EventItem__removebtn"
+          onClick={[Function]}
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
