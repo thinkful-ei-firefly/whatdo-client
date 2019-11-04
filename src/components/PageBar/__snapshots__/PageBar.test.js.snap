@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PageBar /> renders as expected 1`] = `
+<div
+  className="pagination-bar"
+>
+  <button
+    className="pagination-prev-next-button"
+  >
+    <a
+      href="#scroll-target"
+    >
+       Prev 
+    </a>
+  </button>
+  <span
+    className="pagination-page-num"
+  >
+        Page 
+    <span
+      className="bold"
+    />
+     of 
+       
+  </span>
+  <button
+    className="pagination-prev-next-button"
+  >
+    <a
+      href="#scroll-target"
+    >
+      Next
+    </a>
+  </button>
+</div>
+`;

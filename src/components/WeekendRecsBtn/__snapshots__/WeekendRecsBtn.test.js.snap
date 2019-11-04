@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<WeekendRecsBtn /> renders as expected 1`] = `
+<div
+  className="weekend__button__component"
+>
+  <button
+    className="weekend__button"
+    onClick={[Function]}
+  >
+    What Do this Weekend?
+  </button>
+</div>
+`;

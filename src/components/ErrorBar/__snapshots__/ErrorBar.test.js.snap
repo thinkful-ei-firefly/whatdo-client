@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ErrorBar /> renders as expected 1`] = `
+<div
+  className="fetch-error-bar"
+>
+  <h2
+    className="error-bar-header"
+  >
+    We're sorry, the server is experiencing some difficulties.
+  </h2>
+  <h3>
+    Please wait a few minutes or refresh the page and try again.
+  </h3>
+</div>
+`;

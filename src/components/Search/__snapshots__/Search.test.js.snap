@@ -101,7 +101,7 @@ exports[`<Search /> renders as expected 1`] = `
           id="date"
           name="date"
           type="date"
-          value="12/12/12"
+          value="2019-11-04T15:56:24.238Z"
         />
       </div>
       <h4>
