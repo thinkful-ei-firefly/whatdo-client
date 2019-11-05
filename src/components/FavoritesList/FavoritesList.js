@@ -1,6 +1,6 @@
-import React from 'react';
-import SearchContext from '../../contexts/SearchContext';
-import SavedEvent from '../../components/SavedEvent/SavedEvent';
+import React from "react";
+import SearchContext from "../../contexts/SearchContext";
+import SavedEvent from "../../components/SavedEvent/SavedEvent";
 
 export default class FavoritesList extends React.Component {
   state = { loading: true };
@@ -44,7 +44,7 @@ export default class FavoritesList extends React.Component {
           venue={event.venue}
           address={event.address}
           start_time={event.start_time}
-          stop={event.stop || 'unknown'}
+          stop={event.stop || "unknown"}
           image={event.image}
           removeEvent={this.context.removeEvent}
         />
