@@ -18,7 +18,7 @@ const SearchContext = React.createContext({
   searchedTerms: {
     zipCode: '30084',
     distance: 10,
-    date: new Date(Date.now()),
+    date: '2019-11-05',
     music: false,
     attractions: false,
     bars: false,
