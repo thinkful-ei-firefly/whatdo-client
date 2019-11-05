@@ -25,7 +25,7 @@ const eventDataHelpers = {
     const eventData = json.events.event.map(event => {
 
       let addressData = [event.venue_address, event.city_name, event.region_name];
-      addressData = addressData.filter(item => !!item);
+      addressData = addressData.filter(item => !!item && item.length > 2);
       addressData = addressData.join(', ')
       
       let description = event.description || 'Visit the site for more information!'
