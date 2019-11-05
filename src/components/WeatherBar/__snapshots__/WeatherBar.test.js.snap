@@ -3,12 +3,11 @@
 exports[`<WeatherBar /> renders properly 1`] = `
 <div
   className="weatherbar"
+  id="scroll-target"
 >
-  <h2
-    className="alert"
-  >
+  <h2>
     No Weather data available for 
-    10/25/2019
+    2019-11-05
   </h2>
 </div>
 `;

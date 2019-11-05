@@ -6,6 +6,8 @@ exports[`<PageBar /> renders as expected 1`] = `
 >
   <button
     className="pagination-prev-next-button"
+    disabled={false}
+    onClick={[Function]}
   >
     <a
       href="#scroll-target"
@@ -19,12 +21,17 @@ exports[`<PageBar /> renders as expected 1`] = `
         Page 
     <span
       className="bold"
-    />
+    >
+      1
+    </span>
      of 
+    1
        
   </span>
   <button
     className="pagination-prev-next-button"
+    disabled={false}
+    onClick={[Function]}
   >
     <a
       href="#scroll-target"

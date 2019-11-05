@@ -2,7 +2,7 @@
 
 exports[`<EventItem /> renders as expected 1`] = `
 <div
-  className=".EventItem__Container"
+  className="EventItem__Container"
 >
   <div
     className="EventItem"
@@ -11,28 +11,55 @@ exports[`<EventItem /> renders as expected 1`] = `
     <span />
     <span />
     <span />
-    <h3>
-      Event Name
-    </h3>
-    <h4>
-      Event Venue
-      , 
-      5:00:00 PM
-    </h4>
-    <h5>
-      9999 Event Avenue, Event Town, Florida 33301
-    </h5>
-    An event of events for events by events
-     
-    <a
-      href="https://www.event.com"
+    <div
+      className="EventItems"
     >
-      Learn More
-    </a>
-    <br />
-    <button>
-      Add to favorites
-    </button>
+      <h3
+        className="EventItem__header"
+      >
+        Event Name
+      </h3>
+      <h4
+        className="EventItem__time"
+      >
+        Event Venue
+        , 
+        Invalid Date
+      </h4>
+      <h5
+        className="EventItem__address"
+      >
+        9999 Event Avenue, Event Town, Florida 33301
+      </h5>
+      <div
+        className="EventItem__description"
+      >
+        <p>
+          An event of events for events by events
+        </p>
+      </div>
+      <div
+        className="EventItem__learnMore"
+      >
+        <a
+          href="https://www.event.com"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Learn More
+        </a>
+      </div>
+      <br />
+      <div
+        className="EventItem__goLogin"
+      >
+        <a
+          className="EventItem__goLoginbtn"
+          href="/signIn"
+          onClick={[Function]}
+        />
+      </div>
+    </div>
   </div>
 </div>
 `;

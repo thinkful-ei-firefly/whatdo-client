@@ -16,6 +16,7 @@ exports[`<SignInForm/> renders correctly 1`] = `
     </h1>
     <input
       autoComplete="off"
+      className="txtb"
       id="username"
       name="username"
       placeholder="Username"
@@ -23,6 +24,7 @@ exports[`<SignInForm/> renders correctly 1`] = `
       type="text"
     />
     <input
+      className="txtb"
       id="password"
       name="password"
       placeholder="Password"
@@ -30,9 +32,17 @@ exports[`<SignInForm/> renders correctly 1`] = `
       type="password"
     />
     <input
+      className="signin-btn"
       type="submit"
       value="Sign In"
     />
+    <a
+      className="haventAccYet"
+      href="/signUp"
+      onClick={[Function]}
+    >
+      Don’t have an account ?
+    </a>
   </form>
 </div>
 `;
