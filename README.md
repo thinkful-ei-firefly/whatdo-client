@@ -49,6 +49,7 @@ Making plans for the weekend doesn't always have to be hard. No matter where you
 ## To test out the app right away, log in using the demo credentials:
 
 > Username: demo
+
 > Password: pass
 
 ## Site Screenshots
@@ -149,6 +150,6 @@ To fix a bug or enhance an existing module, follow these steps:
 - Create a new branch (`git checkout -b improve-feature`)
 - Make the appropriate changes in the files
 - Add changes to reflect the changes made
-- Commit your changes (`git commit -am 'Improve feature'`)
+- Commit your changes (`git commit -m 'Improve feature'`)
 - Push to the branch (`git push origin improve-feature`)
 - Create a Pull Request
