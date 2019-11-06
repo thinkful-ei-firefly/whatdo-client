@@ -30,33 +30,25 @@
 
 ## App Description
 
-<table>
-<tr>
-<td>
-  Making plans for the weekend doesn't always have to be hard. No matter where you are, our WhatDo app will let you learn about all kinds of fun events near your location, from concerts and plays to sporting events and museums. Our app also gives you a brief weather report for your selected day, so you can decide for yourself if you'd rather spend the day inside or outside. Favorite events can be saved to your profile, so you can look up the details quickly at a later time.
-
-</td>
-</tr>
-</table>
+Making plans for the weekend doesn't always have to be hard. No matter where you are, our WhatDo app will let you learn about all kinds of fun events near your location, from concerts and plays to sporting events and museums. Our app also gives you a brief weather report for your selected day, so you can decide for yourself if you'd rather spend the day inside or outside. Favorite events can be saved to your profile, so you can look up the details quickly at a later time.
 
 ## User Stories
 
 - #### As a new user, I want to be able to create an account.
 - #### As a returning user, I want to be able to sign into my account.
-- #### As a user, I want to be able to search for things to do around a given area (by zip code).
+- #### As a user, I want to be able to search for things to do around a given area by zip code.
 - #### As a user, I want to search for events on a given day.
 - #### As a user, I want to be able to search for things to do around my current location.
-- #### As a user, I want to be able to see more information about an event of interest. (link to external site?)
-- #### As a user, I want to be able to add events to my list/calendar
-- #### As a returning user, I want to be able to see my events that I’ve added to my list/calendar.
-- #### As a returning user, I want to be able to remove events from my calendar.
+- #### As a user, I want to be able to find out more information about an event of interest.
+- #### As a user, I want to be able to add events to my favorites list.
+- #### As a returning user, I want to be able to see my events that I’ve added to my favorites list.
+- #### As a returning user, I want to be able to remove events from my favorites list.
 - #### As a user, I want to see the weather in the given location on the given day.
 - #### As a user, I want to be able to filter events to search on the given day.
 
 ## To test out the app right away, log in using the demo credentials:
 
 > Username: demo
-
 > Password: pass
 
 ## Site Screenshots
@@ -87,7 +79,7 @@
 - Signup Page
   - [ live version of the html wireframe](https://thinkful-ei-firefly.github.io/whatdo-wireframe/signUpPage/index.html)
 
-## Build with
+## Built with
 
 - React
 - Vanilla CSS
@@ -102,7 +94,6 @@ To setup the application
 
 - Fork or clone the project to your machine
 - `npm install`.
--
 
 ## Running project
 
@@ -110,7 +101,7 @@ To setup the application
 
 ## Running the tests
 
-- `npm test` will start test this project.
+- `npm test` will start running the test suite for this project.
 
 ## Endpoints
 
