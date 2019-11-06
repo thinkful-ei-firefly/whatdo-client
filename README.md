@@ -7,8 +7,8 @@
 ### Engineering Team
 
 - Jessica Doyle (Project Manager)
-- Ben Rosen (Product Manager)
-- Cody Oberholtzer (Product Manager)
+- Ben Rosen (Backend Lead)
+- Cody Oberholtzer (Frontend Lead)
 - Ahmed AM (Design Lead)
 
 ## Table of contents
