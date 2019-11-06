@@ -2,7 +2,7 @@
 
 # ![WebApp](https://github.com/thinkful-ei-firefly/whatdo-client/blob/master/src/assets/readme-images/whatdo_responsive.png?raw=true)
 
-brief about our app("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
+Looking for a fun way to spend a day? Ask us, "What Do?"
 
 ### Engineering Team
 
@@ -33,7 +33,7 @@ brief about our app("Lorem ipsum dolor sit amet, consectetur adipiscing elit, se
 <table>
 <tr>
 <td>
-  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+  Making plans for the weekend doesn't always have to be hard. No matter where you are, our WhatDo app will let you learn about all kinds of fun events near your location, from concerts and plays to sporting events and museums. Our app also gives you a brief weather report for your selected day, so you can decide for yourself if you'd rather spend the day inside or outside. Favorite events can be saved to your profile, so you can look up the details quickly.
 
 </td>
 </tr>
