@@ -62,15 +62,15 @@ brief about our app("Lorem ipsum dolor sit amet, consectetur adipiscing elit, se
 ## Site Screenshots
 
 - ### Signup Page.
-  ![](https://github.com/thinkful-ei-firefly/whatdo-client/blob/master/src/assets/readme-images/whatdo_responsive.png?raw=true)
+  ![](https://github.com/thinkful-ei-firefly/whatdo-client/blob/master/src/assets/readme-images/signup_page.png?raw=true)
 - ### Sign In Page
-  ![](https://github.com/thinkful-ei-firefly/whatdo-client/blob/master/src/assets/readme-images/whatdo_responsive.png?raw=true)
+  ![](https://github.com/thinkful-ei-firefly/whatdo-client/blob/master/src/assets/readme-images/signin_page.png?raw=true)
 - ### Dashboard Page
-  ![](https://github.com/thinkful-ei-firefly/whatdo-client/blob/master/src/assets/readme-images/whatdo_responsive.png?raw=true)
+  ![](https://github.com/thinkful-ei-firefly/whatdo-client/blob/master/src/assets/readme-images/dashboard_page.png?raw=true)
 - ### SearchEvents Page
-  ![](https://github.com/thinkful-ei-firefly/whatdo-client/blob/master/src/assets/readme-images/whatdo_responsive.png?raw=true)
+  ![](https://github.com/thinkful-ei-firefly/whatdo-client/blob/master/src/assets/readme-images/searchEvents_page.png?raw=true)
 - ### MyEvents Page
-  ![](https://github.com/thinkful-ei-firefly/whatdo-client/blob/master/src/assets/readme-images/whatdo_responsive.png?raw=true)
+  ![](https://github.com/thinkful-ei-firefly/whatdo-client/blob/master/src/assets/readme-images/myEvents_page.png?raw=true)
 
 ## Wireframe
 

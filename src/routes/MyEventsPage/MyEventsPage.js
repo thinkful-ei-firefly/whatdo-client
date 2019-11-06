@@ -1,18 +1,18 @@
-import React from 'react';
-import './MyEventsPage.css';
-import FavoritesList from '../../components/FavoritesList/FavoritesList'
-import WeekendRecsBtn from '../../components/WeekendRecsBtn/WeekendRecsBtn'
+import React from "react";
+import "./MyEventsPage.css";
+import FavoritesList from "../../components/FavoritesList/FavoritesList";
+import WeekendRecsBtn from "../../components/WeekendRecsBtn/WeekendRecsBtn";
 
 export default class MyEventsPage extends React.Component {
   redirectToEvents = () => {
-    this.props.history.push('/eventsPage');
-  }
+    this.props.history.push("/eventsPage");
+  };
 
-  render() {    
+  render() {
     return (
       <div className="MyEventsPage__container">
-        <div className="MyEventsPage">          
-          <WeekendRecsBtn redirectToEvents={this.redirectToEvents}/>
+        <div className="MyEventsPage__subContainer">
+          <WeekendRecsBtn redirectToEvents={this.redirectToEvents} />
           <FavoritesList />
         </div>
       </div>
