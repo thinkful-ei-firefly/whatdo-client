@@ -5,8 +5,7 @@
   padding: 70px 0;
   font-family: sans-serif;
   display: flex;
-  background: url("Desktop-1.png") no-repeat fixed center;
-  background-repeat: no-repeat;
+  background: url("Desktop-1.png") fixed center;
   background-size: fixed;
   /* animation: landingPageSlide 25s ease infinite; */
 }
