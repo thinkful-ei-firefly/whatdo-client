@@ -36,7 +36,7 @@ Making plans for the weekend doesn't always have to be hard. No matter where you
 
 - [Live Demo](https://whatdo.now.sh/)
 - [Live API](https://thinkful-whatdo.herokuapp.com/)
-- [Server-site repo](https://github.com/thinkful-ei-firefly/whatdo-server)
+- [API Repo](https://github.com/thinkful-ei-firefly/whatdo-server)
 
 ## User Stories
 
